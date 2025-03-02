@@ -4,8 +4,8 @@ const isProd = process.env.NODE_ENV === "production";
 
 const nextConfig: NextConfig = {
   // Configuración de rutas para GitHub Pages
-  basePath: isProd ? process.env.NEXT_PUBLIC_BASE_PATH || "/" : "",
-  assetPrefix: isProd ? process.env.NEXT_PUBLIC_BASE_PATH || "/" : "",
+  // basePath: isProd ? process.env.NEXT_PUBLIC_BASE_PATH || "/" : "",
+  // assetPrefix: isProd ? process.env.NEXT_PUBLIC_BASE_PATH || "/" : "",
 
   // Configuración base
   output: "export",
