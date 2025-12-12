@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import Link from "next/link";
+import { useLanguage } from "@/hooks/useLanguage";
+import { t } from "@/lib/translations";
 
 interface HeaderProps {
   name: string;
 }
 
 export function Header({ name }: HeaderProps): React.JSX.Element {
+  const { language, setLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: "Inicio" },
-    { href: "#sobre-mi", label: "Sobre Mí" },
-    { href: "/projects", label: "Proyectos" },
-    { href: "#contacto", label: "Contacto" },
+    { href: "/", label: t("nav.inicio", language) },
+    { href: "#sobre-mi", label: t("nav.sobreMi", language) },
+    { href: "/projects/", label: t("nav.proyectos", language) },
+    { href: "#contacto", label: t("nav.contacto", language) },
   ];
 
   return (
@@ -39,11 +42,28 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
           </nav>
 
           {/* Language Selector */}
-          <div className="hidden md:block">
-            <select className="bg-black/30 text-white border border-cyan-500/50 px-3 py-1 rounded text-sm hover:border-cyan-400 transition-colors duration-300 cursor-pointer">
-              <option value="es">ES</option>
-              <option value="en">EN</option>
-            </select>
+          <div className="hidden md:flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-2 py-1">
+            <button
+              className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
+                language === "es"
+                  ? "bg-cyan-500 text-white"
+                  : "text-white/60 hover:text-white"
+              }`}
+              onClick={() => setLanguage("es")}
+            >
+              ES
+            </button>
+            <span className="text-cyan-500/50">|</span>
+            <button
+              className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
+                language === "en"
+                  ? "bg-cyan-500 text-white"
+                  : "text-white/60 hover:text-white"
+              }`}
+              onClick={() => setLanguage("en")}
+            >
+              EN
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -79,6 +99,31 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
                 {link.label}
               </a>
             ))}
+            
+            {/* Mobile Language Selector */}
+            <div className="flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-3 py-2 mt-4 w-fit">
+              <button
+                className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
+                  language === "es"
+                    ? "bg-cyan-500 text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
+                onClick={() => setLanguage("es")}
+              >
+                ES
+              </button>
+              <span className="text-cyan-500/50">|</span>
+              <button
+                className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
+                  language === "en"
+                    ? "bg-cyan-500 text-white"
+                    : "text-white/60 hover:text-white"
+                }`}
+                onClick={() => setLanguage("en")}
+              >
+                EN
+              </button>
+            </div>
           </nav>
         )}
       </div>

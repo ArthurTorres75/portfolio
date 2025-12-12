@@ -1,4 +1,6 @@
 import React from "react";
+import { useLanguage } from "@/hooks/useLanguage";
+import { t } from "@/lib/translations";
 
 interface ProjectCardProps {
   title: string;
@@ -14,6 +16,7 @@ export function ProjectCard({
   technologies,
   link,
 }: ProjectCardProps): React.JSX.Element {
+  const { language } = useLanguage();
   return (
     <div className="group card-hover glass-effect rounded-lg p-6 hover:border-cyan-400/50">
       {/* Header con efecto tornasolado */}
@@ -46,7 +49,7 @@ export function ProjectCard({
           rel="noopener noreferrer"
           className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
         >
-          Ver Proyecto
+          {t("projects.viewProject", language)}
           <svg
             className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform"
             fill="none"

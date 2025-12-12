@@ -16,7 +16,7 @@ export function Section({
   className = "",
 }: SectionProps): React.JSX.Element {
   return (
-    <section id={id} className={`py-16 ${className}`}>
+    <section id={id} className={`py-24 ${className}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="mb-12 text-center">
