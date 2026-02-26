@@ -12,9 +12,9 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { href: "/", label: t("nav.inicio", language) },
+    { href: "#", label: t("nav.inicio", language) },
     { href: "#sobre-mi", label: t("nav.sobreMi", language) },
-    { href: "/projects/", label: t("nav.proyectos", language) },
+    { href: "#proyectos", label: t("nav.proyectos", language) },
     { href: "#contacto", label: t("nav.contacto", language) },
   ];
 
