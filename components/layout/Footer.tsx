@@ -14,7 +14,7 @@ export function Footer(): React.JSX.Element {
             <ul className="space-y-2 text-white/70">
               <li>
                 <a
-                  href="mailto:contact@example.com"
+                  href="mailto:arthurtorres75@gmail.com"
                   className="hover:text-cyan-400 transition-colors"
                 >
                   Email
@@ -22,7 +22,7 @@ export function Footer(): React.JSX.Element {
               </li>
               <li>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/arthur-torres-9b41a2184/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-cyan-400 transition-colors"
@@ -55,7 +55,7 @@ export function Footer(): React.JSX.Element {
             <h3 className="text-cyan-400 font-semibold mb-4">Redes</h3>
             <div className="flex space-x-4">
               <a
-                href="https://github.com"
+                href="https://github.com/ArthurTorres75"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-cyan-400 transition-colors"
@@ -63,12 +63,12 @@ export function Footer(): React.JSX.Element {
                 GitHub
               </a>
               <a
-                href="https://twitter.com"
+                href="https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-white/70 hover:text-cyan-400 transition-colors"
               >
-                Twitter
+                Upwork
               </a>
             </div>
           </div>

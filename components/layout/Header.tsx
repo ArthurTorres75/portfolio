@@ -14,7 +14,9 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
   const navLinks = [
     { href: "#", label: t("nav.inicio", language) },
     { href: "#sobre-mi", label: t("nav.sobreMi", language) },
+    { href: "#certificaciones", label: t("nav.certificaciones", language) },
     { href: "#proyectos", label: t("nav.proyectos", language) },
+    { href: "#testimonios", label: t("nav.testimonios", language) },
     { href: "#contacto", label: t("nav.contacto", language) },
   ];
 

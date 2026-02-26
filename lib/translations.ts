@@ -17,9 +17,17 @@ export const translations: Translations = {
     es: "Sobre Mí",
     en: "About Me",
   },
+  "nav.certificaciones": {
+    es: "Certificaciones",
+    en: "Certifications",
+  },
   "nav.proyectos": {
     es: "Proyectos",
     en: "Projects",
+  },
+  "nav.testimonios": {
+    es: "Testimonios",
+    en: "Testimonials",
   },
   "nav.contacto": {
     es: "Contacto",
@@ -54,36 +62,224 @@ export const translations: Translations = {
     en: "About Me",
   },
   "about.subtitle": {
-    es: "Conoce más acerca de mi experiencia y habilidades",
-    en: "Learn more about my experience and skills",
+    es: "Desarrollador Full Stack con más de 7 años de experiencia",
+    en: "Full Stack Developer with over 7 years of experience",
   },
-  "about.approach": {
-    es: "🎯 Mi Enfoque",
-    en: "🎯 My Approach",
+  "about.intro": {
+    es: "Soy un desarrollador de software con más de siete años de experiencia trabajando con tecnologías modernas. Actualmente enfocado en AWS, Terraform, y desarrollo full-stack con TypeScript.",
+    en: "I am a software developer with over seven years of experience working with modern technologies. Currently focused on AWS, Terraform, and full-stack development with TypeScript.",
   },
-  "about.approachDesc": {
-    es: "Me dedico a crear soluciones digitales que no solo funcionan correctamente, sino que también ofrecen una experiencia de usuario excepcional. Utilizando las mejores prácticas del desarrollo moderno.",
-    en: "I am dedicated to creating digital solutions that not only work correctly, but also provide an exceptional user experience. Using the best practices of modern development.",
+  "about.frontendTitle": {
+    es: "🎨 Desarrollador Front-End",
+    en: "🎨 Front-End Developer",
   },
-  "about.skills": {
-    es: "💻 Habilidades",
-    en: "💻 Skills",
+  "about.frontendDesc": {
+    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui, y librerías de visualización como D3.js, Chart.js y Plotly.js. Experto en APIs de Google Maps, GoJS para diagramas, y optimización de diseños responsivos.",
+    en: "Over 4 years with Angular, React.js and Next.js, implementing interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and visualization libraries like D3.js, Chart.js and Plotly.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
-  "about.skillsJavaScript": {
-    es: "• JavaScript / TypeScript",
-    en: "• JavaScript / TypeScript",
+  "about.backendTitle": {
+    es: "⚙️ Desarrollador Full-Stack",
+    en: "⚙️ Full-Stack Developer",
   },
-  "about.skillsReact": {
-    es: "• React & Next.js",
-    en: "• React & Next.js",
+  "about.backendDesc": {
+    es: "Experiencia con Node.js, NestJS, Prisma ORM, construyendo aplicaciones escalables con PostgreSQL, MongoDB, Firebase y Supabase. Implementación de autenticación JWT, RBAC, generación de reportes (PDF/Excel), cron jobs, Redis para caché, y SendGrid para emails automatizados.",
+    en: "Experience with Node.js, NestJS, Prisma ORM, building scalable applications with PostgreSQL, MongoDB, Firebase and Supabase. Implementation of JWT authentication, RBAC, report generation (PDF/Excel), cron jobs, Redis for caching, and SendGrid for automated emails.",
   },
-  "about.skillsTailwind": {
-    es: "• Tailwind CSS & Diseño Responsivo",
-    en: "• Tailwind CSS & Responsive Design",
+  "about.cloudTitle": {
+    es: "☁️ Cloud & DevOps",
+    en: "☁️ Cloud & DevOps",
   },
-  "about.skillsBackend": {
-    es: "• Node.js & Bases de Datos",
-    en: "• Node.js & Databases",
+  "about.cloudDesc": {
+    es: "Experiencia desplegando aplicaciones en AWS (S3, Lambda, EC2), Vercel, Terraform para infraestructura como código, Firebase (authentication, hosting, Firestore), Supabase y Hostinger. Familiarizado con CI/CD, Git, GitLab, GitHub, y herramientas de gestión como Jira y Trello.",
+    en: "Experience deploying applications on AWS (S3, Lambda, EC2), Vercel, Terraform for infrastructure as code, Firebase (authentication, hosting, Firestore), Supabase and Hostinger. Familiar with CI/CD, Git, GitLab, GitHub, and management tools like Jira and Trello.",
+  },
+  "about.techStack": {
+    es: "🛠️ Stack Tecnológico",
+    en: "🛠️ Tech Stack",
+  },
+  "about.techFrontend": {
+    es: "Frontend: Angular, React, Next.js, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
+    en: "Frontend: Angular, React, Next.js, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
+  },
+  "about.techBackend": {
+    es: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
+    en: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
+  },
+  "about.techCloud": {
+    es: "Cloud: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Terraform",
+    en: "Cloud: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Terraform",
+  },
+  "about.techMobile": {
+    es: "Mobile: React Native, Ionic",
+    en: "Mobile: React Native, Ionic",
+  },
+  "about.workEthic": {
+    es: "💼 Enfoque Profesional",
+    en: "💼 Work Ethic",
+  },
+  "about.workEthicDesc": {
+    es: "Altamente organizado y comprometido con las mejores prácticas de programación. Tomo mi trabajo con seriedad, asegurando resultados de alta calidad mientras mantengo un enfoque colaborativo y comunicativo con mi equipo.",
+    en: "Highly organized and committed to best programming practices. I take my work seriously, ensuring high-quality results while maintaining a collaborative and communicative approach with my team.",
+  },
+
+  // Certifications Section
+  "certifications.title": {
+    es: "Certificaciones",
+    en: "Certifications",
+  },
+  "certifications.subtitle": {
+    es: "Certificaciones y cursos completados",
+    en: "Certifications and completed courses",
+  },
+  "cert1.title": {
+    es: "AWS Cloud Practitioner",
+    en: "AWS Cloud Practitioner",
+  },
+  "cert1.issuer": {
+    es: "Amazon Web Services",
+    en: "Amazon Web Services",
+  },
+  "cert1.date": {
+    es: "2024",
+    en: "2024",
+  },
+  "cert2.title": {
+    es: "Terraform Associate",
+    en: "Terraform Associate",
+  },
+  "cert2.issuer": {
+    es: "HashiCorp",
+    en: "HashiCorp",
+  },
+  "cert2.date": {
+    es: "2024",
+    en: "2024",
+  },
+  "cert3.title": {
+    es: "React Advanced",
+    en: "React Advanced",
+  },
+  "cert3.issuer": {
+    es: "Udemy",
+    en: "Udemy",
+  },
+  "cert3.date": {
+    es: "2023",
+    en: "2023",
+  },
+
+  // Testimonials Section
+  "testimonials.title": {
+    es: "Lo Que Dicen Mis Clientes",
+    en: "What My Clients Say",
+  },
+  "testimonials.subtitle": {
+    es: "Opiniones reales de clientes satisfechos en Upwork",
+    en: "Real reviews from satisfied clients on Upwork",
+  },
+  "testimonial.duration": {
+    es: "Duración",
+    en: "Duration",
+  },
+  "testimonial.earned": {
+    es: "Ganado",
+    en: "Earned",
+  },
+  "testimonial.hours": {
+    es: "Horas",
+    en: "Hours",
+  },
+  "testimonial.avgRating": {
+    es: "Calificación Promedio",
+    en: "Average Rating",
+  },
+  "testimonial.totalJobs": {
+    es: "Proyectos Totales",
+    en: "Total Jobs",
+  },
+  "testimonial.totalHours": {
+    es: "Horas Totales",
+    en: "Total Hours",
+  },
+  "testimonial.totalEarned": {
+    es: "Ganancia Total",
+    en: "Total Earned",
+  },
+
+  // Testimonial 1 - React & Node
+  "testimonial1.role": {
+    es: "Desarrollador Front-End, React y Node",
+    en: "Front-End Developer, React and Node",
+  },
+  "testimonial1.comment": {
+    es: "Arthur es un ingeniero muy inteligente y eficiente. Se tomó el tiempo de entender completamente los requisitos del proyecto y entregar código de gran calidad cada vez. Es un placer trabajar con él.",
+    en: "Arthur is a very smart, efficient engineer. He took great care to fully understand the project requirements and deliver great code every time. He's a pleasure to work with.",
+  },
+
+  // Testimonial 2 - Next.js/NestJS
+  "testimonial2.role": {
+    es: "Desarrollador Full Stack - JavaScript, Next.js, NestJS",
+    en: "Full Stack Developer - JavaScript, Next.js, NestJS",
+  },
+  "testimonial2.comment": {
+    es: "Excelente desarrollador especializado en el stack moderno de JavaScript. Entrega constante de código limpio y bien estructurado.",
+    en: "Excellent developer specialized in modern JavaScript stack. Consistent delivery of clean and well-structured code.",
+  },
+
+  // Testimonial 3 - Angular (Montrix)
+  "testimonial3.role": {
+    es: "Desarrollador Frontend - Angular",
+    en: "Frontend Developer - Angular",
+  },
+  "testimonial3.comment": {
+    es: "Arthur trabajó en este proyecto durante mucho tiempo y proporcionó aportes útiles. Siempre hace buenas preguntas para aclarar detalles y es muy amigable para trabajar, incluso cuando el trabajo es desafiante.",
+    en: "Arthur has worked on this project very long and provided useful inputs. He always asks good questions for clarification and is very friendly to work with, even when the work is challenging.",
+  },
+
+  // Testimonial 4 - GoJS
+  "testimonial4.role": {
+    es: "Desarrollador Front-End",
+    en: "Front End Developer",
+  },
+  "testimonial4.comment": {
+    es: "Arthur es un desarrollador FE capacitado. Proactivo con las soluciones, aprende muy rápido. ¡Siempre proponiendo ideas sobre cómo mejorar las cosas! Tiene experiencia con la librería de diagramación GoJS.",
+    en: "Arthur is a skilled FE dev. Proactive with solutions, he picks on really fast. Always pitching ideas on how to make things better! He is experienced with diagraming library GoJS.",
+  },
+
+  // Testimonial 5 - Cloudshim
+  "testimonial5.role": {
+    es: "Desarrollador Frontend para proyecto Angular",
+    en: "Frontend Developer for Angular project",
+  },
+  "testimonial5.comment": {
+    es: "Arthur trabajó excelentemente y como se esperaba. Pudimos cerrar las tareas planificadas a tiempo para nuestro cliente y él también quedó satisfecho con lo entregado. ¡Gracias Arthur!",
+    en: "Arthur worked excellently and as expected. We were able to close the planned tasks on time for our client and he was also satisfied with what was delivered. Thank you Arthur!",
+  },
+
+  // Badges
+  "badge.quality": {
+    es: "Comprometido con la Calidad",
+    en: "Committed to Quality",
+  },
+  "badge.collaborative": {
+    es: "Colaborativo",
+    en: "Collaborative",
+  },
+  "badge.communicator": {
+    es: "Comunicador Claro",
+    en: "Clear Communicator",
+  },
+  "badge.reliable": {
+    es: "Confiable",
+    en: "Reliable",
+  },
+  "badge.efficient": {
+    es: "Eficiente",
+    en: "Efficient",
+  },
+  "badge.solutionOriented": {
+    es: "Orientado a Soluciones",
+    en: "Solution Oriented",
   },
 
   // Projects Section
@@ -144,6 +340,30 @@ export const translations: Translations = {
   "contact.send": {
     es: "Enviar Mensaje",
     en: "Send Message",
+  },
+  "contact.directMessage": {
+    es: "Elige tu método de contacto preferido:",
+    en: "Choose your preferred contact method:",
+  },
+  "contact.emailLabel": {
+    es: "Correo Electrónico",
+    en: "Email",
+  },
+  "contact.githubLabel": {
+    es: "GitHub",
+    en: "GitHub",
+  },
+  "contact.githubDesc": {
+    es: "Explora mis proyectos y contribuciones",
+    en: "Explore my projects and contributions",
+  },
+  "contact.linkedinLabel": {
+    es: "LinkedIn",
+    en: "LinkedIn",
+  },
+  "contact.linkedinDesc": {
+    es: "Conecta conmigo profesionalmente",
+    en: "Connect with me professionally",
   },
 
   // Footer
