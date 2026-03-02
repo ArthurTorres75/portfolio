@@ -1,8 +1,11 @@
 import React from "react";
 import Link from "next/link";
+import { useLanguage } from "@/hooks/useLanguage";
+import { t } from "@/lib/translations";
 
 export function Footer(): React.JSX.Element {
   const currentYear = new Date().getFullYear();
+  const { language } = useLanguage();
 
   return (
     <footer className="glass-effect border-t border-cyan-500/30 mt-16">
@@ -10,14 +13,14 @@ export function Footer(): React.JSX.Element {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
           {/* Contact */}
           <div>
-            <h3 className="text-cyan-400 font-semibold mb-4">Contacto</h3>
+            <h3 className="text-cyan-400 font-semibold mb-4">{t("footer.contact", language)}</h3>
             <ul className="space-y-2 text-white/70">
               <li>
                 <a
                   href="mailto:arthurtorres75@gmail.com"
                   className="hover:text-cyan-400 transition-colors"
                 >
-                  Email
+                  {t("contact.emailLabel", language)}
                 </a>
               </li>
               <li>
@@ -35,16 +38,16 @@ export function Footer(): React.JSX.Element {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-cyan-400 font-semibold mb-4">Enlaces</h3>
+            <h3 className="text-cyan-400 font-semibold mb-4">{t("footer.links", language)}</h3>
             <ul className="space-y-2 text-white/70">
               <li>
                 <Link href="/" className="hover:text-cyan-400 transition-colors">
-                  Inicio
+                  {t("nav.inicio", language)}
                 </Link>
               </li>
               <li>
                 <Link href="/projects/" className="hover:text-cyan-400 transition-colors">
-                  Proyectos
+                  {t("nav.proyectos", language)}
                 </Link>
               </li>
             </ul>
@@ -52,7 +55,7 @@ export function Footer(): React.JSX.Element {
 
           {/* Redes Sociales */}
           <div>
-            <h3 className="text-cyan-400 font-semibold mb-4">Redes</h3>
+            <h3 className="text-cyan-400 font-semibold mb-4">{t("footer.social", language)}</h3>
             <div className="flex space-x-4">
               <a
                 href="https://github.com/ArthurTorres75"
