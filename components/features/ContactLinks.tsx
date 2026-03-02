@@ -19,7 +19,7 @@ function ContactLink({ href, icon, label, description, isExternal = false }: Con
     <a
       href={href}
       {...linkProps}
-      className="group glass-effect p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20"
+      className="group glass-effect glass-effect--no-blur p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20"
     >
       <div className="flex items-start gap-4">
         <div className="text-4xl">{icon}</div>
@@ -27,7 +27,7 @@ function ContactLink({ href, icon, label, description, isExternal = false }: Con
           <h3 className="text-xl font-semibold text-cyan-400 mb-2 group-hover:text-cyan-300 transition-colors">
             {label}
           </h3>
-          <p className="text-white/70 group-hover:text-white/90 transition-colors">
+          <p className="text-white/90 group-hover:text-white transition-colors">
             {description}
           </p>
         </div>
@@ -62,6 +62,13 @@ export function ContactLinks(): React.JSX.Element {
       icon: "💼",
       label: t("contact.linkedinLabel", language),
       description: t("contact.linkedinDesc", language),
+      isExternal: true,
+    },
+    {
+      href: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+      icon: "🟢",
+      label: t("contact.upworkLabel", language),
+      description: t("contact.upworkDesc", language),
       isExternal: true,
     },
   ];

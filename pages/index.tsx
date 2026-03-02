@@ -7,6 +7,8 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 import { ContactLinks } from "@/components/features/ContactLinks";
 import { Certifications } from "@/components/features/Certifications";
 import { Testimonials } from "@/components/features/Testimonials";
+import { WorkHistory } from "@/components/features/WorkHistory";
+import { Watermark } from "@/components/common/Watermark";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
 
@@ -54,7 +56,8 @@ export default function Home(): React.JSX.Element {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
+    <div className="min-h-screen bg-black text-white flex flex-col relative">
+      <Watermark />
       <Header name={name} />
 
       <main className="flex-grow">
@@ -147,6 +150,16 @@ export default function Home(): React.JSX.Element {
               </p>
             </div>
           </div>
+        </Section>
+
+        {/* Experiencia Laboral Section */}
+        <Section
+          id="experiencia"
+          title={t("workHistory.title", language)}
+          subtitle={t("workHistory.subtitle", language)}
+          className="bg-black"
+        >
+          <WorkHistory />
         </Section>
 
         {/* Certificaciones Section */}
