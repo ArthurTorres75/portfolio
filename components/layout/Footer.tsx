@@ -78,7 +78,7 @@ export function Footer(): React.JSX.Element {
         </div>
 
         <div className="border-t border-cyan-500/20 pt-6 text-center text-white/50 text-sm">
-          <p>© {currentYear} Arthur Torres. Todos los derechos reservados.</p>
+          <p>© {currentYear} Arthur Torres. {t("footer.copyright", language)}</p>
         </div>
       </div>
     </footer>

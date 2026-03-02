@@ -66,8 +66,8 @@ export const translations: Translations = {
     en: "Full Stack Developer with over 7 years of experience",
   },
   "about.intro": {
-    es: "Soy un desarrollador de software con más de siete años de experiencia trabajando con tecnologías modernas. Actualmente enfocado en AWS, Terraform, y desarrollo full-stack con TypeScript.",
-    en: "I am a software developer with over seven years of experience working with modern technologies. Currently focused on AWS, Terraform, and full-stack development with TypeScript.",
+    es: "Soy desarrollador web especializado en brindar a las empresas una presencia digital sólida y orientada a resultados. Diseño y desarrollo sitios profesionales que atraen y convierten clientes, automatizo procesos para ahorrar tiempo y reducir errores, y gestiono el alojamiento en la nube para garantizar rendimiento y disponibilidad. Trabajo de forma personalizada con cada cliente para ofrecer soluciones prácticas que impulsan el crecimiento de su negocio.",
+    en: "I am a web developer specializing in providing businesses with a strong, results-driven digital presence. I design and build professional websites that attract and convert customers, automate processes to save time and reduce errors, and manage cloud hosting to ensure performance and availability. I work closely with each client to deliver practical solutions that drive business growth.",
   },
   "about.frontendTitle": {
     es: "🎨 Desarrollador Front-End",
@@ -364,6 +364,14 @@ export const translations: Translations = {
   "contact.linkedinDesc": {
     es: "Conecta conmigo profesionalmente",
     en: "Connect with me professionally",
+  },
+  "contact.upworkLabel": {
+    es: "Upwork",
+    en: "Upwork",
+  },
+  "contact.upworkDesc": {
+    es: "Contrátame en Upwork",
+    en: "Hire me on Upwork",
   },
 
   // Footer
