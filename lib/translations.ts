@@ -55,6 +55,10 @@ export const translations: Translations = {
     es: "Contactarme",
     en: "Contact Me",
   },
+  "hero.downloadCV": {
+    es: "Descargar CV",
+    en: "Download CV",
+  },
 
   // About Section
   "about.title": {
@@ -120,6 +124,114 @@ export const translations: Translations = {
   "about.workEthicDesc": {
     es: "Altamente organizado y comprometido con las mejores prácticas de programación. Tomo mi trabajo con seriedad, asegurando resultados de alta calidad mientras mantengo un enfoque colaborativo y comunicativo con mi equipo.",
     en: "Highly organized and committed to best programming practices. I take my work seriously, ensuring high-quality results while maintaining a collaborative and communicative approach with my team.",
+  },
+
+  // Work History Section
+  "nav.experiencia": {
+    es: "Experiencia",
+    en: "Experience",
+  },
+  "workHistory.title": {
+    es: "Experiencia Laboral",
+    en: "Work Experience",
+  },
+  "workHistory.subtitle": {
+    es: "Mi trayectoria profesional en desarrollo de software",
+    en: "My professional career in software development",
+  },
+  "workHistory.present": {
+    es: "Presente",
+    en: "Present",
+  },
+
+  // Job 1
+  "job1.title": {
+    es: "Desarrollador Full Stack Freelance",
+    en: "Freelance Full Stack Developer",
+  },
+  "job1.company": {
+    es: "Upwork — Remoto",
+    en: "Upwork — Remote",
+  },
+  "job1.period": {
+    es: "2021 – Presente",
+    en: "2021 – Present",
+  },
+  "job1.desc": {
+    es: "Desarrollo de aplicaciones web completas para clientes internacionales. Implementación de soluciones con React, Next.js, Angular, Node.js, NestJS y despliegues en AWS. Más de 20 proyectos entregados exitosamente con calificación de 5 estrellas.",
+    en: "Full-stack web application development for international clients. Implementation of solutions with React, Next.js, Angular, Node.js, NestJS and AWS deployments. Over 20 projects successfully delivered with 5-star ratings.",
+  },
+
+  // Job 2
+  "job2.title": {
+    es: "Desarrollador Frontend — Angular",
+    en: "Frontend Developer — Angular",
+  },
+  "job2.company": {
+    es: "Montrix — Remoto (Contrato)",
+    en: "Montrix — Remote (Contract)",
+  },
+  "job2.period": {
+    es: "2022 – 2023",
+    en: "2022 – 2023",
+  },
+  "job2.desc": {
+    es: "Desarrollo de interfaces interactivas con Angular, integración de APIs de Google Maps, GoJS para diagramas y optimización de rendimiento en aplicaciones empresariales de gran escala.",
+    en: "Development of interactive interfaces with Angular, Google Maps API integration, GoJS for diagrams, and performance optimization in large-scale enterprise applications.",
+  },
+
+  // Job 3
+  "job3.title": {
+    es: "Desarrollador Full Stack — Next.js & NestJS",
+    en: "Full Stack Developer — Next.js & NestJS",
+  },
+  "job3.company": {
+    es: "Proyecto Internacional — Remoto (Contrato)",
+    en: "International Project — Remote (Contract)",
+  },
+  "job3.period": {
+    es: "2021 – 2022",
+    en: "2021 – 2022",
+  },
+  "job3.desc": {
+    es: "Construcción de aplicaciones escalables con Next.js y NestJS, implementando autenticación JWT, RBAC, generación de reportes PDF/Excel, cron jobs, Redis para caché y SendGrid para emails automatizados.",
+    en: "Building scalable applications with Next.js and NestJS, implementing JWT authentication, RBAC, PDF/Excel report generation, cron jobs, Redis for caching, and SendGrid for automated emails.",
+  },
+
+  // Job 4
+  "job4.title": {
+    es: "Desarrollador Frontend — Angular",
+    en: "Frontend Developer — Angular",
+  },
+  "job4.company": {
+    es: "Cloudshim — Remoto (Contrato)",
+    en: "Cloudshim — Remote (Contract)",
+  },
+  "job4.period": {
+    es: "2020 – 2021",
+    en: "2020 – 2021",
+  },
+  "job4.desc": {
+    es: "Desarrollo frontend con Angular para plataforma de gestión cloud. Entrega de tareas planificadas a tiempo con alta satisfacción del cliente. Implementación de interfaces responsivas con Material UI.",
+    en: "Frontend development with Angular for a cloud management platform. On-time delivery of planned tasks with high client satisfaction. Implementation of responsive interfaces with Material UI.",
+  },
+
+  // Job 5
+  "job5.title": {
+    es: "Desarrollador de Software Junior",
+    en: "Junior Software Developer",
+  },
+  "job5.company": {
+    es: "Primeros Proyectos — Freelance",
+    en: "Early Projects — Freelance",
+  },
+  "job5.period": {
+    es: "2018 – 2020",
+    en: "2018 – 2020",
+  },
+  "job5.desc": {
+    es: "Inicio de carrera profesional desarrollando sitios web y aplicaciones con JavaScript, React y Node.js. Construcción de bases sólidas en programación, bases de datos y buenas prácticas de desarrollo.",
+    en: "Career start developing websites and applications with JavaScript, React, and Node.js. Building solid foundations in programming, databases, and development best practices.",
   },
 
   // Certifications Section

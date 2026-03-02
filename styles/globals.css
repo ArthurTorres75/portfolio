@@ -88,3 +88,46 @@
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #0891b2, #0e7490);
 }
+
+/* Watermark overlay */
+@keyframes watermark-scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+.watermark-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.watermark-inner {
+  position: absolute;
+  inset: -100% -100%;
+  width: 300%;
+  height: 300%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 3rem;
+  padding: 2rem;
+  transform: rotate(-25deg);
+  opacity: 0.035;
+  animation: watermark-scroll 120s linear infinite;
+  user-select: none;
+}
+
+.watermark-inner span {
+  white-space: nowrap;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: white;
+}
