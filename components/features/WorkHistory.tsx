@@ -9,38 +9,17 @@ interface Job {
   descKey: string;
 }
 
-const JOBS: Job[] = [
-  {
-    titleKey: "job1.title",
-    companyKey: "job1.company",
-    periodKey: "job1.period",
-    descKey: "job1.desc",
-  },
-  {
-    titleKey: "job2.title",
-    companyKey: "job2.company",
-    periodKey: "job2.period",
-    descKey: "job2.desc",
-  },
-  {
-    titleKey: "job3.title",
-    companyKey: "job3.company",
-    periodKey: "job3.period",
-    descKey: "job3.desc",
-  },
-  {
-    titleKey: "job4.title",
-    companyKey: "job4.company",
-    periodKey: "job4.period",
-    descKey: "job4.desc",
-  },
-  {
-    titleKey: "job5.title",
-    companyKey: "job5.company",
-    periodKey: "job5.period",
-    descKey: "job5.desc",
-  },
-];
+const JOB_COUNT = 11;
+
+const JOBS: Job[] = Array.from({ length: JOB_COUNT }, (_, i) => {
+  const n = i + 1;
+  return {
+    titleKey: `job${n}.title`,
+    companyKey: `job${n}.company`,
+    periodKey: `job${n}.period`,
+    descKey: `job${n}.desc`,
+  };
+});
 
 export function WorkHistory(): React.JSX.Element {
   const { language } = useLanguage();

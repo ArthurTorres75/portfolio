@@ -144,94 +144,202 @@ export const translations: Translations = {
     en: "Present",
   },
 
-  // Job 1
+  // Job 1 — Hacking HR
   "job1.title": {
-    es: "Desarrollador Full Stack Freelance",
-    en: "Freelance Full Stack Developer",
+    es: "Desarrollador Full Stack",
+    en: "Full-Stack Developer",
   },
   "job1.company": {
-    es: "Upwork — Remoto",
-    en: "Upwork — Remote",
+    es: "Hacking HR — Remoto (EE. UU.)",
+    en: "Hacking HR — Remote (USA)",
   },
   "job1.period": {
-    es: "2021 – Presente",
-    en: "2021 – Present",
+    es: "Oct 2025 – Presente",
+    en: "Oct 2025 – Present",
   },
   "job1.desc": {
-    es: "Desarrollo de aplicaciones web completas para clientes internacionales. Implementación de soluciones con React, Next.js, Angular, Node.js, NestJS y despliegues en AWS. Más de 20 proyectos entregados exitosamente con calificación de 5 estrellas.",
-    en: "Full-stack web application development for international clients. Implementation of solutions with React, Next.js, Angular, Node.js, NestJS and AWS deployments. Over 20 projects successfully delivered with 5-star ratings.",
+    es: "Desarrollo de una plataforma escalable de gestión de eventos con Next.js y un CMS headless, optimizando el consumo de APIs y el rendimiento frontend. Extensión de estructuras en Payload CMS. Lideré la migración de Brevo a Amazon SES, configuración de verificación de dominio y SMTP. Análisis de DNS y tráfico con Cloudflare, infraestructura AWS con Terraform, despliegues en AWS Amplify y resolución de incidencias CI/CD.",
+    en: "Contributed to a scalable event management platform built with Next.js and a headless CMS, optimizing API consumption and improving frontend performance. Extended Payload CMS structures to support new features. Led migration from Brevo to Amazon SES, configuring domain verification and SMTP for better deliverability. Analyzed DNS and traffic with Cloudflare, supported AWS infrastructure using Terraform, and managed deployments in AWS Amplify.",
   },
 
-  // Job 2
+  // Job 2 — Speedy Delivery
   "job2.title": {
-    es: "Desarrollador Frontend — Angular",
-    en: "Frontend Developer — Angular",
+    es: "Desarrollador Mobile",
+    en: "Mobile Developer",
   },
   "job2.company": {
-    es: "Montrix — Remoto (Contrato)",
-    en: "Montrix — Remote (Contract)",
+    es: "Speedy Delivery — Híbrido (Venezuela)",
+    en: "Speedy Delivery — Hybrid (Venezuela)",
   },
   "job2.period": {
-    es: "2022 – 2023",
-    en: "2022 – 2023",
+    es: "Ago 2025 – Oct 2025",
+    en: "Aug 2025 – Oct 2025",
   },
   "job2.desc": {
-    es: "Desarrollo de interfaces interactivas con Angular, integración de APIs de Google Maps, GoJS para diagramas y optimización de rendimiento en aplicaciones empresariales de gran escala.",
-    en: "Development of interactive interfaces with Angular, Google Maps API integration, GoJS for diagrams, and performance optimization in large-scale enterprise applications.",
+    es: "Desarrollo de aplicación móvil de delivery de comida con React Native y Expo Go. Implementación de interfaces responsivas con Tailwind CSS y flujos de pedidos en tiempo real.",
+    en: "Development of a food delivery mobile app with React Native and Expo Go. Implementation of responsive interfaces with Tailwind CSS and real-time order flows.",
   },
 
-  // Job 3
+  // Job 3 — OtherWorld Gift
   "job3.title": {
-    es: "Desarrollador Full Stack — Next.js & NestJS",
-    en: "Full Stack Developer — Next.js & NestJS",
+    es: "Desarrollador Full Stack",
+    en: "Full-Stack Developer",
   },
   "job3.company": {
-    es: "Proyecto Internacional — Remoto (Contrato)",
-    en: "International Project — Remote (Contract)",
+    es: "OtherWorld Gift — Remoto (Argentina)",
+    en: "OtherWorld Gift — Remote (Argentina)",
   },
   "job3.period": {
-    es: "2021 – 2022",
-    en: "2021 – 2022",
+    es: "Jun 2024 – Ene 2025",
+    en: "Jun 2024 – Jan 2025",
   },
   "job3.desc": {
-    es: "Construcción de aplicaciones escalables con Next.js y NestJS, implementando autenticación JWT, RBAC, generación de reportes PDF/Excel, cron jobs, Redis para caché y SendGrid para emails automatizados.",
-    en: "Building scalable applications with Next.js and NestJS, implementing JWT authentication, RBAC, PDF/Excel report generation, cron jobs, Redis for caching, and SendGrid for automated emails.",
+    es: "Desarrollo de un sistema robusto con reportes automatizados en Excel y PDF, módulos CRUD completos, autorización de ventas para control de crédito y gestión de inventario. Implementación de cron jobs con soporte de zona horaria, algoritmos para gestión de productos duplicados, modelos de datos optimizados en Prisma, integración de sistemas de pago y gestión de caja con seguimiento de ingresos y transferencias bancarias.",
+    en: "Developed a robust system with automated Excel and PDF reporting, full CRUD modules, a sales authorization module for credit control, and inventory management. Implemented cron jobs with time zone support, designed algorithms to manage duplicate products, optimized data models in Prisma with advanced validations, integrated payment systems, and implemented a cash management system with revenue tracking and bank transfers.",
   },
 
-  // Job 4
+  // Job 4 — PiggyBack Network
   "job4.title": {
-    es: "Desarrollador Frontend — Angular",
-    en: "Frontend Developer — Angular",
+    es: "Desarrollador Frontend",
+    en: "Frontend Developer",
   },
   "job4.company": {
-    es: "Cloudshim — Remoto (Contrato)",
-    en: "Cloudshim — Remote (Contract)",
+    es: "PiggyBack Network — Remoto (EE. UU.)",
+    en: "PiggyBack Network — Remote (USA)",
   },
   "job4.period": {
-    es: "2020 – 2021",
-    en: "2020 – 2021",
+    es: "Abr 2022 – May 2024",
+    en: "Apr 2022 – May 2024",
   },
   "job4.desc": {
-    es: "Desarrollo frontend con Angular para plataforma de gestión cloud. Entrega de tareas planificadas a tiempo con alta satisfacción del cliente. Implementación de interfaces responsivas con Material UI.",
-    en: "Frontend development with Angular for a cloud management platform. On-time delivery of planned tasks with high client satisfaction. Implementation of responsive interfaces with Material UI.",
+    es: "Desarrollo frontend con Next.js, React y TypeScript. Integración de pasarelas de pago Stripe y PayPal. Optimización de rendimiento, diseño responsivo e infraestructura AWS para una plataforma web escalable.",
+    en: "Frontend development with Next.js, React, and TypeScript. Integration of Stripe and PayPal payment gateways. Performance optimization, responsive design, and AWS infrastructure for a scalable web platform.",
   },
 
-  // Job 5
+  // Job 5 — Little Taller
   "job5.title": {
-    es: "Desarrollador de Software Junior",
-    en: "Junior Software Developer",
+    es: "Desarrollador Frontend",
+    en: "Frontend Developer",
   },
   "job5.company": {
-    es: "Primeros Proyectos — Freelance",
-    en: "Early Projects — Freelance",
+    es: "Little Taller — Remoto (EE. UU.)",
+    en: "Little Taller — Remote (USA)",
   },
   "job5.period": {
-    es: "2018 – 2020",
-    en: "2018 – 2020",
+    es: "Ago 2022 – Ene 2024",
+    en: "Aug 2022 – Jan 2024",
   },
   "job5.desc": {
-    es: "Inicio de carrera profesional desarrollando sitios web y aplicaciones con JavaScript, React y Node.js. Construcción de bases sólidas en programación, bases de datos y buenas prácticas de desarrollo.",
-    en: "Career start developing websites and applications with JavaScript, React, and Node.js. Building solid foundations in programming, databases, and development best practices.",
+    es: "Desarrollo frontend con React, Material UI, Firebase, Tailwind CSS y TypeScript. Despliegues en Vercel. Comunicación efectiva en equipo y optimización de aplicaciones web.",
+    en: "Frontend development with React, Material UI, Firebase, Tailwind CSS, and TypeScript. Deployments on Vercel. Effective team communication and web application optimization.",
+  },
+
+  // Job 6 — Montrix
+  "job6.title": {
+    es: "Desarrollador Frontend",
+    en: "Frontend Developer",
+  },
+  "job6.company": {
+    es: "Montrix — Remoto (EE. UU.)",
+    en: "Montrix — Remote (USA)",
+  },
+  "job6.period": {
+    es: "Jun 2021 – Jul 2022",
+    en: "Jun 2021 – Jul 2022",
+  },
+  "job6.desc": {
+    es: "Desarrollo de interfaces interactivas con Angular, Angular Material y Bootstrap. Integración de APIs de Google Maps y GoJS para diagramas. Optimización de rendimiento y diseño UX en aplicaciones empresariales de gran escala en AWS.",
+    en: "Development of interactive interfaces with Angular, Angular Material, and Bootstrap. Integration of Google Maps APIs and GoJS for diagrams. Performance optimization and UX design in large-scale enterprise applications on AWS.",
+  },
+
+  // Job 7 — Cloudshim
+  "job7.title": {
+    es: "Desarrollador Frontend",
+    en: "Front-End Developer",
+  },
+  "job7.company": {
+    es: "Cloudshim — Remoto (EE. UU.)",
+    en: "Cloudshim — Remote (USA)",
+  },
+  "job7.period": {
+    es: "Oct 2020 – May 2021",
+    en: "Oct 2020 – May 2021",
+  },
+  "job7.desc": {
+    es: "Desarrollo de software con Angular, Angular Material y bibliotecas JavaScript como GoJS y D3.js. Adquirí un conocimiento profundo de la librería GoJS para diagramación. Diseño responsivo y gráficos interactivos en AWS.",
+    en: "Software development with Angular, Angular Material, and JavaScript libraries like GoJS and D3.js. Gained deep-level knowledge of the GoJS diagramming library. Responsive design and interactive charts on AWS.",
+  },
+
+  // Job 8 — Zippyttech
+  "job8.title": {
+    es: "Desarrollador Frontend",
+    en: "Front-End Developer",
+  },
+  "job8.company": {
+    es: "Zippyttech Tecnología e Innovación — Venezuela",
+    en: "Zippyttech Technology & Innovation — Venezuela",
+  },
+  "job8.period": {
+    es: "Feb 2018 – Oct 2020",
+    en: "Feb 2018 – Oct 2020",
+  },
+  "job8.desc": {
+    es: "Desarrollo frontend con Angular, TypeScript, Angular Material y Bootstrap. Integración de Google Maps API, diseño responsivo con CSS y SCSS. Trabajo en equipo con metodologías ágiles en entorno Linux.",
+    en: "Frontend development with Angular, TypeScript, Angular Material, and Bootstrap. Google Maps API integration, responsive design with CSS and SCSS. Agile team collaboration in a Linux environment.",
+  },
+
+  // Job 9 — Crazy Imagine Software (Umbrella)
+  "job9.title": {
+    es: "Desarrollador Full Stack — Freelance",
+    en: "Full Stack Developer — Freelance",
+  },
+  "job9.company": {
+    es: "Crazy Imagine Software — Venezuela",
+    en: "Crazy Imagine Software — Venezuela",
+  },
+  "job9.period": {
+    es: "Oct 2020 – Presente",
+    en: "Oct 2020 – Present",
+  },
+  "job9.desc": {
+    es: "Desarrollo de software freelance para múltiples clientes internacionales a través de esta agencia. Aplicación de metodologías ágiles en proyectos de diversa escala y tecnologías.",
+    en: "Freelance software development for multiple international clients through this agency. Application of agile methodologies across projects of varying scale and technologies.",
+  },
+
+  // Job 10 — Escuela Luis Caceres de Arismendi
+  "job10.title": {
+    es: "Desarrollador Full Stack",
+    en: "Full Stack Developer",
+  },
+  "job10.company": {
+    es: "Escuela Luis Cáceres de Arismendi — Venezuela",
+    en: "Escuela Luis Cáceres de Arismendi — Venezuela",
+  },
+  "job10.period": {
+    es: "Feb 2012 – Feb 2013",
+    en: "Feb 2012 – Feb 2013",
+  },
+  "job10.desc": {
+    es: "Desarrollo de una aplicación web para el control administrativo de la escuela. Generación de reportes de constancias de estudio para alumnos en formato PDF con PHP, MySQL y JavaScript.",
+    en: "Development of a web application for the school's administrative management. Generation of student enrollment certificate reports in PDF format using PHP, MySQL, and JavaScript.",
+  },
+
+  // Job 11 — Comunidad del Barrio San Pedro
+  "job11.title": {
+    es: "Programador Full Stack",
+    en: "Full Stack Developer",
+  },
+  "job11.company": {
+    es: "Comunidad del Barrio San Pedro — Venezuela",
+    en: "Comunidad del Barrio San Pedro — Venezuela",
+  },
+  "job11.period": {
+    es: "Feb 2011 – Feb 2012",
+    en: "Feb 2011 – Feb 2012",
+  },
+  "job11.desc": {
+    es: "Desarrollo de una aplicación web para el registro y control de los habitantes de la comunidad. Implementación con PHP, MySQL, JavaScript, HTML y CSS.",
+    en: "Development of a web application for community resident registration and management. Built with PHP, MySQL, JavaScript, HTML, and CSS.",
   },
 
   // Certifications Section
@@ -243,41 +351,111 @@ export const translations: Translations = {
     es: "Certificaciones y cursos completados",
     en: "Certifications and completed courses",
   },
+  "certifications.inProgress": {
+    es: "En Progreso",
+    en: "In Progress",
+  },
+  "certifications.completed": {
+    es: "Completado",
+    en: "Completed",
+  },
+
+  // Cert 1 — HTML
   "cert1.title": {
-    es: "AWS Cloud Practitioner",
-    en: "AWS Cloud Practitioner",
+    es: "Comprensión Teórica de HTML",
+    en: "Theoretical Understanding of HTML",
   },
   "cert1.issuer": {
-    es: "Amazon Web Services",
-    en: "Amazon Web Services",
+    es: "Desarrollo Web",
+    en: "Web Development",
   },
   "cert1.date": {
-    es: "2024",
-    en: "2024",
+    es: "Nov 2017",
+    en: "Nov 2017",
   },
+
+  // Cert 2 — CSS
   "cert2.title": {
-    es: "Terraform Associate",
-    en: "Terraform Associate",
+    es: "Comprensión Teórica de CSS",
+    en: "Theoretical Understanding of CSS",
   },
   "cert2.issuer": {
-    es: "HashiCorp",
-    en: "HashiCorp",
+    es: "Desarrollo Web",
+    en: "Web Development",
   },
   "cert2.date": {
-    es: "2024",
-    en: "2024",
+    es: "Nov 2017",
+    en: "Nov 2017",
   },
+
+  // Cert 3 — SQL
   "cert3.title": {
-    es: "React Advanced",
-    en: "React Advanced",
+    es: "Comprensión Teórica de SQL",
+    en: "Theoretical Understanding of SQL",
   },
   "cert3.issuer": {
+    es: "Desarrollo Web",
+    en: "Web Development",
+  },
+  "cert3.date": {
+    es: "Dic 2017",
+    en: "Dec 2017",
+  },
+
+  // Cert 4 — PHP
+  "cert4.title": {
+    es: "Comprensión Teórica de PHP",
+    en: "Theoretical Understanding of PHP",
+  },
+  "cert4.issuer": {
+    es: "Desarrollo Web",
+    en: "Web Development",
+  },
+  "cert4.date": {
+    es: "Dic 2017",
+    en: "Dec 2017",
+  },
+
+  // Cert 5 — JavaScript
+  "cert5.title": {
+    es: "Comprensión Teórica y Práctica de JavaScript",
+    en: "Theoretical and Practical Understanding of JavaScript",
+  },
+  "cert5.issuer": {
+    es: "Desarrollo Web",
+    en: "Web Development",
+  },
+  "cert5.date": {
+    es: "Jul 2022",
+    en: "Jul 2022",
+  },
+
+  // Cert 6 — AWS Fundamentals (in progress)
+  "cert6.title": {
+    es: "Fundamentos Técnicos de AWS — Parte 1",
+    en: "AWS Technical Fundamentals — Part 1",
+  },
+  "cert6.issuer": {
+    es: "Amazon Skill Builder",
+    en: "Amazon Skill Builder",
+  },
+  "cert6.date": {
+    es: "En progreso",
+    en: "In progress",
+  },
+
+  // Cert 7 — AWS & Terraform Udemy (in progress)
+  "cert7.title": {
+    es: "AWS y Terraform",
+    en: "AWS and Terraform",
+  },
+  "cert7.issuer": {
     es: "Udemy",
     en: "Udemy",
   },
-  "cert3.date": {
-    es: "2023",
-    en: "2023",
+  "cert7.date": {
+    es: "En progreso",
+    en: "In progress",
   },
 
   // Testimonials Section
