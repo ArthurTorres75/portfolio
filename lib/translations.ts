@@ -684,76 +684,76 @@ export const translations: Translations = {
 
   // Project Examples
   "project1.title": {
-    es: "Proyecto 1",
-    en: "Project 1",
+    es: "Hacking HR — Plataforma de Eventos Escalable",
+    en: "Hacking HR — Scalable Event Platform",
   },
   "project1.desc": {
-    es: "Una aplicación web moderna construida con Next.js y React.",
-    en: "A modern web application built with Next.js and React.",
+    es: "Plataforma de gestión de eventos construida con Next.js y CMS headless, con optimización de APIs, mejora de rendimiento frontend y despliegue en AWS Amplify.",
+    en: "Event management platform built with Next.js and a headless CMS, with API optimization, improved frontend performance, and deployment on AWS Amplify.",
   },
   "project2.title": {
-    es: "Proyecto 2",
-    en: "Project 2",
+    es: "OtherWorld Gift — Sistema de Inventario y Ventas",
+    en: "OtherWorld Gift — Inventory & Sales System",
   },
   "project2.desc": {
-    es: "Sistema de gestión de datos con API REST y base de datos.",
-    en: "Data management system with REST API and database.",
+    es: "Sistema full stack con reportes automatizados en Excel/PDF, autorización de ventas, gestión de inventario, cron jobs y módulo de caja con transferencias bancarias.",
+    en: "Full-stack system with automated Excel/PDF reports, sales authorization, inventory management, cron jobs, and a cash module with bank transfers.",
   },
   "project3.title": {
-    es: "Proyecto 3",
-    en: "Project 3",
+    es: "Speedy Delivery — App Móvil de Delivery",
+    en: "Speedy Delivery — Food Delivery Mobile App",
   },
   "project3.desc": {
-    es: "Aplicación móvil con interfaz intuitiva y diseño responsivo.",
-    en: "Mobile application with intuitive interface and responsive design.",
+    es: "Aplicación móvil para delivery de comida desarrollada con React Native y Expo, con interfaz responsiva y flujo de pedidos en tiempo real.",
+    en: "Food delivery mobile app developed with React Native and Expo, featuring a responsive UI and real-time order flow.",
   },
   "project4.title": {
-    es: "Proyecto 4",
-    en: "Project 4",
+    es: "PiggyBack Network — Plataforma E-commerce con Pagos",
+    en: "PiggyBack Network — E-commerce Platform with Payments",
   },
   "project4.desc": {
-    es: "Dashboard analítico con gráficos en tiempo real.",
-    en: "Analytical dashboard with real-time charts.",
+    es: "Desarrollo frontend para plataforma de e-commerce con integración de Stripe y PayPal, optimización de rendimiento y arquitectura escalable en AWS.",
+    en: "Frontend development for an e-commerce platform with Stripe and PayPal integration, performance optimization, and scalable AWS architecture.",
   },
   "project5.title": {
-    es: "Proyecto 5",
-    en: "Project 5",
+    es: "Little Taller — Suite Frontend para Clientes",
+    en: "Little Taller — Client Frontend Suite",
   },
   "project5.desc": {
-    es: "E-commerce con carrito de compras y pasarela de pago.",
-    en: "E-commerce with shopping cart and payment gateway.",
+    es: "Conjunto de interfaces frontend con React, TypeScript, Firebase y Material UI, desplegadas en Vercel para productos web orientados a cliente final.",
+    en: "Collection of frontend interfaces using React, TypeScript, Firebase, and Material UI, deployed on Vercel for customer-facing web products.",
   },
   "project6.title": {
-    es: "Proyecto 6",
-    en: "Project 6",
+    es: "Montrix — Dashboard Operacional con Mapas",
+    en: "Montrix — Operational Dashboard with Maps",
   },
   "project6.desc": {
-    es: "Plataforma de aprendizaje en línea con videos y quizzes.",
-    en: "Online learning platform with videos and quizzes.",
+    es: "Aplicación empresarial con Angular, Angular Material y Google Maps API para visualización operativa, experiencia UX mejorada y alto rendimiento.",
+    en: "Enterprise application using Angular, Angular Material, and Google Maps API for operational visualization, improved UX, and high performance.",
   },
   "project7.title": {
-    es: "Proyecto 7",
-    en: "Project 7",
+    es: "Cloudshim — Herramienta de Diagramación Avanzada",
+    en: "Cloudshim — Advanced Diagramming Tool",
   },
   "project7.desc": {
-    es: "Chat en tiempo real con autenticación y notificaciones.",
-    en: "Real-time chat with authentication and notifications.",
+    es: "Plataforma frontend con Angular y GoJS para diagramación compleja, gráficos interactivos con D3.js y diseño responsivo para entornos cloud.",
+    en: "Frontend platform with Angular and GoJS for complex diagramming, interactive D3.js charts, and responsive design for cloud environments.",
   },
   "project8.title": {
-    es: "Proyecto 8",
-    en: "Project 8",
+    es: "Zippyttech — Portal Web de Operaciones",
+    en: "Zippyttech — Operations Web Portal",
   },
   "project8.desc": {
-    es: "Generador de portafolios personalizado y responsive.",
-    en: "Custom portfolio generator that's responsive.",
+    es: "Portal frontend desarrollado con Angular y TypeScript, integración de Google Maps y componentes responsivos para flujos operativos de negocio.",
+    en: "Frontend portal built with Angular and TypeScript, integrating Google Maps and responsive components for business operational workflows.",
   },
   "project9.title": {
-    es: "Proyecto 9",
-    en: "Project 9",
+    es: "Escuela Luis Cáceres — Sistema Administrativo",
+    en: "Escuela Luis Cáceres — Administrative System",
   },
   "project9.desc": {
-    es: "API REST con documentación Swagger y pruebas automatizadas.",
-    en: "REST API with Swagger documentation and automated tests.",
+    es: "Aplicación web para control administrativo escolar y emisión de constancias en PDF, desarrollada con PHP, MySQL y JavaScript.",
+    en: "Web application for school administrative management and PDF certificate issuance, developed with PHP, MySQL, and JavaScript.",
   },
 };
 
