@@ -460,8 +460,8 @@ export const translations: Translations = {
 
   // Cert 8 — AI Development (in progress)
   "cert8.title": {
-    es: "Curso de Desarrollo con IA para RRSS",
-    en: "AI Development for Social Media",
+    es: "Curso de Desarrollo con IA de 0 a producción",
+    en: "AI Development from 0 to Production",
   },
   "cert8.issuer": {
     es: "MoureDev - Big School",
