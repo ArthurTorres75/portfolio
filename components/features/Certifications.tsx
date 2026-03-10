@@ -103,6 +103,13 @@ export function Certifications(): React.JSX.Element {
       date: t("cert7.date", language),
       icon: "🏗️",
     },
+    {
+      title: t("cert8.title", language),
+      issuer: t("cert8.issuer", language),
+      date: t("cert8.date", language),
+      icon: "🤖",
+      credentialUrl: "https://thebigschool.com/sp/curso-de-desarrollo-ia-a-rrss-brais/",
+    },
   ];
 
   return (
@@ -121,26 +128,37 @@ export function Certifications(): React.JSX.Element {
           {t("certifications.inProgress", language)}
         </h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {inProgress.map((cert, index) => (
-            <div
-              key={index}
-              className="glass-effect p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 relative overflow-hidden"
-            >
-              <div className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-bold bg-yellow-500/20 text-yellow-300 rounded-full uppercase tracking-wider">
-                {t("certifications.inProgress", language)}
-              </div>
-              <div className="flex items-start gap-4">
-                <div className="text-4xl">{cert.icon}</div>
-                <div className="flex-1">
-                  <h3 className="text-lg font-semibold text-yellow-400 mb-2">
-                    {cert.title}
-                  </h3>
-                  <p className="text-white/70 text-sm mb-1">{cert.issuer}</p>
-                  <p className="text-white/50 text-xs">{cert.date}</p>
+          {inProgress.map((cert, index) => {
+            const card = (
+              <div
+                className="glass-effect p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 relative overflow-hidden"
+              >
+                <div className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-bold bg-yellow-500/20 text-yellow-300 rounded-full uppercase tracking-wider">
+                  {t("certifications.inProgress", language)}
+                </div>
+                <div className="flex items-start gap-4">
+                  <div className="text-4xl">{cert.icon}</div>
+                  <div className="flex-1">
+                    <h3 className="text-lg font-semibold text-yellow-400 mb-2">
+                      {cert.title}
+                    </h3>
+                    <p className="text-white/70 text-sm mb-1">{cert.issuer}</p>
+                    <p className="text-white/50 text-xs">{cert.date}</p>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+
+            if (cert.credentialUrl) {
+              return (
+                <a key={index} href={cert.credentialUrl} target="_blank" rel="noopener noreferrer" className="block">
+                  {card}
+                </a>
+              );
+            }
+
+            return <div key={index}>{card}</div>;
+          })}
         </div>
       </div>
     </div>
