@@ -78,8 +78,8 @@ export const translations: Translations = {
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui, y librerías de visualización como D3.js, Chart.js y Plotly.js. Experto en APIs de Google Maps, GoJS para diagramas, y optimización de diseños responsivos.",
-    en: "Over 4 years with Angular, React.js and Next.js, implementing interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and visualization libraries like D3.js, Chart.js and Plotly.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS, además de librerías de visualización como D3.js, Chart.js y Plotly.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
+    en: "Over 4 years with Angular, React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS, along with visualization libraries such as D3.js, Chart.js, and Plotly.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
@@ -102,8 +102,8 @@ export const translations: Translations = {
     en: "🛠️ Tech Stack",
   },
   "about.techFrontend": {
-    es: "Frontend: Angular, React, Next.js, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
-    en: "Frontend: Angular, React, Next.js, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
+    es: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
+    en: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
   },
   "about.techBackend": {
     es: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
@@ -685,6 +685,22 @@ export const translations: Translations = {
     es: "Elige tu método de contacto preferido:",
     en: "Choose your preferred contact method:",
   },
+  "contact.channelLabel": {
+    es: "Canal de contacto",
+    en: "Contact channel",
+  },
+  "contact.openLink": {
+    es: "Abrir enlace",
+    en: "Open link",
+  },
+  "contact.availability": {
+    es: "Disponible para trabajo remoto",
+    en: "Available for remote work",
+  },
+  "contact.emailMeta": {
+    es: "Correo directo",
+    en: "Direct email",
+  },
   "contact.emailLabel": {
     es: "Correo Electrónico",
     en: "Email",
@@ -712,6 +728,10 @@ export const translations: Translations = {
   "contact.upworkDesc": {
     es: "Contrátame en Upwork",
     en: "Hire me on Upwork",
+  },
+  "contact.upworkMeta": {
+    es: "Perfil con contrato activo",
+    en: "Active contract profile",
   },
 
   // Footer

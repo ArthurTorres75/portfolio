@@ -203,7 +203,7 @@ export default function Home(): React.JSX.Element {
           id="contacto"
           title={t("contact.title", language)}
           subtitle={t("contact.subtitle", language)}
-          className="bg-gradient-to-b from-black to-blue-950/20 py-32"
+          className="section-blue-surface section-blue-surface--intense py-32"
         >
           <ContactLinks />
         </Section>
