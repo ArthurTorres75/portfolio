@@ -6,7 +6,7 @@ interface CertificationProps {
   title: string;
   issuer: string;
   date: string;
-  icon: string;
+  icon: React.ReactNode;
   credentialUrl?: string;
 }
 
@@ -57,36 +57,36 @@ export function Certifications(): React.JSX.Element {
       title: t("cert5.title", language),
       issuer: t("cert5.issuer", language),
       date: t("cert5.date", language),
-      icon: "🟨",
-      credentialUrl: "",
+      icon: <span className="inline-block px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded font-bold text-xs" style={{fontFamily: 'monospace'}}>&lt;&gt;</span>, // HTML icon
+      credentialUrl: "https://www.sololearn.com/certificates/CT-WPCZMDGL",
     },
     {
       title: t("cert1.title", language),
       issuer: t("cert1.issuer", language),
       date: t("cert1.date", language),
-      icon: "🟧",
-      credentialUrl: "",
+      icon: <span className="inline-block px-2 py-0.5 bg-orange-500/20 text-orange-400 rounded font-bold text-xs" style={{fontFamily: 'monospace'}}>JS</span>, // JavaScript icon
+      credentialUrl: "https://www.sololearn.com/certificates/CT-NPULW3N2",
     },
     {
       title: t("cert2.title", language),
       issuer: t("cert2.issuer", language),
       date: t("cert2.date", language),
       icon: "🎨",
-      credentialUrl: "",
+      credentialUrl: "https://www.sololearn.com/certificates/CT-PP0ZQ7KF",
     },
     {
       title: t("cert3.title", language),
       issuer: t("cert3.issuer", language),
       date: t("cert3.date", language),
       icon: "🗄️",
-      credentialUrl: "",
+      credentialUrl: "https://www.sololearn.com/certificates/CT-U5DC4HMR",
     },
     {
       title: t("cert4.title", language),
       issuer: t("cert4.issuer", language),
       date: t("cert4.date", language),
       icon: "🐘",
-      credentialUrl: "",
+      credentialUrl: "https://www.sololearn.com/certificates/CT-VN1JMINK",
     },
     {
       title: t("cert8.title", language),

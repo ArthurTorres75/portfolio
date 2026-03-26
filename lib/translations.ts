@@ -144,6 +144,42 @@ export const translations: Translations = {
     en: "Present",
   },
 
+  // Job 12 — Upwork (MERN Stack)
+  "job12.title": {
+    es: "Desarrollador Full Stack (MERN)",
+    en: "Full Stack Developer (MERN)",
+  },
+  "job12.company": {
+    es: "Upwork / Development MERN Stack — Remoto",
+    en: "Upwork / Development MERN Stack — Remote",
+  },
+  "job12.period": {
+    es: "Feb 2025 – Presente",
+    en: "Feb 2025 – Present",
+  },
+  "job12.desc": {
+    es: "Contrato activo en Upwork como desarrollador full stack con MERN, NestJS y Next.js. Implementación de interfaces con Tailwind CSS, desarrollo de APIs y módulos backend, despliegue y administración de hosting en Hostinger, y soporte de mantenimiento para nuevos requerimientos.",
+    en: "Active Upwork contract as a full-stack developer using MERN, NestJS, and Next.js. Built interfaces with Tailwind CSS, developed APIs and backend modules, managed deployment and hosting on Hostinger, and provided maintenance support for new requirements.",
+  },
+
+  // Job 13 — Fibtotech
+  "job13.title": {
+    es: "Desarrollador Frontend",
+    en: "Frontend Developer",
+  },
+  "job13.company": {
+    es: "Fibtotech — Remoto",
+    en: "Fibtotech — Remote",
+  },
+  "job13.period": {
+    es: "Feb 2025 – Jul 2025",
+    en: "Feb 2025 – Jul 2025",
+  },
+  "job13.desc": {
+    es: "Soporte frontend para varios sistemas con Next.js, Tailwind CSS y visualizaciones avanzadas con Plotly y Chart.js. Integración de Google Maps y optimización de rendimiento para manejar millones de registros de datos en interfaces interactivas.",
+    en: "Frontend support across multiple systems with Next.js, Tailwind CSS, and advanced visualizations using Plotly and Chart.js. Integrated Google Maps and optimized performance to handle millions of data records in interactive interfaces.",
+  },
+
   // Job 1 — Hacking HR
   "job1.title": {
     es: "Desarrollador Full Stack",
@@ -154,8 +190,8 @@ export const translations: Translations = {
     en: "Hacking HR — Remote (USA)",
   },
   "job1.period": {
-    es: "Oct 2025 – Presente",
-    en: "Oct 2025 – Present",
+    es: "Oct 2025 – Mar 2026",
+    en: "Oct 2025 – Mar 2026",
   },
   "job1.desc": {
     es: "Desarrollo de una plataforma escalable de gestión de eventos con Next.js y un CMS headless, optimizando el consumo de APIs y el rendimiento frontend. Extensión de estructuras en Payload CMS. Lideré la migración de Brevo a Amazon SES, configuración de verificación de dominio y SMTP. Análisis de DNS y tráfico con Cloudflare, infraestructura AWS con Terraform, despliegues en AWS Amplify y resolución de incidencias CI/CD.",

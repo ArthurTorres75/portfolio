@@ -159,7 +159,7 @@ export default function Home(): React.JSX.Element {
           id="experiencia"
           title={t("workHistory.title", language)}
           subtitle={t("workHistory.subtitle", language)}
-          className="bg-black"
+          className="section-blue-surface section-blue-surface--intense"
         >
           <WorkHistory />
         </Section>
@@ -169,7 +169,7 @@ export default function Home(): React.JSX.Element {
           id="certificaciones"
           title={t("certifications.title", language)}
           subtitle={t("certifications.subtitle", language)}
-          className="bg-black"
+          className="section-blue-surface section-blue-surface--soft"
         >
           <Certifications />
         </Section>

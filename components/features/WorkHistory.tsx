@@ -9,17 +9,14 @@ interface Job {
   descKey: string;
 }
 
-const JOB_COUNT = 11;
+const JOB_ORDER = [1, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const;
 
-const JOBS: Job[] = Array.from({ length: JOB_COUNT }, (_, i) => {
-  const n = i + 1;
-  return {
-    titleKey: `job${n}.title`,
-    companyKey: `job${n}.company`,
-    periodKey: `job${n}.period`,
-    descKey: `job${n}.desc`,
-  };
-});
+const JOBS: Job[] = JOB_ORDER.map((n) => ({
+  titleKey: `job${n}.title`,
+  companyKey: `job${n}.company`,
+  periodKey: `job${n}.period`,
+  descKey: `job${n}.desc`,
+}));
 
 export function WorkHistory(): React.JSX.Element {
   const { language } = useLanguage();

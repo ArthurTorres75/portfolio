@@ -16,8 +16,11 @@ export function Section({
   className = "",
 }: SectionProps): React.JSX.Element {
   return (
-    <section id={id} className={`py-24 ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id={id}
+      className={`relative overflow-hidden py-24 ${className}`}
+    >
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Title */}
         <div className="mb-12 text-center">
           <h2 className="text-4xl md:text-5xl font-bold iridescent-text mb-4">
