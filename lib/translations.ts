@@ -458,7 +458,7 @@ export const translations: Translations = {
     en: "In progress",
   },
 
-  // Cert 8 — AI Development (in progress)
+  // Cert 8 — AI Development
   "cert8.title": {
     es: "Curso de Desarrollo con IA de 0 a producción",
     en: "AI Development from 0 to Production",
@@ -468,8 +468,8 @@ export const translations: Translations = {
     en: "MoureDev - Big School",
   },
   "cert8.date": {
-    es: "En progreso",
-    en: "In progress",
+    es: "Mar 2026",
+    en: "Mar 2026",
   },
 
   // Testimonials Section

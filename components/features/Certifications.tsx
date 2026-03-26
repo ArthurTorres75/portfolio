@@ -88,6 +88,13 @@ export function Certifications(): React.JSX.Element {
       icon: "🐘",
       credentialUrl: "",
     },
+    {
+      title: t("cert8.title", language),
+      issuer: t("cert8.issuer", language),
+      date: t("cert8.date", language),
+      icon: "🤖",
+      credentialUrl: "https://certificados.thebigschool.com/wp-content/uploads/certs/MDEV2/Certificado-Arthur-Orlando-Torres-Suarez-gxplvh6j.pdf",
+    },
   ];
 
   const inProgress = [
@@ -96,19 +103,14 @@ export function Certifications(): React.JSX.Element {
       issuer: t("cert6.issuer", language),
       date: t("cert6.date", language),
       icon: "☁️",
+      credentialUrl: "",
     },
     {
       title: t("cert7.title", language),
       issuer: t("cert7.issuer", language),
       date: t("cert7.date", language),
       icon: "🏗️",
-    },
-    {
-      title: t("cert8.title", language),
-      issuer: t("cert8.issuer", language),
-      date: t("cert8.date", language),
-      icon: "🤖",
-      credentialUrl: "https://thebigschool.com/sp/curso-de-desarrollo-ia-a-rrss-brais/",
+      credentialUrl: "",
     },
   ];
 
