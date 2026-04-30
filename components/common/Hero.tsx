@@ -1,5 +1,6 @@
 import type React from "react";
 import { motion } from "framer-motion";
+import dynamic from "next/dynamic";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
 import { animationVariants } from "@/hooks/useScrollAnimation";
@@ -10,12 +11,19 @@ interface HeroProps {
   description: string;
 }
 
+const CyberNebula = dynamic(
+  () => import("@/components/common/CyberNebula").then((mod) => mod.CyberNebula),
+  { ssr: false }
+);
+
 export function Hero({ name, title, description }: HeroProps): React.JSX.Element {
   const { language } = useLanguage();
   return (
     <section className="iridescent-gradient min-h-[700px] py-32 flex items-center justify-center relative overflow-hidden">
+      <CyberNebula />
+
       {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden">
+      <div className="absolute inset-0 overflow-hidden z-[1]">
         <div className="absolute -top-40 -right-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl animate-pulse" />
         <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
       </div>

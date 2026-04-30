@@ -1,8 +1,9 @@
-import React from "react";
+import type React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/common/Section";
 import { ProjectCard } from "@/components/common/ProjectCard";
+import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
 
@@ -68,8 +69,16 @@ export default function Projects(): React.JSX.Element {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      <Header name="Arthur Torres" />
+    <>
+      <Seo
+        title="Projects | Arthur Torres"
+        description="Explora los proyectos de Arthur Torres: soluciones web y mobile con Next.js, React, Angular, TypeScript y arquitecturas escalables."
+        path="/projects/"
+        keywords="Arthur Torres projects, Next.js portfolio, React projects, TypeScript"
+      />
+
+      <div className="min-h-screen bg-black text-white flex flex-col">
+        <Header name="Arthur Torres" />
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -103,7 +112,8 @@ export default function Projects(): React.JSX.Element {
         </Section>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

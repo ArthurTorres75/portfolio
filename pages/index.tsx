@@ -1,10 +1,12 @@
-import React from "react";
+import type React from "react";
+import Head from "next/head";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/common/Hero";
 import { Section } from "@/components/common/Section";
 import { ProjectCard } from "@/components/common/ProjectCard";
+import { Seo } from "@/components/common/Seo";
 import { ContactLinks } from "@/components/features/ContactLinks";
 import { Certifications } from "@/components/features/Certifications";
 import { Testimonials } from "@/components/features/Testimonials";
@@ -85,10 +87,46 @@ export default function Home(): React.JSX.Element {
     },
   ];
 
+  const personSchema = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name,
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/",
+    sameAs: [
+      "https://github.com/ArthurTorres75",
+      "https://www.linkedin.com/in/arthur-torres-9b41a2184/",
+      upworkProfile,
+    ],
+    jobTitle: t("hero.title", language),
+    knowsAbout: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Node.js",
+      "AWS",
+      "Frontend Development",
+      "Backend Development",
+    ],
+  };
+
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col relative">
-      <Watermark />
-      <Header name={name} />
+    <>
+      <Seo
+        title="Arthur Torres | Full Stack Developer"
+        description="Portfolio de Arthur Torres: desarrollo web full stack con Next.js, React, TypeScript, Node.js y AWS. Proyectos, experiencia y contacto."
+        path="/"
+        keywords="Arthur Torres, Full Stack Developer, Next.js, React, TypeScript, Portfolio"
+      />
+      <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+        />
+      </Head>
+
+      <div className="min-h-screen bg-black text-white flex flex-col relative">
+        <Watermark />
+        <Header name={name} />
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -245,7 +283,8 @@ export default function Home(): React.JSX.Element {
         </Section>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

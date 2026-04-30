@@ -631,6 +631,26 @@
   color: rgba(254, 240, 138, 0.95);
 }
 
+.hero-nebula {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.75;
+  mix-blend-mode: screen;
+}
+
+.hero-nebula canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+@media (max-width: 768px) {
+  .hero-nebula {
+    opacity: 0.5;
+  }
+}
+
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
   width: 10px;
