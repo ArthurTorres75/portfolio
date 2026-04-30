@@ -25,7 +25,7 @@ export function ProjectCard({
   const { language } = useLanguage();
   return (
     <motion.div
-      className="group card-hover glass-effect rounded-lg p-6 hover:border-cyan-400/50"
+      className="group card-hover glass-effect rounded-lg p-6 border border-cyan-500/25"
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.15 }}
@@ -73,7 +73,7 @@ export function ProjectCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
+          className="inline-flex items-center text-cyan-300 project-link group/link"
         >
           {t("projects.viewProject", language)}
           <svg

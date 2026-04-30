@@ -1,4 +1,4 @@
-import React from "react";
+import type React from "react";
 import Link from "next/link";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
@@ -18,7 +18,7 @@ export function Footer(): React.JSX.Element {
               <li>
                 <a
                   href="mailto:arthurtorres75@gmail.com"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="footer-link"
                 >
                   {t("contact.emailLabel", language)}
                 </a>
@@ -28,7 +28,7 @@ export function Footer(): React.JSX.Element {
                   href="https://www.linkedin.com/in/arthur-torres-9b41a2184/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-cyan-400 transition-colors"
+                  className="footer-link"
                 >
                   LinkedIn
                 </a>
@@ -41,12 +41,12 @@ export function Footer(): React.JSX.Element {
             <h3 className="text-cyan-400 font-semibold mb-4">{t("footer.links", language)}</h3>
             <ul className="space-y-2 text-white/70">
               <li>
-                <Link href="/" className="hover:text-cyan-400 transition-colors">
+                <Link href="/" className="footer-link">
                   {t("nav.inicio", language)}
                 </Link>
               </li>
               <li>
-                <Link href="/projects/" className="hover:text-cyan-400 transition-colors">
+                <Link href="/projects/" className="footer-link">
                   {t("nav.proyectos", language)}
                 </Link>
               </li>
@@ -61,7 +61,7 @@ export function Footer(): React.JSX.Element {
                 href="https://github.com/ArthurTorres75"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-cyan-400 transition-colors"
+                className="footer-link"
               >
                 GitHub
               </a>
@@ -69,7 +69,7 @@ export function Footer(): React.JSX.Element {
                 href="https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white/70 hover:text-cyan-400 transition-colors"
+                className="footer-link"
               >
                 Upwork
               </a>

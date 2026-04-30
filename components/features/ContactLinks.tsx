@@ -81,14 +81,14 @@ function ContactLink({
     <a
       href={href}
       {...linkProps}
-      className="group relative block overflow-hidden rounded-2xl border border-cyan-400/20 bg-slate-950/65 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-300/60 hover:shadow-[0_24px_60px_-24px_rgba(34,211,238,0.5)]"
+      className="group contact-card"
     >
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(56,189,248,0.18),transparent_28%),linear-gradient(135deg,rgba(15,23,42,0.3),rgba(2,132,199,0.06))] opacity-80 transition-opacity duration-300 group-hover:opacity-100" />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-cyan-300/60 to-transparent" />
 
       <div className="relative z-10 mb-5 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
+          <div className="contact-card__icon flex h-11 w-11 items-center justify-center rounded-xl border border-cyan-400/20 bg-cyan-400/10 text-cyan-200 shadow-[inset_0_1px_0_rgba(255,255,255,0.08)]">
             {icon}
           </div>
           <div>
@@ -101,7 +101,7 @@ function ContactLink({
           </div>
         </div>
 
-        <div className="flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-slate-900/80 text-cyan-300 transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-300/60 group-hover:text-white">
+        <div className="contact-card__arrow flex h-10 w-10 items-center justify-center rounded-full border border-cyan-400/20 bg-slate-900/80 text-cyan-300 transition-all duration-300 group-hover:translate-x-1 group-hover:border-cyan-300/60 group-hover:text-white">
           <svg
             aria-hidden="true"
             viewBox="0 0 24 24"
@@ -121,13 +121,13 @@ function ContactLink({
           <p className="mb-3 text-sm leading-relaxed text-white/82 transition-colors group-hover:text-white">
             {description}
           </p>
-          <div className="inline-flex max-w-full items-center rounded-full border border-cyan-400/15 bg-slate-900/80 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.24em] text-cyan-200/80">
+          <div className="contact-card__meta inline-flex max-w-full items-center rounded-full border border-cyan-400/15 bg-slate-900/80 px-3 py-1.5 text-[11px] font-medium uppercase tracking-[0.24em] text-cyan-200/80">
             <span className="mr-2 h-2 w-2 rounded-full bg-cyan-300 shadow-[0_0_12px_rgba(103,232,249,0.8)]" />
             <span className="truncate">{meta}</span>
           </div>
         </div>
 
-        <div className="hidden rounded-xl border border-cyan-400/10 bg-slate-900/70 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-300/70 md:block">
+        <div className="contact-card__badge hidden rounded-xl border border-cyan-400/10 bg-slate-900/70 px-3 py-2 text-[10px] font-semibold uppercase tracking-[0.22em] text-cyan-300/70 md:block">
           {t("contact.openLink", language)}
         </div>
       </div>
