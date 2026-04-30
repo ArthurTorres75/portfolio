@@ -1,6 +1,8 @@
-import React from "react";
+import type React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface HeroProps {
   name: string;
@@ -20,21 +22,45 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <motion.h1
+          className="text-5xl md:text-7xl font-bold mb-6"
+          initial="hidden"
+          animate="visible"
+          variants={animationVariants.fadeUp}
+          custom={0}
+        >
           <span className="text-white">{t("hero.greeting", language)}, </span>
           <span className="iridescent-text inline-block">{name}</span>
-        </h1>
+        </motion.h1>
 
-        <h2 className="text-2xl md:text-3xl text-cyan-300 mb-6 font-semibold">
+        <motion.h2
+          className="text-2xl md:text-3xl text-cyan-300 mb-6 font-semibold"
+          initial="hidden"
+          animate="visible"
+          variants={animationVariants.fadeUp}
+          custom={0.15}
+        >
           {title}
-        </h2>
+        </motion.h2>
 
-        <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+        <motion.p
+          className="text-lg text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed"
+          initial="hidden"
+          animate="visible"
+          variants={animationVariants.fadeUp}
+          custom={0.3}
+        >
           {description}
-        </p>
+        </motion.p>
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center gap-4">
+        <motion.div
+          className="flex flex-col sm:flex-row justify-center gap-4"
+          initial="hidden"
+          animate="visible"
+          variants={animationVariants.fadeUp}
+          custom={0.45}
+        >
           <a
             href="#proyectos"
             className="px-8 py-3 bg-gradient-to-r from-blue-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-cyan-500/50 transition-all duration-300 hover:-translate-y-1"
@@ -67,7 +93,7 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
             </svg>
             {t("hero.downloadCV", language)}
           </a>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

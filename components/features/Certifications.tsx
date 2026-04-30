@@ -1,6 +1,8 @@
-import React from "react";
+import type React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface CertificationProps {
   title: string;
@@ -119,7 +121,16 @@ export function Certifications(): React.JSX.Element {
       {/* Completed */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {certifications.map((cert, index) => (
-          <CertificationCard key={index} {...cert} />
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={animationVariants.fadeUp}
+            custom={index * 0.08}
+          >
+            <CertificationCard {...cert} />
+          </motion.div>
         ))}
       </div>
 
@@ -132,7 +143,12 @@ export function Certifications(): React.JSX.Element {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {inProgress.map((cert, index) => {
             const card = (
-              <div
+              <motion.div
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.15 }}
+                variants={animationVariants.scale}
+                custom={index * 0.1}
                 className="glass-effect p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 relative overflow-hidden"
               >
                 <div className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-bold bg-yellow-500/20 text-yellow-300 rounded-full uppercase tracking-wider">
@@ -148,7 +164,7 @@ export function Certifications(): React.JSX.Element {
                     <p className="text-white/50 text-xs">{cert.date}</p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
 
             if (cert.credentialUrl) {

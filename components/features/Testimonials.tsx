@@ -1,6 +1,8 @@
-import React from "react";
+import type React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface Badge {
   text: string;
@@ -163,7 +165,14 @@ export function Testimonials(): React.JSX.Element {
   return (
     <div className="space-y-6">
       {/* Upwork Stats Banner */}
-      <div className="glass-effect p-6 rounded-lg border border-cyan-500/30 text-center mb-8">
+      <motion.div
+        className="glass-effect p-6 rounded-lg border border-cyan-500/30 text-center mb-8"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={animationVariants.fadeUp}
+        custom={0}
+      >
         <div className="flex flex-wrap justify-center items-center gap-8">
           <div>
             <p className="text-4xl font-bold text-cyan-400">5.0</p>
@@ -185,12 +194,21 @@ export function Testimonials(): React.JSX.Element {
             <p className="text-white/70 text-sm">{t("testimonial.totalEarned", language)}</p>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       {/* Testimonials Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
         {testimonials.map((testimonial, index) => (
-          <TestimonialCard key={index} {...testimonial} />
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
+            variants={animationVariants.fadeUp}
+            custom={index * 0.1}
+          >
+            <TestimonialCard {...testimonial} />
+          </motion.div>
         ))}
       </div>
     </div>

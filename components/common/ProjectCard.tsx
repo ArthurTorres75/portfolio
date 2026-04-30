@@ -1,6 +1,9 @@
-import React from "react";
+import type React from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +11,7 @@ interface ProjectCardProps {
   technologies: string[];
   link?: string;
   image?: string;
+  index?: number;
 }
 
 export function ProjectCard({
@@ -15,11 +19,33 @@ export function ProjectCard({
   description,
   technologies,
   link,
+  image,
+  index = 0,
 }: ProjectCardProps): React.JSX.Element {
   const { language } = useLanguage();
   return (
-    <div className="group card-hover glass-effect rounded-lg p-6 hover:border-cyan-400/50">
-      {/* Header con efecto tornasolado */}
+    <motion.div
+      className="group card-hover glass-effect rounded-lg p-6 hover:border-cyan-400/50"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+      variants={animationVariants.fadeUp}
+      custom={index * 0.1}
+    >
+      {/* Project image */}
+      {image && (
+        <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+      )}
+
+      {/* Header */}
       <div className="mb-4">
         <h3 className="text-xl font-bold text-white group-hover:iridescent-text transition-all duration-300">
           {title}
@@ -65,6 +91,6 @@ export function ProjectCard({
           </svg>
         </a>
       )}
-    </div>
+    </motion.div>
   );
 }

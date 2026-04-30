@@ -1,6 +1,8 @@
-import React from "react";
+import type React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Language, t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface ContactLinkProps {
   href: string;
@@ -175,7 +177,14 @@ export function ContactLinks(): React.JSX.Element {
 
   return (
     <div className="max-w-4xl mx-auto">
-      <div className="mb-8 text-center">
+      <motion.div
+        className="mb-8 text-center"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.5 }}
+        variants={animationVariants.fadeUp}
+        custom={0}
+      >
         <p className="mb-3 text-white/75">
           {t("contact.directMessage", language)}
         </p>
@@ -183,11 +192,20 @@ export function ContactLinks(): React.JSX.Element {
           <span className="h-2 w-2 rounded-full bg-emerald-400 shadow-[0_0_12px_rgba(74,222,128,0.8)]" />
           {t("contact.availability", language)}
         </div>
-      </div>
+      </motion.div>
 
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
         {contactMethods.map((method, index) => (
-          <ContactLink key={index} {...method} language={language} />
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.15 }}
+            variants={animationVariants.fadeUp}
+            custom={index * 0.1}
+          >
+            <ContactLink {...method} language={language} />
+          </motion.div>
         ))}
       </div>
     </div>

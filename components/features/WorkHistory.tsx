@@ -1,6 +1,8 @@
-import React from "react";
+import type React from "react";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface Job {
   titleKey: string;
@@ -37,13 +39,24 @@ export function WorkHistory(): React.JSX.Element {
             }`}
           >
             {/* Timeline dot */}
-            <div className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 border-4 border-black z-10 shadow-lg shadow-cyan-400/50" />
+            <motion.div
+              className="absolute left-4 md:left-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-cyan-400 border-4 border-black z-10 shadow-lg shadow-cyan-400/50"
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.3, delay: index * 0.05 }}
+            />
 
             {/* Card */}
-            <div
+            <motion.div
               className={`ml-12 md:ml-0 md:w-[calc(50%-2rem)] ${
                 isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
               }`}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, amount: 0.2 }}
+              variants={isLeft ? animationVariants.fadeLeft : animationVariants.fadeRight}
+              custom={index * 0.04}
             >
               <div className="glass-effect p-6 rounded-lg border border-cyan-500/30 hover:border-cyan-400 transition-all duration-300 group">
                 {/* Period badge */}
@@ -66,7 +79,7 @@ export function WorkHistory(): React.JSX.Element {
                   {t(job.descKey, language)}
                 </p>
               </div>
-            </div>
+            </motion.div>
           </div>
         );
       })}
