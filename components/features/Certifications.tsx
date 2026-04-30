@@ -10,22 +10,41 @@ interface CertificationProps {
   date: string;
   icon: React.ReactNode;
   credentialUrl?: string;
+  inProgress?: boolean;
+  language: "es" | "en";
 }
 
-function CertificationCard({ title, issuer, date, icon, credentialUrl }: CertificationProps): React.JSX.Element {
+function CertificationCard({
+  title,
+  issuer,
+  date,
+  icon,
+  credentialUrl,
+  inProgress = false,
+  language,
+}: CertificationProps): React.JSX.Element {
   const content = (
-    <div className="glass-effect p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-cyan-500/20 h-full">
+    <div
+      className={`glass-effect certification-card p-6 rounded-lg h-full ${
+        inProgress ? "certification-card--progress" : ""
+      }`}
+    >
+      {inProgress && (
+        <div className="certification-card__status">
+          {t("certifications.inProgress", language)}
+        </div>
+      )}
       <div className="flex items-start gap-4">
-        <div className="text-4xl">{icon}</div>
+        <div className="certification-card__icon text-4xl">{icon}</div>
         <div className="flex-1">
-          <h3 className="text-lg font-semibold text-cyan-400 mb-2">
+          <h3 className="text-lg font-semibold text-cyan-400 mb-2 certification-card__title">
             {title}
           </h3>
           <p className="text-white/70 text-sm mb-1">{issuer}</p>
           <p className="text-white/50 text-xs">{date}</p>
         </div>
         {credentialUrl && (
-          <div className="text-cyan-400 hover:text-cyan-300 transition-colors">
+          <div className="certification-card__link text-cyan-400 transition-colors">
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
             </svg>
@@ -59,14 +78,22 @@ export function Certifications(): React.JSX.Element {
       title: t("cert5.title", language),
       issuer: t("cert5.issuer", language),
       date: t("cert5.date", language),
-      icon: <span className="inline-block px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded font-bold text-xs" style={{fontFamily: 'monospace'}}>&lt;&gt;</span>, // HTML icon
+      icon: (
+        <span className="inline-block px-2 py-0.5 bg-yellow-500/20 text-yellow-400 rounded font-bold text-xs font-mono">
+          &lt;&gt;
+        </span>
+      ),
       credentialUrl: "https://www.sololearn.com/certificates/CT-WPCZMDGL",
     },
     {
       title: t("cert1.title", language),
       issuer: t("cert1.issuer", language),
       date: t("cert1.date", language),
-      icon: <span className="inline-block px-2 py-0.5 bg-orange-500/20 text-orange-400 rounded font-bold text-xs" style={{fontFamily: 'monospace'}}>JS</span>, // JavaScript icon
+      icon: (
+        <span className="inline-block px-2 py-0.5 bg-orange-500/20 text-orange-400 rounded font-bold text-xs font-mono">
+          JS
+        </span>
+      ),
       credentialUrl: "https://www.sololearn.com/certificates/CT-NPULW3N2",
     },
     {
@@ -125,11 +152,11 @@ export function Certifications(): React.JSX.Element {
             key={index}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.15 }}
+            viewport={{ once: false, amount: 0.2 }}
             variants={animationVariants.fadeUp}
             custom={index * 0.08}
           >
-            <CertificationCard {...cert} />
+            <CertificationCard {...cert} language={language} />
           </motion.div>
         ))}
       </div>
@@ -146,24 +173,20 @@ export function Certifications(): React.JSX.Element {
               <motion.div
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: true, amount: 0.15 }}
+                viewport={{ once: false, amount: 0.2 }}
                 variants={animationVariants.scale}
                 custom={index * 0.1}
-                className="glass-effect p-6 rounded-lg border border-yellow-500/30 hover:border-yellow-400 transition-all duration-300 relative overflow-hidden"
+                className="h-full"
               >
-                <div className="absolute top-2 right-2 px-2 py-0.5 text-[10px] font-bold bg-yellow-500/20 text-yellow-300 rounded-full uppercase tracking-wider">
-                  {t("certifications.inProgress", language)}
-                </div>
-                <div className="flex items-start gap-4">
-                  <div className="text-4xl">{cert.icon}</div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-yellow-400 mb-2">
-                      {cert.title}
-                    </h3>
-                    <p className="text-white/70 text-sm mb-1">{cert.issuer}</p>
-                    <p className="text-white/50 text-xs">{cert.date}</p>
-                  </div>
-                </div>
+                <CertificationCard
+                  title={cert.title}
+                  issuer={cert.issuer}
+                  date={cert.date}
+                  icon={cert.icon}
+                  credentialUrl={cert.credentialUrl}
+                  inProgress
+                  language={language}
+                />
               </motion.div>
             );
 

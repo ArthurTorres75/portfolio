@@ -417,6 +417,220 @@
   box-shadow: 0 0 16px rgba(34, 211, 238, 0.2);
 }
 
+.about-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  transition:
+    transform 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.about-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 18% 115%, rgba(37, 99, 235, 0.28), transparent 48%),
+    radial-gradient(circle at 88% 0%, rgba(34, 211, 238, 0.24), transparent 42%);
+  transition: opacity 320ms ease;
+}
+
+.about-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-120%) skewX(-14deg);
+  background: linear-gradient(
+    102deg,
+    transparent 28%,
+    rgba(186, 230, 253, 0.2) 52%,
+    transparent 76%
+  );
+  transition:
+    opacity 280ms ease,
+    transform 680ms ease;
+}
+
+.about-card:hover,
+.about-card:focus-visible {
+  border-color: rgba(103, 232, 249, 0.76);
+  box-shadow:
+    0 22px 45px -24px rgba(14, 165, 233, 0.55),
+    0 0 0 1px rgba(34, 211, 238, 0.2);
+  transform: translateY(-0.4rem) scale(1.01);
+}
+
+.about-card:hover::before,
+.about-card:focus-visible::before {
+  opacity: 1;
+}
+
+.about-card:hover::after,
+.about-card:focus-visible::after {
+  opacity: 1;
+  transform: translateX(120%) skewX(-14deg);
+}
+
+.about-card__title {
+  transition:
+    color 260ms ease,
+    text-shadow 260ms ease;
+}
+
+.about-card:hover .about-card__title,
+.about-card:focus-visible .about-card__title {
+  color: #a5f3fc;
+  text-shadow: 0 0 16px rgba(34, 211, 238, 0.5);
+}
+
+.about-tech-row {
+  transition:
+    transform 240ms ease,
+    color 240ms ease;
+}
+
+.about-card:hover .about-tech-row,
+.about-card:focus-visible .about-tech-row {
+  transform: translateX(0.2rem);
+}
+
+.certification-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(34, 211, 238, 0.3);
+  transition:
+    transform 320ms ease,
+    border-color 320ms ease,
+    box-shadow 320ms ease;
+}
+
+.certification-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 15% 110%, rgba(59, 130, 246, 0.32), transparent 46%),
+    radial-gradient(circle at 90% 0%, rgba(34, 211, 238, 0.3), transparent 44%);
+  transition: opacity 320ms ease;
+}
+
+.certification-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-130%) skewX(-14deg);
+  background: linear-gradient(
+    102deg,
+    transparent 28%,
+    rgba(125, 211, 252, 0.2) 52%,
+    transparent 76%
+  );
+  transition:
+    opacity 300ms ease,
+    transform 700ms ease;
+}
+
+.certification-card:hover,
+.certification-card:focus-visible {
+  border-color: rgba(103, 232, 249, 0.76);
+  box-shadow:
+    0 24px 50px -26px rgba(14, 165, 233, 0.6),
+    0 0 0 1px rgba(34, 211, 238, 0.22);
+  transform: translateY(-0.4rem) scale(1.01);
+}
+
+.certification-card:hover::before,
+.certification-card:focus-visible::before {
+  opacity: 1;
+}
+
+.certification-card:hover::after,
+.certification-card:focus-visible::after {
+  opacity: 1;
+  transform: translateX(130%) skewX(-14deg);
+}
+
+.certification-card__icon {
+  transition: transform 260ms ease;
+}
+
+.certification-card__title,
+.certification-card__link {
+  transition:
+    color 260ms ease,
+    text-shadow 260ms ease;
+}
+
+.certification-card:hover .certification-card__icon,
+.certification-card:focus-visible .certification-card__icon {
+  transform: translateY(-0.1rem) scale(1.04);
+}
+
+.certification-card:hover .certification-card__title,
+.certification-card:focus-visible .certification-card__title {
+  color: #a5f3fc;
+  text-shadow: 0 0 14px rgba(34, 211, 238, 0.45);
+}
+
+.certification-card:hover .certification-card__link,
+.certification-card:focus-visible .certification-card__link {
+  color: #a5f3fc;
+  text-shadow: 0 0 14px rgba(34, 211, 238, 0.55);
+}
+
+.certification-card--progress {
+  border-color: rgba(234, 179, 8, 0.38);
+}
+
+.certification-card--progress::before {
+  background:
+    radial-gradient(circle at 15% 110%, rgba(234, 179, 8, 0.25), transparent 46%),
+    radial-gradient(circle at 90% 0%, rgba(250, 204, 21, 0.22), transparent 44%);
+}
+
+.certification-card--progress:hover,
+.certification-card--progress:focus-visible {
+  border-color: rgba(250, 204, 21, 0.78);
+  box-shadow:
+    0 24px 50px -26px rgba(234, 179, 8, 0.58),
+    0 0 0 1px rgba(250, 204, 21, 0.22);
+}
+
+.certification-card--progress .certification-card__title {
+  color: #facc15;
+}
+
+.certification-card--progress:hover .certification-card__title,
+.certification-card--progress:focus-visible .certification-card__title {
+  color: #fef08a;
+  text-shadow: 0 0 14px rgba(250, 204, 21, 0.45);
+}
+
+.certification-card__status {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  border-radius: 999px;
+  border: 1px solid rgba(250, 204, 21, 0.4);
+  background: rgba(250, 204, 21, 0.18);
+  padding: 0.15rem 0.5rem;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(254, 240, 138, 0.95);
+}
+
 /* Scrollbar personalizado */
 ::-webkit-scrollbar {
   width: 10px;

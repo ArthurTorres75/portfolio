@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Hero } from "@/components/common/Hero";
@@ -10,13 +11,40 @@ import { Testimonials } from "@/components/features/Testimonials";
 import { WorkHistory } from "@/components/features/WorkHistory";
 import { Watermark } from "@/components/common/Watermark";
 import { useLanguage } from "@/hooks/useLanguage";
+import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
 
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
+  const { ref: aboutRef, isInView: isAboutInView } = useScrollAnimation({
+    once: false,
+    amount: 0.2,
+  });
   const name = "Arthur Torres";
   const upworkProfile =
     "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share";
+
+  const aboutCards = [
+    {
+      title: t("about.frontendTitle", language),
+      description: t("about.frontendDesc", language),
+    },
+    {
+      title: t("about.backendTitle", language),
+      description: t("about.backendDesc", language),
+    },
+    {
+      title: t("about.cloudTitle", language),
+      description: t("about.cloudDesc", language),
+    },
+  ];
+
+  const techRows = [
+    t("about.techFrontend", language),
+    t("about.techBackend", language),
+    t("about.techCloud", language),
+    t("about.techMobile", language),
+  ];
   
   const projects = [
     {
@@ -77,73 +105,80 @@ export default function Home(): React.JSX.Element {
           subtitle={t("about.subtitle", language)}
           className="bg-gradient-to-b from-black to-blue-950/20"
         >
+          <div ref={aboutRef}>
           {/* Intro */}
-          <div className="max-w-4xl mx-auto mb-12 text-center">
+          <motion.div
+            className="max-w-4xl mx-auto mb-12 text-center"
+            initial="hidden"
+            animate={isAboutInView ? "visible" : "hidden"}
+            variants={animationVariants.fadeUp}
+            custom={0.03}
+          >
             <p className="text-white/80 text-lg leading-relaxed">
               {t("about.intro", language)}
             </p>
-          </div>
+          </motion.div>
 
           {/* Skills Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
-            <div className="glass-effect p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-                {t("about.frontendTitle", language)}
-              </h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                {t("about.frontendDesc", language)}
-              </p>
-            </div>
-
-            <div className="glass-effect p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-                {t("about.backendTitle", language)}
-              </h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                {t("about.backendDesc", language)}
-              </p>
-            </div>
-
-            <div className="glass-effect p-6 rounded-lg hover:border-cyan-400 border border-cyan-500/30 transition-all duration-300">
-              <h3 className="text-xl font-semibold text-cyan-400 mb-4">
-                {t("about.cloudTitle", language)}
-              </h3>
-              <p className="text-white/70 leading-relaxed text-sm">
-                {t("about.cloudDesc", language)}
-              </p>
-            </div>
+            {aboutCards.map((card, index) => (
+              <motion.div
+                key={card.title}
+                className="glass-effect about-card p-6 rounded-lg"
+                initial="hidden"
+                animate={isAboutInView ? "visible" : "hidden"}
+                variants={animationVariants.fadeUp}
+                custom={index * 0.08 + 0.08}
+              >
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4 about-card__title">
+                  {card.title}
+                </h3>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
           </div>
 
           {/* Tech Stack */}
-          <div className="max-w-4xl mx-auto mb-12">
-            <div className="glass-effect p-8 rounded-lg">
+          <motion.div
+            className="max-w-4xl mx-auto mb-12"
+            initial="hidden"
+            animate={isAboutInView ? "visible" : "hidden"}
+            variants={animationVariants.fadeUp}
+            custom={0.32}
+          >
+            <div className="glass-effect about-card p-8 rounded-lg">
               <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
                 {t("about.techStack", language)}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-1">→</span>
-                  <p className="text-white/70">{t("about.techFrontend", language)}</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-1">→</span>
-                  <p className="text-white/70">{t("about.techBackend", language)}</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-1">→</span>
-                  <p className="text-white/70">{t("about.techCloud", language)}</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-cyan-400 mt-1">→</span>
-                  <p className="text-white/70">{t("about.techMobile", language)}</p>
-                </div>
+                {techRows.map((tech, index) => (
+                  <motion.div
+                    key={tech}
+                    className="flex items-start gap-2 about-tech-row"
+                    initial="hidden"
+                    animate={isAboutInView ? "visible" : "hidden"}
+                    variants={animationVariants.fadeUp}
+                    custom={index * 0.05 + 0.36}
+                  >
+                    <span className="text-cyan-400 mt-1">→</span>
+                    <p className="text-white/70">{tech}</p>
+                  </motion.div>
+                ))}
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Work Ethic */}
-          <div className="max-w-3xl mx-auto">
-            <div className="glass-effect p-6 rounded-lg border border-cyan-500/30">
+          <motion.div
+            className="max-w-3xl mx-auto"
+            initial="hidden"
+            animate={isAboutInView ? "visible" : "hidden"}
+            variants={animationVariants.fadeUp}
+            custom={0.5}
+          >
+            <div className="glass-effect about-card p-6 rounded-lg border border-cyan-500/30">
               <h3 className="text-xl font-semibold text-cyan-400 mb-4">
                 {t("about.workEthic", language)}
               </h3>
@@ -151,6 +186,7 @@ export default function Home(): React.JSX.Element {
                 {t("about.workEthicDesc", language)}
               </p>
             </div>
+          </motion.div>
           </div>
         </Section>
 
