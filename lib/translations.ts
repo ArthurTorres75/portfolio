@@ -78,8 +78,8 @@ export const translations: Translations = {
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS, además de librerías de visualización como D3.js, Chart.js y Plotly.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
-    en: "Over 4 years with Angular, React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS, along with visualization libraries such as D3.js, Chart.js, and Plotly.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS, además de librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente estoy aprendiendo Three.js para experiencias 3D y Anime.js para secuencias de animación avanzadas. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
+    en: "Over 4 years with Angular, React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS, along with visualization libraries such as D3.js, Chart.js, and Plotly.js. I am currently learning Three.js for 3D experiences and Anime.js for advanced animation sequences. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
@@ -102,8 +102,8 @@ export const translations: Translations = {
     en: "🛠️ Tech Stack",
   },
   "about.techFrontend": {
-    es: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
-    en: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion",
+    es: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion, Three.js (aprendiendo), Anime.js (aprendiendo)",
+    en: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion, Three.js (learning), Anime.js (learning)",
   },
   "about.techBackend": {
     es: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
