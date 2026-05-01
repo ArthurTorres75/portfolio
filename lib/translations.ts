@@ -853,6 +853,14 @@ export const translations: Translations = {
     es: "Aplicación web para control administrativo escolar y emisión de constancias en PDF, desarrollada con PHP, MySQL y JavaScript.",
     en: "Web application for school administrative management and PDF certificate issuance, developed with PHP, MySQL, and JavaScript.",
   },
+  "project10.title": {
+    es: "School SaaS — Proyecto Personal",
+    en: "School SaaS — Personal Project",
+  },
+  "project10.desc": {
+    es: "Proyecto personal que estoy desarrollando por mi cuenta: un SaaS educativo para gestión escolar, con enfoque en experiencia moderna, flujos administrativos y despliegue continuo en Vercel.",
+    en: "Personal project I am building on my own: an educational SaaS for school management, focused on modern UX, administrative workflows, and continuous deployment on Vercel.",
+  },
 };
 
 export function t(key: string, language: Language): string {

@@ -11,7 +11,14 @@ export default function Projects(): React.JSX.Element {
   const { language } = useLanguage();
   const upworkProfile =
     "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share";
+  const schoolSaasUrl = "https://school-mauve-eight.vercel.app/";
   const projects = [
+    {
+      title: t("project10.title", language),
+      description: t("project10.desc", language),
+      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
+      link: schoolSaasUrl,
+    },
     {
       title: t("project1.title", language),
       description: t("project1.desc", language),
