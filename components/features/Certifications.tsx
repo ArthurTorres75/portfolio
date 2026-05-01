@@ -124,6 +124,24 @@ export function Certifications(): React.JSX.Element {
       icon: "🤖",
       credentialUrl: "https://certificados.thebigschool.com/wp-content/uploads/certs/MDEV2/Certificado-Arthur-Orlando-Torres-Suarez-gxplvh6j.pdf",
     },
+    {
+      title: t("cert9.title", language),
+      issuer: t("cert9.issuer", language),
+      date: t("cert9.date", language),
+      icon: (
+        <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-pink-500/20 text-pink-300 font-bold text-base font-mono">
+          E
+        </span>
+      ),
+      credentialUrl: "https://www.udemy.com/certificate/UC-7d4d0579-2175-4797-8952-8696a59fbf1c/",
+    },
+    {
+      title: t("cert10.title", language),
+      issuer: t("cert10.issuer", language),
+      date: t("cert10.date", language),
+      icon: "☁️",
+      credentialUrl: "",
+    },
   ];
 
   const inProgress = [

@@ -466,10 +466,10 @@ export const translations: Translations = {
     en: "Jul 2022",
   },
 
-  // Cert 6 — AWS Fundamentals (in progress)
+  // Cert 6 — AWS Fundamentals Part 2 (in progress)
   "cert6.title": {
-    es: "Fundamentos Técnicos de AWS — Parte 1",
-    en: "AWS Technical Fundamentals — Part 1",
+    es: "Fundamentos Técnicos de AWS — Parte 2",
+    en: "AWS Technical Fundamentals — Part 2",
   },
   "cert6.issuer": {
     es: "Amazon Skill Builder",
@@ -506,6 +506,34 @@ export const translations: Translations = {
   "cert8.date": {
     es: "Mar 2026",
     en: "Mar 2026",
+  },
+
+  // Cert 9 — Elementor Master
+  "cert9.title": {
+    es: "Máster en Elementor 2026, ¡Desde Cero Hasta Experto!",
+    en: "Elementor Master 2026, From Zero to Expert!",
+  },
+  "cert9.issuer": {
+    es: "Udemy",
+    en: "Udemy",
+  },
+  "cert9.date": {
+    es: "Abr 2026",
+    en: "Apr 2026",
+  },
+
+  // Cert 10 — AWS Fundamentals Part 1 (completed)
+  "cert10.title": {
+    es: "Fundamentos Técnicos de AWS — Parte 1",
+    en: "AWS Technical Fundamentals — Part 1",
+  },
+  "cert10.issuer": {
+    es: "Amazon Skill Builder",
+    en: "Amazon Skill Builder",
+  },
+  "cert10.date": {
+    es: "Abr 2026",
+    en: "Apr 2026",
   },
 
   // Testimonials Section
