@@ -135,7 +135,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden lg:flex space-x-8">
             {navLinks.map((link) => (
               <a
                 key={link.href}
@@ -150,7 +150,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
           </nav>
 
           {/* Language Selector */}
-          <div className="hidden md:flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-2 py-1">
+          <div className="hidden lg:flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-2 py-1">
             <button
               className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
                 language === "es"
@@ -176,8 +176,11 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-white"
+            className="lg:hidden text-white"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label={isMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-nav"
           >
             <svg
               className="w-6 h-6"
@@ -197,14 +200,14 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <nav className="md:hidden pb-4 space-y-2">
+          <nav id="mobile-nav" className="lg:hidden pb-4 space-y-2 flex flex-col items-start">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
                 className={`block py-2 transition-colors duration-300 nav-link-mobile ${
                   isLinkActive(link)
-                    ? "text-cyan-200"
+                    ? "nav-link-mobile-active"
                     : "text-white/80 hover:text-cyan-300"
                 }`}
                 onClick={() => setIsMenuOpen(false)}
@@ -214,7 +217,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
             ))}
             
             {/* Mobile Language Selector */}
-            <div className="flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-3 py-2 mt-4 w-fit">
+            <div className="inline-flex items-center gap-2 bg-black/30 border border-cyan-500/50 rounded px-3 py-2 mt-4">
               <button
                 className={`px-2 py-1 text-sm font-medium rounded transition-all duration-300 ${
                   language === "es"

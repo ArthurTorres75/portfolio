@@ -77,17 +77,17 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
           </a>
           <a
             href="#contacto"
-            className="px-8 py-3 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400/10 transition-all duration-300"
+            className="hero-cta hero-cta--contact"
           >
-            {t("hero.contact", language)}
+            <span className="hero-cta__label">{t("hero.contact", language)}</span>
           </a>
           <a
             href="cv-arthur-torres.pdf"
             download
-            className="px-8 py-3 border-2 border-white/40 text-white font-semibold rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center gap-2"
+            className="hero-cta hero-cta--download"
           >
             <svg
-              className="w-5 h-5"
+              className="hero-cta__icon w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -99,7 +99,7 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
                 d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
               />
             </svg>
-            {t("hero.downloadCV", language)}
+            <span className="hero-cta__label">{t("hero.downloadCV", language)}</span>
           </a>
         </motion.div>
       </div>
