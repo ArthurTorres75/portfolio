@@ -1,5 +1,6 @@
 import type React from "react";
 import Head from "next/head";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -16,10 +17,15 @@ import { useLanguage } from "@/hooks/useLanguage";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
 
+const WaterSurface3D = dynamic(
+  () => import("@/components/common/WaterSurface3D").then((mod) => mod.WaterSurface3D),
+  { ssr: false }
+);
+
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
   const { ref: aboutRef, isInView: isAboutInView } = useScrollAnimation({
-    once: false,
+    once: true,
     amount: 0.2,
   });
   const name = "Arthur Torres";
@@ -150,7 +156,18 @@ export default function Home(): React.JSX.Element {
           subtitle={t("about.subtitle", language)}
           className="bg-gradient-to-b from-black to-blue-950/20"
         >
-          <div ref={aboutRef}>
+          <motion.div
+            ref={aboutRef}
+            className="about-water-stage"
+            initial="hidden"
+            animate={isAboutInView ? "visible" : "hidden"}
+            variants={animationVariants.fadeUp}
+            custom={0}
+          >
+            <WaterSurface3D isVisible={isAboutInView} />
+          </motion.div>
+
+          <div>
           {/* Intro */}
           <motion.div
             className="max-w-4xl mx-auto mb-12 text-center"

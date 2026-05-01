@@ -359,6 +359,66 @@
   text-shadow: 0 0 12px rgba(34, 211, 238, 0.55);
 }
 
+.about-water-stage {
+  position: relative;
+  width: min(100%, 960px);
+  height: clamp(210px, 40vw, 340px);
+  margin: 0 auto 3rem;
+  border-radius: 1.2rem;
+  overflow: hidden;
+  border: 1px solid rgba(56, 189, 248, 0.24);
+  background: linear-gradient(180deg, rgba(2, 20, 34, 0.7), rgba(1, 10, 20, 0.9));
+  box-shadow:
+    inset 0 1px 0 rgba(125, 211, 252, 0.2),
+    0 16px 36px -18px rgba(14, 116, 144, 0.52);
+}
+
+.about-water-stage::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(125, 211, 252, 0.22), transparent 30%),
+    radial-gradient(circle at 82% 78%, rgba(34, 211, 238, 0.18), transparent 26%);
+  z-index: 1;
+}
+
+.about-water-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.23;
+  background-image: linear-gradient(to bottom, transparent 0%, rgba(147, 197, 253, 0.35) 100%);
+  mix-blend-mode: screen;
+}
+
+.about-water-3d {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.about-water-3d canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .about-water-stage {
+    margin-bottom: 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-water-3d {
+    display: none;
+  }
+}
+
 .footer-link:hover::after,
 .footer-link:focus-visible::after {
   width: 100%;
