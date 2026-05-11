@@ -66,8 +66,8 @@ export const translations: Translations = {
     en: "About Me",
   },
   "about.subtitle": {
-    es: "Desarrollador Full Stack con más de 7 años de experiencia",
-    en: "Full Stack Developer with over 7 years of experience",
+    es: "Desarrollador Full Stack con más de 8 años de experiencia",
+    en: "Full Stack Developer with over 8 years of experience",
   },
   "about.intro": {
     es: "Soy desarrollador web especializado en brindar a las empresas una presencia digital sólida y orientada a resultados. Diseño y desarrollo sitios profesionales que atraen y convierten clientes, automatizo procesos para ahorrar tiempo y reducir errores, y gestiono el alojamiento en la nube para garantizar rendimiento y disponibilidad. Trabajo de forma personalizada con cada cliente para ofrecer soluciones prácticas que impulsan el crecimiento de su negocio.",
@@ -102,20 +102,28 @@ export const translations: Translations = {
     en: "🛠️ Tech Stack",
   },
   "about.techFrontend": {
-    es: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion, Three.js (aprendiendo), Anime.js (aprendiendo)",
-    en: "Frontend: Angular, React, Next.js, Payload CMS, TailwindCSS, Material UI, shadcn/ui, Framer Motion, Three.js (learning), Anime.js (learning)",
+    es: "Frontend: TypeScript, Angular, React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (aprendiendo)",
+    en: "Frontend: TypeScript, Angular, React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (learning)",
   },
   "about.techBackend": {
-    es: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
-    en: "Backend: Node.js, NestJS, Prisma, PostgreSQL, MongoDB, Supabase, Redis",
+    es: "Backend: Node.js, Express, NestJS, Prisma, MySQL, PostgreSQL, MongoDB, Supabase, Redis, Auth (JWT/OAuth/RBAC)",
+    en: "Backend: Node.js, Express, NestJS, Prisma, MySQL, PostgreSQL, MongoDB, Supabase, Redis, Auth (JWT/OAuth/RBAC)",
   },
   "about.techCloud": {
-    es: "Cloud: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Terraform",
-    en: "Cloud: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Terraform",
+    es: "Cloud & DevOps: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Docker, Terraform, GitHub Actions, GitLab CI/CD",
+    en: "Cloud & DevOps: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Docker, Terraform, GitHub Actions, GitLab CI/CD",
   },
   "about.techMobile": {
     es: "Mobile: React Native, Ionic",
     en: "Mobile: React Native, Ionic",
+  },
+  "about.techSeoAnalytics": {
+    es: "SEO & Analytics: SEO técnico, Schema.org, Core Web Vitals, Google Analytics 4, Google Tag Manager",
+    en: "SEO & Analytics: Technical SEO, Schema.org, Core Web Vitals, Google Analytics 4, Google Tag Manager",
+  },
+  "about.techWorkflow": {
+    es: "Workflow: GitHub, GitLab, Scrum, Kanban y ceremonias ágiles",
+    en: "Workflow: GitHub, GitLab, Scrum, Kanban, and agile ceremonies",
   },
   "about.workEthic": {
     es: "💼 Enfoque Profesional",

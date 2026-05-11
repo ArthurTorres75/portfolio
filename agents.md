@@ -29,9 +29,21 @@ Instrucciones de routing para sub-agentes en este proyecto.
 | Componentes React, hooks, estado | react-19 |
 | Routing, data fetching, Next.js config | nextjs-15 |
 | Estilos, clases Tailwind | tailwind-4 |
+| CSS puro, layout responsive, arquitectura CSS | css-architecture |
 | TypeScript, tipos, interfaces | typescript |
 | Tests, Vitest, RTL | vitest-testing |
 | Animaciones, Framer Motion | (ver sección 13 de copilot-instructions.md) |
+| Animaciones avanzadas con timeline/scroll | gsap-motion |
+| Backend Node.js, APIs REST, middleware | express-api |
+| Autenticación/autorización (JWT, OAuth, RBAC) | auth-security |
+| Docker, Docker Compose, contenedores | docker-devops |
+| MySQL, modelado, índices, queries, migraciones | mysql-data |
+| SEO técnico, metadata, OG, schema.org | seo-web |
+| Analytics, eventos, GA4, GTM, consent mode | analytics-tracking |
+| GitHub Actions, branching, PR workflow | github-workflow |
+| Scrum, Kanban, metodologías ágiles | agile-scrum |
+| GitLab, runners, pipelines | gitlab-ci |
+| CI/CD multi-entorno, releases, deployments | ci-cd-pipelines |
 | Imágenes, OptimizedImage | (ver sección 14 de copilot-instructions.md) |
 | i18n, traducciones | (ver sección 11 de copilot-instructions.md) |
 | PR, branch, issue | branch-pr, issue-creation |

@@ -53,6 +53,8 @@ export default function Home(): React.JSX.Element {
     t("about.techBackend", language),
     t("about.techCloud", language),
     t("about.techMobile", language),
+    t("about.techSeoAnalytics", language),
+    t("about.techWorkflow", language),
   ];
   
   const projects = [
