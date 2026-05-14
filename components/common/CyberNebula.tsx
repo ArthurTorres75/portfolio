@@ -65,7 +65,7 @@ function ParticleField({
     pointsRef.current.rotation.y =
       t * speed + pointerInfluenceRef.current.x * interactionStrength;
     pointsRef.current.rotation.x =
-      Math.sin(t * 0.22) * 0.12 + pointerInfluenceRef.current.y * interactionStrength * 0.65;
+      Math.sin(t * 0.22) * 0.12 - pointerInfluenceRef.current.y * interactionStrength * 0.65;
   });
 
   return (
@@ -99,7 +99,7 @@ export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Eleme
     const handleMouseMove = (event: MouseEvent): void => {
       const rect = container.getBoundingClientRect();
       const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
-      const y = -(((event.clientY - rect.top) / rect.height) * 2 - 1);
+      const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
       pointerTargetRef.current.x = x;
       pointerTargetRef.current.y = y;
     };
