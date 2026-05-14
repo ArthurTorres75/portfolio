@@ -1,4 +1,5 @@
 import type React from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -18,9 +19,14 @@ const CyberNebula = dynamic(
 
 export function Hero({ name, title, description }: HeroProps): React.JSX.Element {
   const { language } = useLanguage();
+  const heroSectionRef = useRef<HTMLElement | null>(null);
+
   return (
-    <section className="iridescent-gradient min-h-[700px] py-32 flex items-center justify-center relative overflow-hidden">
-      <CyberNebula />
+    <section
+      ref={heroSectionRef}
+      className="iridescent-gradient min-h-[700px] py-32 flex items-center justify-center relative overflow-hidden"
+    >
+      <CyberNebula containerRef={heroSectionRef} />
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-[1]">
