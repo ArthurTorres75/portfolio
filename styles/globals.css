@@ -885,7 +885,8 @@
 
 @media (max-width: 768px) {
   .hero-nebula {
-    opacity: 0.5;
+    opacity: 0.85;
+    mix-blend-mode: normal;
   }
 }
 
