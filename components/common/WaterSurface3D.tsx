@@ -122,13 +122,19 @@ function WaterPlane({ isVisible }: WaterPlaneProps): React.JSX.Element {
   );
 }
 
-export function WaterSurface3D({ isVisible = true }: WaterSurface3DProps): React.JSX.Element {
+export function WaterSurface3D({ isVisible = true }: WaterSurface3DProps): React.JSX.Element | null {
+  const isMobile =
+    typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches;
+
+  if (isMobile) return null;
+
   return (
     <div className="about-water-3d" aria-hidden="true">
       <Canvas
-        dpr={[1, 1.6]}
+        dpr={[1, 1.2]}
+        frameloop={isVisible ? "always" : "demand"}
         camera={{ position: [0, 1.25, 2.75], fov: 47 }}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
       >
         <ambientLight intensity={0.45} />
         <directionalLight position={[1.5, 2.2, 1.2]} intensity={0.95} color="#9ce6ff" />

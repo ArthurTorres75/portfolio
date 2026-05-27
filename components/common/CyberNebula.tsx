@@ -94,9 +94,11 @@ function ParticleField({
   );
 }
 
-export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Element {
+export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Element | null {
   const pointerTargetRef = useRef({ x: 0, y: 0 });
-  const [isTouchLikeDevice, setIsTouchLikeDevice] = useState(false);
+  const [isTouchLikeDevice, setIsTouchLikeDevice] = useState(
+    () => typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
@@ -144,48 +146,50 @@ export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Eleme
     };
   }, [containerRef, isTouchLikeDevice]);
 
+  if (isTouchLikeDevice) return null;
+
   return (
     <div className="hero-nebula" aria-hidden="true">
       <Canvas
-        dpr={[1, 1.6]}
+        dpr={[1, 1.2]}
         camera={{ position: [0, 0, 8], fov: 52 }}
-        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
       >
         <fog attach="fog" args={["#01030a", 7, 22]} />
 
         <ambientLight intensity={0.3} />
 
         <ParticleField
-          count={isTouchLikeDevice ? 420 : 620}
+          count={420}
           radius={7.8}
           speed={0.045}
           color="#22d3ee"
-          size={isTouchLikeDevice ? 0.04 : 0.03}
+          size={0.03}
           pointerTargetRef={pointerTargetRef}
           interactionStrength={0.12}
-          autoMotion={isTouchLikeDevice}
+          autoMotion={false}
         />
 
         <ParticleField
-          count={isTouchLikeDevice ? 260 : 380}
+          count={260}
           radius={6.1}
           speed={-0.028}
           color="#3b82f6"
-          size={isTouchLikeDevice ? 0.055 : 0.045}
+          size={0.045}
           pointerTargetRef={pointerTargetRef}
           interactionStrength={0.09}
-          autoMotion={isTouchLikeDevice}
+          autoMotion={false}
         />
 
         <ParticleField
-          count={isTouchLikeDevice ? 180 : 220}
+          count={160}
           radius={4.4}
           speed={0.02}
           color="#a5f3fc"
-          size={isTouchLikeDevice ? 0.06 : 0.05}
+          size={0.05}
           pointerTargetRef={pointerTargetRef}
           interactionStrength={0.07}
-          autoMotion={isTouchLikeDevice}
+          autoMotion={false}
         />
       </Canvas>
     </div>
