@@ -12,7 +12,7 @@ interface SeoProps {
 }
 
 const DEFAULT_SITE_URL = "https://arthurtorres75.github.io/portfolio/";
-const DEFAULT_OG_IMAGE = "/next.svg";
+const DEFAULT_OG_IMAGE = "/og-image.svg";
 
 function normalizeSiteUrl(url: string): string {
   return url.endsWith("/") ? url.slice(0, -1) : url;
@@ -66,11 +66,15 @@ export function Seo({
       <meta property="og:url" content={canonical} />
       <meta property="og:site_name" content="Arthur Torres Portfolio" />
       <meta property="og:image" content={ogImage} />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:locale" content="es_AR" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
+      <meta name="twitter:creator" content="@arthurtorres75" />
     </Head>
   );
 }

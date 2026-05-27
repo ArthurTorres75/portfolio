@@ -1,6 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 /* Efecto tornasolado (iridiscente) */
 @keyframes iridescent {
@@ -38,11 +36,11 @@
 .iridescent-text {
   background: linear-gradient(
     90deg,
-    #0369a1,
-    #06b6d4,
-    #0891b2,
-    #0e7490,
-    #0369a1
+    #ffffff,
+    #a5f3fc,
+    #e0f2fe,
+    #67e8f9,
+    #ffffff
   );
   background-size: 200% auto;
   -webkit-background-clip: text;

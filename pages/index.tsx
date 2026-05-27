@@ -102,6 +102,16 @@ export default function Home(): React.JSX.Element {
     },
   ];
 
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/";
+
+  const websiteSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Arthur Torres Portfolio",
+    url: siteUrl,
+    author: { "@type": "Person", name },
+  };
+
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -133,6 +143,10 @@ export default function Home(): React.JSX.Element {
         keywords="Arthur Torres, Full Stack Developer, Next.js, React, TypeScript, Portfolio"
       />
       <Head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}

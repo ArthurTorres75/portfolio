@@ -17,6 +17,39 @@ const CyberNebula = dynamic(
   { ssr: false }
 );
 
+const sandContainer = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.04,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+function sandCharVariants(i: number) {
+  return {
+    hidden: {
+      opacity: 0,
+      filter: "blur(14px)",
+      x: ((i * 19 + 5) % 32) - 16,
+      y: ((i * 11 + 7) % 20) - 10,
+      scale: 0.4,
+    },
+    visible: {
+      opacity: 1,
+      filter: "blur(0px)",
+      x: 0,
+      y: 0,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.23, 1, 0.32, 1] as const,
+      },
+    },
+  };
+}
+
 export function Hero({ name, title, description }: HeroProps): React.JSX.Element {
   const { language } = useLanguage();
   const heroSectionRef = useRef<HTMLElement | null>(null);
@@ -24,7 +57,7 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
   return (
     <section
       ref={heroSectionRef}
-      className="iridescent-gradient min-h-[700px] py-32 flex items-center justify-center relative overflow-hidden"
+      className="iridescent-gradient min-h-screen py-32 flex items-center justify-center relative overflow-hidden"
     >
       <CyberNebula containerRef={heroSectionRef} />
 
@@ -44,11 +77,27 @@ export function Hero({ name, title, description }: HeroProps): React.JSX.Element
           custom={0}
         >
           <span className="text-white">{t("hero.greeting", language)}, </span>
-          <span className="iridescent-text inline-block">{name}</span>
+          <motion.span
+            className="inline-block"
+            initial="hidden"
+            animate="visible"
+            variants={sandContainer}
+          >
+            {name.split("").map((char, i) => (
+              <motion.span
+                key={i}
+                className="iridescent-text"
+                style={{ display: char === " " ? "inline" : "inline-block" }}
+                variants={sandCharVariants(i)}
+              >
+                {char === " " ? " " : char}
+              </motion.span>
+            ))}
+          </motion.span>
         </motion.h1>
 
         <motion.h2
-          className="text-2xl md:text-3xl text-cyan-300 mb-6 font-semibold"
+          className="text-2xl md:text-3xl text-white mb-6 font-semibold" style={{ textShadow: "0 0 24px rgba(34,211,238,0.55)" }}
           initial="hidden"
           animate="visible"
           variants={animationVariants.fadeUp}
