@@ -6,74 +6,16 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { PROJECTS } from "@/lib/projects";
 
 export default function Projects(): React.JSX.Element {
   const { language } = useLanguage();
-  const upworkProfile =
-    "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share";
-  const schoolSaasUrl = "https://school-mauve-eight.vercel.app/";
-  const projects = [
-    {
-      title: t("project10.title", language),
-      description: t("project10.desc", language),
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      link: schoolSaasUrl,
-    },
-    {
-      title: t("project1.title", language),
-      description: t("project1.desc", language),
-      technologies: ["Next.js", "TypeScript", "Payload CMS", "AWS Amplify"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project2.title", language),
-      description: t("project2.desc", language),
-      technologies: ["Next.js", "NestJS", "Prisma", "MySQL"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project3.title", language),
-      description: t("project3.desc", language),
-      technologies: ["React Native", "Expo", "Tailwind CSS", "TypeScript"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project4.title", language),
-      description: t("project4.desc", language),
-      technologies: ["Next.js", "React", "Stripe", "PayPal"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project5.title", language),
-      description: t("project5.desc", language),
-      technologies: ["React", "TypeScript", "Firebase", "Material UI"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project6.title", language),
-      description: t("project6.desc", language),
-      technologies: ["Angular", "Angular Material", "Google Maps API", "AWS"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project7.title", language),
-      description: t("project7.desc", language),
-      technologies: ["Angular", "GoJS", "D3.js", "TypeScript"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project8.title", language),
-      description: t("project8.desc", language),
-      technologies: ["Angular", "TypeScript", "Google Maps API", "SCSS"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project9.title", language),
-      description: t("project9.desc", language),
-      technologies: ["PHP", "MySQL", "JavaScript", "XAMPP"],
-      link: upworkProfile,
-    },
-  ];
+  const projects = PROJECTS.map((p) => ({
+    title: t(p.titleKey, language),
+    description: t(p.descKey, language),
+    technologies: p.technologies,
+    link: p.link,
+  }));
 
   return (
     <>

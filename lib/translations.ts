@@ -386,6 +386,24 @@ export const translations: Translations = {
     en: "Development of a web application for community resident registration and management. Built with PHP, MySQL, JavaScript, HTML, and CSS.",
   },
 
+  // Job 14 — Chamco Digital
+  "job14.title": {
+    es: "Desarrollador Full Stack",
+    en: "Full Stack Developer",
+  },
+  "job14.company": {
+    es: "Chamco Digital — Remoto",
+    en: "Chamco Digital — Remote",
+  },
+  "job14.period": {
+    es: "May 2026 – Presente",
+    en: "May 2026 – Present",
+  },
+  "job14.desc": {
+    es: "Desarrollo del panel de administración, optimización de SEO y rendimiento Lighthouse, configuración de CI/CD con GitHub Actions, despliegue en Vercel, servidor PostgreSQL en Azure, configuración de envío de emails con Microsoft Graph API, subida de imágenes con Azure Blob Storage y limpieza general de calidad de código.",
+    en: "Built the admin panel, optimized SEO and Lighthouse performance scores, configured CI/CD with GitHub Actions, deployed on Vercel, set up a PostgreSQL server on Azure, configured email delivery via Microsoft Graph API, implemented image uploads with Azure Blob Storage, and performed overall code quality improvements.",
+  },
+
   // Certifications Section
   "certifications.title": {
     es: "Certificaciones",
@@ -679,6 +697,10 @@ export const translations: Translations = {
     es: "Una selección de mis mejores trabajos",
     en: "A selection of my best work",
   },
+  "projects.viewAll": {
+    es: "Ver Todos los Proyectos",
+    en: "View All Projects",
+  },
 
   // Contact Section
   "contact.title": {
@@ -868,6 +890,16 @@ export const translations: Translations = {
   "project10.desc": {
     es: "Proyecto personal que estoy desarrollando por mi cuenta: un SaaS educativo para gestión escolar, con enfoque en experiencia moderna, flujos administrativos y despliegue continuo en Vercel.",
     en: "Personal project I am building on my own: an educational SaaS for school management, focused on modern UX, administrative workflows, and continuous deployment on Vercel.",
+  },
+
+  // Project 11 — Chamco Digital
+  "project11.title": {
+    es: "Chamco Digital — Plataforma Web con Panel Admin",
+    en: "Chamco Digital — Web Platform with Admin Panel",
+  },
+  "project11.desc": {
+    es: "Panel de administración completo, optimización SEO y Lighthouse, CI/CD con GitHub Actions, despliegue en Vercel, base de datos PostgreSQL en Azure, envío de emails con Microsoft Graph API y almacenamiento de imágenes en Azure Blob Storage.",
+    en: "Full admin panel, SEO and Lighthouse optimization, CI/CD with GitHub Actions, deployment on Vercel, PostgreSQL database on Azure, email delivery via Microsoft Graph API, and image storage on Azure Blob Storage.",
   },
 };
 

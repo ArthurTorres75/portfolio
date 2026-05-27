@@ -16,6 +16,8 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
   const [activeSection, setActiveSection] = useState<string>("");
 
   const isProjectsPage = router.pathname === "/projects";
+  const isHomePage = router.pathname === "/";
+  const homeBase = isHomePage ? "" : router.basePath + "/";
 
   useEffect(() => {
     if (router.pathname !== "/") {
@@ -75,35 +77,35 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
   };
 
   const navLinks: NavLink[] = [
-    { href: "#", label: t("nav.inicio", language), route: "/" },
+    { href: isHomePage ? "#" : `${router.basePath}/`, label: t("nav.inicio", language), route: "/" },
     {
-      href: "#sobre-mi",
+      href: `${homeBase}#sobre-mi`,
       label: t("nav.sobreMi", language),
       sectionId: "sobre-mi",
     },
     {
-      href: "#experiencia",
+      href: `${homeBase}#experiencia`,
       label: t("nav.experiencia", language),
       sectionId: "experiencia",
     },
     {
-      href: "#certificaciones",
+      href: `${homeBase}#certificaciones`,
       label: t("nav.certificaciones", language),
       sectionId: "certificaciones",
     },
     {
-      href: isProjectsPage ? "/projects/" : "#proyectos",
+      href: isProjectsPage ? "/projects/" : `${homeBase}#proyectos`,
       label: t("nav.proyectos", language),
       sectionId: "proyectos",
       route: "/projects",
     },
     {
-      href: "#testimonios",
+      href: `${homeBase}#testimonios`,
       label: t("nav.testimonios", language),
       sectionId: "testimonios",
     },
     {
-      href: "#contacto",
+      href: `${homeBase}#contacto`,
       label: t("nav.contacto", language),
       sectionId: "contacto",
     },

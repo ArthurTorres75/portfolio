@@ -17,6 +17,7 @@ import { Watermark } from "@/components/common/Watermark";
 import { useLanguage } from "@/hooks/useLanguage";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
+import { PROJECTS } from "@/lib/projects";
 
 const WaterSurface3D = dynamic(
   () => import("@/components/common/WaterSurface3D").then((mod) => mod.WaterSurface3D),
@@ -35,10 +36,6 @@ export default function Home(): React.JSX.Element {
     amount: 0.2,
   });
   const name = "Arthur Torres";
-  const upworkProfile =
-    "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share";
-  const schoolSaasUrl = "https://school-mauve-eight.vercel.app/";
-
   const aboutCards = [
     {
       title: t("about.frontendTitle", language),
@@ -63,50 +60,12 @@ export default function Home(): React.JSX.Element {
     t("about.techWorkflow", language),
   ];
   
-  const projects = [
-    {
-      title: t("project10.title", language),
-      description: t("project10.desc", language),
-      technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
-      link: schoolSaasUrl,
-    },
-    {
-      title: t("project1.title", language),
-      description: t("project1.desc", language),
-      technologies: ["Next.js", "TypeScript", "Payload CMS", "AWS Amplify"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project2.title", language),
-      description: t("project2.desc", language),
-      technologies: ["Next.js", "NestJS", "Prisma", "MySQL"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project3.title", language),
-      description: t("project3.desc", language),
-      technologies: ["React Native", "Expo", "Tailwind CSS", "TypeScript"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project4.title", language),
-      description: t("project4.desc", language),
-      technologies: ["Next.js", "React", "Stripe", "PayPal"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project5.title", language),
-      description: t("project5.desc", language),
-      technologies: ["React", "TypeScript", "Firebase", "Material UI"],
-      link: upworkProfile,
-    },
-    {
-      title: t("project6.title", language),
-      description: t("project6.desc", language),
-      technologies: ["Angular", "Angular Material", "Google Maps API", "AWS"],
-      link: upworkProfile,
-    },
-  ];
+  const projects = PROJECTS.slice(0, 6).map((p) => ({
+    title: t(p.titleKey, language),
+    description: t(p.descKey, language),
+    technologies: p.technologies,
+    link: p.link,
+  }));
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/";
 
@@ -126,7 +85,7 @@ export default function Home(): React.JSX.Element {
     sameAs: [
       "https://github.com/ArthurTorres75",
       "https://www.linkedin.com/in/arthur-torres-9b41a2184/",
-      upworkProfile,
+      "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
     ],
     jobTitle: t("hero.title", language),
     knowsAbout: [
@@ -305,6 +264,14 @@ export default function Home(): React.JSX.Element {
             {projects.map((project, index) => (
               <ProjectCard key={index} {...project} index={index} />
             ))}
+          </div>
+          <div className="flex justify-center mt-10">
+            <a
+              href="/portfolio/projects/"
+              className="px-8 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
+            >
+              {t("projects.viewAll", language)} →
+            </a>
           </div>
         </Section>
 

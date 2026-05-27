@@ -19,7 +19,7 @@ interface TimelineItemProps {
   index: number;
 }
 
-const JOB_ORDER = [1, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const;
+const JOB_ORDER = [14, 1, 12, 13, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11] as const;
 
 const JOBS: Job[] = JOB_ORDER.map((n) => ({
   titleKey: `job${n}.title`,
