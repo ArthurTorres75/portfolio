@@ -1,5 +1,6 @@
 import type React from "react";
 import Head from "next/head";
+import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
@@ -24,6 +25,11 @@ const WaterSurface3D = dynamic(
 
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(!window.matchMedia("(hover: none), (pointer: coarse)").matches);
+  }, []);
   const { ref: aboutRef, isInView: isAboutInView } = useScrollAnimation({
     once: true,
     amount: 0.2,
@@ -180,7 +186,7 @@ export default function Home(): React.JSX.Element {
             variants={animationVariants.fadeUp}
             custom={0}
           >
-            <WaterSurface3D isVisible={isAboutInView} />
+            {isDesktop && <WaterSurface3D isVisible={isAboutInView} />}
           </motion.div>
 
           <div>

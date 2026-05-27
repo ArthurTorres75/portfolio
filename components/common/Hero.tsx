@@ -1,5 +1,5 @@
 import type React from "react";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLanguage } from "@/hooks/useLanguage";
@@ -53,13 +53,18 @@ function sandCharVariants(i: number) {
 export function Hero({ name, title, description }: HeroProps): React.JSX.Element {
   const { language } = useLanguage();
   const heroSectionRef = useRef<HTMLElement | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    setIsDesktop(!window.matchMedia("(hover: none), (pointer: coarse)").matches);
+  }, []);
 
   return (
     <section
       ref={heroSectionRef}
       className="iridescent-gradient min-h-screen py-32 flex items-center justify-center relative overflow-hidden"
     >
-      <CyberNebula containerRef={heroSectionRef} />
+      {isDesktop && <CyberNebula containerRef={heroSectionRef} />}
 
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden z-[1]">

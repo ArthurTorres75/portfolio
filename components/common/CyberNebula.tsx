@@ -151,9 +151,9 @@ export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Eleme
   return (
     <div className="hero-nebula" aria-hidden="true">
       <Canvas
-        dpr={[1, 1.2]}
+        dpr={[1, 1.6]}
         camera={{ position: [0, 0, 8], fov: 52 }}
-        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
         <fog attach="fog" args={["#01030a", 7, 22]} />
 

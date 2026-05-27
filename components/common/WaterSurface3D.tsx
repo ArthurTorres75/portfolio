@@ -131,10 +131,10 @@ export function WaterSurface3D({ isVisible = true }: WaterSurface3DProps): React
   return (
     <div className="about-water-3d" aria-hidden="true">
       <Canvas
-        dpr={[1, 1.2]}
+        dpr={[1, 1.6]}
         frameloop={isVisible ? "always" : "demand"}
         camera={{ position: [0, 1.25, 2.75], fov: 47 }}
-        gl={{ antialias: false, alpha: true, powerPreference: "high-performance" }}
+        gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
       >
         <ambientLight intensity={0.45} />
         <directionalLight position={[1.5, 2.2, 1.2]} intensity={0.95} color="#9ce6ff" />
