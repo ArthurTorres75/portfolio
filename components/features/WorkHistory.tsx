@@ -11,6 +11,11 @@ interface Job {
   descKey: string;
 }
 
+interface OtherExperience {
+  titleKey: string;
+  descKey: string;
+}
+
 interface TimelineItemProps {
   title: string;
   company: string;
@@ -27,6 +32,17 @@ const JOBS: Job[] = JOB_ORDER.map((n) => ({
   periodKey: `job${n}.period`,
   descKey: `job${n}.desc`,
 }));
+
+const OTHER_EXPERIENCES: OtherExperience[] = [
+  {
+    titleKey: "workHistory.other1.title",
+    descKey: "workHistory.other1.desc",
+  },
+  {
+    titleKey: "workHistory.other2.title",
+    descKey: "workHistory.other2.desc",
+  },
+];
 
 function TimelineItem({
   title,
@@ -126,22 +142,49 @@ export function WorkHistory(): React.JSX.Element {
   const { language } = useLanguage();
 
   return (
-    <div className="max-w-4xl mx-auto relative">
-      {/* Timeline line */}
-      <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-blue-500 to-cyan-400/20" />
+    <div className="max-w-4xl mx-auto">
+      <div className="relative">
+        {/* Timeline line */}
+        <div className="absolute left-4 md:left-1/2 md:-translate-x-px top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-400 via-blue-500 to-cyan-400/20" />
 
-      {JOBS.map((job, index) => {
-        return (
-          <TimelineItem
-            key={job.titleKey}
-            title={t(job.titleKey, language)}
-            company={t(job.companyKey, language)}
-            period={t(job.periodKey, language)}
-            description={t(job.descKey, language)}
-            index={index}
-          />
-        );
-      })}
+        {JOBS.map((job, index) => {
+          return (
+            <TimelineItem
+              key={job.titleKey}
+              title={t(job.titleKey, language)}
+              company={t(job.companyKey, language)}
+              period={t(job.periodKey, language)}
+              description={t(job.descKey, language)}
+              index={index}
+            />
+          );
+        })}
+      </div>
+
+      <div className="mt-16 glass-effect p-6 md:p-8 rounded-xl border border-cyan-500/30">
+        <h3 className="text-xl md:text-2xl font-bold text-cyan-300">
+          {t("workHistory.otherExperiencesTitle", language)}
+        </h3>
+        <p className="text-white/70 mt-2 mb-6">
+          {t("workHistory.otherExperiencesSubtitle", language)}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {OTHER_EXPERIENCES.map((item) => (
+            <article
+              key={item.titleKey}
+              className="rounded-lg border border-cyan-400/30 bg-cyan-500/5 p-5"
+            >
+              <h4 className="text-base md:text-lg font-semibold text-white">
+                {t(item.titleKey, language)}
+              </h4>
+              <p className="text-sm text-white/70 leading-relaxed mt-2">
+                {t(item.descKey, language)}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

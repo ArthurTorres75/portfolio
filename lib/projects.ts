@@ -7,6 +7,12 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    titleKey: "project12.title",
+    descKey: "project12.desc",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Vercel"],
+    link: "https://www.gmvykon.com/",
+  },
+  {
     titleKey: "project11.title",
     descKey: "project11.desc",
     technologies: ["Next.js", "PostgreSQL", "Azure", "Vercel"],

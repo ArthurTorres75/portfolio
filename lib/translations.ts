@@ -151,6 +151,30 @@ export const translations: Translations = {
     es: "Presente",
     en: "Present",
   },
+  "workHistory.otherExperiencesTitle": {
+    es: "Otras experiencias",
+    en: "Other Experiences",
+  },
+  "workHistory.otherExperiencesSubtitle": {
+    es: "Proyectos destacados fuera de mi historial laboral principal",
+    en: "Featured projects outside my main work history",
+  },
+  "workHistory.other1.title": {
+    es: "Proyecto de Hackathon",
+    en: "Hackathon Project",
+  },
+  "workHistory.other1.desc": {
+    es: "Proyecto desarrollado en formato hackathon, enfocado en entregar una solución funcional en tiempo limitado con alto impacto visual y técnico.",
+    en: "Project built in a hackathon format, focused on delivering a functional solution in limited time with high visual and technical impact.",
+  },
+  "workHistory.other2.title": {
+    es: "Mountain Portfolio",
+    en: "Mountain Portfolio",
+  },
+  "workHistory.other2.desc": {
+    es: "Portfolio temático con enfoque creativo, animaciones inmersivas y diseño visual orientado a destacar identidad y storytelling del proyecto.",
+    en: "Thematic portfolio with a creative approach, immersive animations, and visual design focused on highlighting project identity and storytelling.",
+  },
 
   // Job 12 — Upwork (MERN Stack)
   "job12.title": {
@@ -900,6 +924,16 @@ export const translations: Translations = {
   "project11.desc": {
     es: "Panel de administración completo, optimización SEO y Lighthouse, CI/CD con GitHub Actions, despliegue en Vercel, base de datos PostgreSQL en Azure, envío de emails con Microsoft Graph API y almacenamiento de imágenes en Azure Blob Storage.",
     en: "Full admin panel, SEO and Lighthouse optimization, CI/CD with GitHub Actions, deployment on Vercel, PostgreSQL database on Azure, email delivery via Microsoft Graph API, and image storage on Azure Blob Storage.",
+  },
+
+  // Project 12 — Gmvykon
+  "project12.title": {
+    es: "Gmvykon — Sitio Web Corporativo",
+    en: "Gmvykon — Corporate Website",
+  },
+  "project12.desc": {
+    es: "Sitio web corporativo construido con Next.js, TypeScript y Tailwind CSS, con contenido gestionado a través de Strapi CMS. Diseño en Figma, despliegue en Vercel y flujo de trabajo asistido por IA.",
+    en: "Corporate website built with Next.js, TypeScript, and Tailwind CSS, with content managed through Strapi CMS. Designed in Figma, deployed on Vercel, and developed with an AI-assisted workflow.",
   },
 };
 
