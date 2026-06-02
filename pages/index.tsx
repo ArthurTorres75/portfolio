@@ -267,7 +267,7 @@ export default function Home(): React.JSX.Element {
           </div>
           <div className="flex justify-center mt-10">
             <a
-              href="/portfolio/projects/"
+              href="/portfolio/projects"
               className="px-8 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
             >
               {t("projects.viewAll", language)} →
