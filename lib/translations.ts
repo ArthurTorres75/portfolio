@@ -101,30 +101,6 @@ export const translations: Translations = {
     es: "🛠️ Stack Tecnológico",
     en: "🛠️ Tech Stack",
   },
-  "about.techFrontend": {
-    es: "Frontend: TypeScript, Angular (Signals, RxJS), React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (aprendiendo), Axios, REST APIs, React Hook Form, TanStack Query, Zustand, Redux Toolkit",
-    en: "Frontend: TypeScript, Angular (Signals, RxJS), React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (learning), Axios, REST APIs, React Hook Form, TanStack Query, Zustand, Redux Toolkit",
-  },
-  "about.techBackend": {
-    es: "Backend: Node.js, Express, NestJS, Prisma, MySQL, PostgreSQL, MongoDB, Supabase, Redis, Auth (JWT/OAuth/RBAC)",
-    en: "Backend: Node.js, Express, NestJS, Prisma, MySQL, PostgreSQL, MongoDB, Supabase, Redis, Auth (JWT/OAuth/RBAC)",
-  },
-  "about.techCloud": {
-    es: "Cloud & DevOps: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Docker, Terraform, GitHub Actions, GitLab CI/CD",
-    en: "Cloud & DevOps: AWS (S3, Lambda, EC2), Vercel, Firebase, Supabase, Docker, Terraform, GitHub Actions, GitLab CI/CD",
-  },
-  "about.techMobile": {
-    es: "Mobile: React Native, Ionic",
-    en: "Mobile: React Native, Ionic",
-  },
-  "about.techSeoAnalytics": {
-    es: "SEO & Analytics: SEO técnico, Schema.org, Core Web Vitals, Google Analytics 4, Google Tag Manager",
-    en: "SEO & Analytics: Technical SEO, Schema.org, Core Web Vitals, Google Analytics 4, Google Tag Manager",
-  },
-  "about.techWorkflow": {
-    es: "Workflow: GitHub, GitLab, Scrum, Kanban y ceremonias ágiles",
-    en: "Workflow: GitHub, GitLab, Scrum, Kanban, and agile ceremonies",
-  },
   "about.workEthic": {
     es: "💼 Enfoque Profesional",
     en: "💼 Work Ethic",

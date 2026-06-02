@@ -10,6 +10,7 @@ import { Section } from "@/components/common/Section";
 import { ProjectCard } from "@/components/common/ProjectCard";
 import { Seo } from "@/components/common/Seo";
 import { ContactLinks } from "@/components/features/ContactLinks";
+import { TechStack } from "@/components/features/TechStack";
 import { Certifications } from "@/components/features/Certifications";
 import { Testimonials } from "@/components/features/Testimonials";
 import { WorkHistory } from "@/components/features/WorkHistory";
@@ -51,15 +52,6 @@ export default function Home(): React.JSX.Element {
     },
   ];
 
-  const techRows = [
-    t("about.techFrontend", language),
-    t("about.techBackend", language),
-    t("about.techCloud", language),
-    t("about.techMobile", language),
-    t("about.techSeoAnalytics", language),
-    t("about.techWorkflow", language),
-  ];
-  
   const projects = PROJECTS.slice(0, 6).map((p) => ({
     title: t(p.titleKey, language),
     description: t(p.descKey, language),
@@ -185,32 +177,13 @@ export default function Home(): React.JSX.Element {
 
           {/* Tech Stack */}
           <motion.div
-            className="max-w-4xl mx-auto mb-12"
+            className="mb-12"
             initial="hidden"
             animate={isAboutInView ? "visible" : "hidden"}
             variants={animationVariants.fadeUp}
             custom={0.32}
           >
-            <div className="glass-effect about-card p-8 rounded-lg">
-              <h3 className="text-2xl font-semibold text-cyan-400 mb-6 text-center">
-                {t("about.techStack", language)}
-              </h3>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                {techRows.map((tech, index) => (
-                  <motion.div
-                    key={tech}
-                    className="flex items-start gap-2 about-tech-row"
-                    initial="hidden"
-                    animate={isAboutInView ? "visible" : "hidden"}
-                    variants={animationVariants.fadeUp}
-                    custom={index * 0.05 + 0.36}
-                  >
-                    <span className="text-cyan-400 mt-1">→</span>
-                    <p className="text-white/70">{tech}</p>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
+            <TechStack title={t("about.techStack", language)} />
           </motion.div>
 
           {/* Work Ethic */}

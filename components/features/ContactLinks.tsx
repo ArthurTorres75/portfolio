@@ -1,5 +1,6 @@
 import type React from "react";
 import { motion } from "framer-motion";
+import { siUpwork } from "simple-icons";
 import { useLanguage } from "@/hooks/useLanguage";
 import { Language, t } from "@/lib/translations";
 import { animationVariants } from "@/hooks/useScrollAnimation";
@@ -58,9 +59,14 @@ function LinkedInIcon(): React.JSX.Element {
 
 function UpworkIcon(): React.JSX.Element {
   return (
-    <div className="flex h-5 w-5 items-center justify-center rounded-md bg-emerald-400/20 text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-300">
-      UW
-    </div>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-5 w-5"
+      fill="#6fda44"
+    >
+      <path d={siUpwork.path} />
+    </svg>
   );
 }
 
