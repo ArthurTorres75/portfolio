@@ -78,8 +78,8 @@ export const translations: Translations = {
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de 4 años con Angular, React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS, además de librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente estoy aprendiendo Three.js para experiencias 3D y Anime.js para secuencias de animación avanzadas. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
-    en: "Over 4 years with Angular, React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS, along with visualization libraries such as D3.js, Chart.js, and Plotly.js. I am currently learning Three.js for 3D experiences and Anime.js for advanced animation sequences. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Más de 4 años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente aprendiendo Three.js y Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
+    en: "Over 4 years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. Currently learning Three.js and Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
@@ -102,8 +102,8 @@ export const translations: Translations = {
     en: "🛠️ Tech Stack",
   },
   "about.techFrontend": {
-    es: "Frontend: TypeScript, Angular, React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (aprendiendo)",
-    en: "Frontend: TypeScript, Angular, React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (learning)",
+    es: "Frontend: TypeScript, Angular (Signals, RxJS), React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (aprendiendo), Axios, REST APIs, React Hook Form, TanStack Query, Zustand, Redux Toolkit",
+    en: "Frontend: TypeScript, Angular (Signals, RxJS), React, Next.js, CSS3, TailwindCSS, Material UI, shadcn/ui, Framer Motion, GSAP, Three.js (learning), Axios, REST APIs, React Hook Form, TanStack Query, Zustand, Redux Toolkit",
   },
   "about.techBackend": {
     es: "Backend: Node.js, Express, NestJS, Prisma, MySQL, PostgreSQL, MongoDB, Supabase, Redis, Auth (JWT/OAuth/RBAC)",
