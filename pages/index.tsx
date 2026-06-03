@@ -40,14 +40,17 @@ export default function Home(): React.JSX.Element {
   const name = "Arthur Torres";
   const aboutCards = [
     {
+      key: "frontend",
       title: t("about.frontendTitle", language),
       description: t("about.frontendDesc", language),
     },
     {
+      key: "backend",
       title: t("about.backendTitle", language),
       description: t("about.backendDesc", language),
     },
     {
+      key: "cloud",
       title: t("about.cloudTitle", language),
       description: t("about.cloudDesc", language),
     },
@@ -207,7 +210,7 @@ export default function Home(): React.JSX.Element {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
             {aboutCards.map((card, index) => (
               <motion.div
-                key={card.title}
+                key={card.key}
                 className="glass-effect about-card p-6 rounded-lg"
                 initial="hidden"
                 animate={isAboutInView ? "visible" : "hidden"}
@@ -228,9 +231,10 @@ export default function Home(): React.JSX.Element {
           <motion.div
             className="mb-12"
             initial="hidden"
-            animate={isAboutInView ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.1 }}
             variants={animationVariants.fadeUp}
-            custom={0.32}
+            custom={0}
           >
             <TechStack title={t("about.techStack", language)} />
           </motion.div>
@@ -239,9 +243,10 @@ export default function Home(): React.JSX.Element {
           <motion.div
             className="max-w-3xl mx-auto"
             initial="hidden"
-            animate={isAboutInView ? "visible" : "hidden"}
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
             variants={animationVariants.fadeUp}
-            custom={0.5}
+            custom={0}
           >
             <div className="glass-effect about-card p-6 rounded-lg border border-cyan-500/30">
               <h3 className="text-xl font-semibold text-cyan-400 mb-4">
