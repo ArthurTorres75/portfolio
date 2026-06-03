@@ -60,6 +60,72 @@ export const translations: Translations = {
     en: "Download CV",
   },
 
+  // Services Section
+  "nav.servicios": {
+    es: "Servicios",
+    en: "Services",
+  },
+  "services.title": {
+    es: "¿En qué puedo ayudarte?",
+    en: "How Can I Help You?",
+  },
+  "services.subtitle": {
+    es: "Soluciones digitales a medida para hacer crecer tu negocio",
+    en: "Custom digital solutions to grow your business",
+  },
+  "services.cta": {
+    es: "Hablemos de tu proyecto",
+    en: "Let's talk about your project",
+  },
+  "services.web.title": {
+    es: "Aplicaciones Web a Medida",
+    en: "Custom Web Applications",
+  },
+  "services.web.desc": {
+    es: "Diseño y desarrollo tu plataforma desde cero — interfaces modernas, rápidas y escalables adaptadas exactamente a los procesos de tu negocio.",
+    en: "I design and build your platform from scratch — modern, fast, and scalable interfaces tailored exactly to your business processes.",
+  },
+  "services.migration.title": {
+    es: "Migración y Mejora de Sistemas",
+    en: "System Migration & Improvement",
+  },
+  "services.migration.desc": {
+    es: "¿Tu sistema actual es lento, difícil de mantener o quedó chico? Lo modernizo, migro a tecnologías actuales y agrego las funcionalidades que necesitás.",
+    en: "Is your current system slow, hard to maintain, or outgrown? I modernize it, migrate to current technologies, and add the features you need.",
+  },
+  "services.payments.title": {
+    es: "Integración de Pagos",
+    en: "Payment Integration",
+  },
+  "services.payments.desc": {
+    es: "Integro pasarelas de pago seguras (Stripe, PayPal) con flujos de cobro, suscripciones, webhooks y gestión de transacciones para tu plataforma.",
+    en: "I integrate secure payment gateways (Stripe, PayPal) with checkout flows, subscriptions, webhooks, and transaction management for your platform.",
+  },
+  "services.cloud.title": {
+    es: "Deploy y Cloud",
+    en: "Cloud Deployment",
+  },
+  "services.cloud.desc": {
+    es: "Configuro y despliego tu aplicación en AWS, Vercel o Azure con CI/CD automatizado, variables de entorno seguras y monitoreo de disponibilidad.",
+    en: "I configure and deploy your application on AWS, Vercel, or Azure with automated CI/CD, secure environment variables, and uptime monitoring.",
+  },
+  "services.mobile.title": {
+    es: "Apps Móviles",
+    en: "Mobile Apps",
+  },
+  "services.mobile.desc": {
+    es: "Desarrollo aplicaciones móviles para iOS y Android con React Native — una sola base de código, experiencia nativa y sincronización en tiempo real.",
+    en: "I build mobile apps for iOS and Android with React Native — one codebase, native experience, and real-time synchronization.",
+  },
+  "services.seo.title": {
+    es: "Rendimiento y SEO",
+    en: "Performance & SEO",
+  },
+  "services.seo.desc": {
+    es: "Optimizo tu sitio para que cargue rápido, aparezca en Google y convierta visitas en clientes — Lighthouse ≥ 90, Core Web Vitals y SEO técnico.",
+    en: "I optimize your site to load fast, rank on Google, and convert visits into clients — Lighthouse ≥ 90, Core Web Vitals, and technical SEO.",
+  },
+
   // About Section
   "about.title": {
     es: "Sobre Mí",

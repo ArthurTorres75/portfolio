@@ -40,7 +40,11 @@ export function TechChip({ item, icon, index }: TechChipProps): React.JSX.Elemen
         boxShadow: `0 0 12px 2px ${brandColor}55`,
         transition: { duration: 0.15 },
       }}
-      className="flex items-center gap-1.5 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs font-medium text-white/80 transition-colors hover:border-white/20 hover:text-white cursor-default select-none"
+      className={`flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition-colors cursor-default select-none ${
+        item.core
+          ? "border-cyan-400/40 bg-cyan-400/8 text-white"
+          : "border-white/10 bg-white/5 text-white/80 hover:border-white/20 hover:text-white"
+      }`}
     >
       {icon && !item.noIcon ? (
         <svg
@@ -63,6 +67,9 @@ export function TechChip({ item, icon, index }: TechChipProps): React.JSX.Elemen
         </span>
       )}
       <span>{item.name}</span>
+      {item.core && (
+        <span aria-label="core skill" className="text-cyan-400 text-[10px] leading-none">★</span>
+      )}
     </motion.div>
   );
 }

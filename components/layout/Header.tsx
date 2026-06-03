@@ -29,6 +29,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
       "sobre-mi",
       "experiencia",
       "certificaciones",
+      "servicios",
       "proyectos",
       "testimonios",
       "contacto",
@@ -92,6 +93,11 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
       href: `${homeBase}#certificaciones`,
       label: t("nav.certificaciones", language),
       sectionId: "certificaciones",
+    },
+    {
+      href: `${homeBase}#servicios`,
+      label: t("nav.servicios", language),
+      sectionId: "servicios",
     },
     {
       href: isProjectsPage ? "/projects/" : `${homeBase}#proyectos`,

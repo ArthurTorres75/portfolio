@@ -69,6 +69,7 @@ export function Seo({
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
       <meta property="og:locale" content="es_AR" />
+      <meta property="og:locale:alternate" content="en_US" />
 
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={title} />

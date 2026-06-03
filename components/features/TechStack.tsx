@@ -126,9 +126,9 @@ function CategoryBlock({
       viewport={{ once: true, amount: 0.15 }}
       variants={containerVariants}
     >
-      <h3 className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-400">
+      <h4 className="mb-4 text-xs font-semibold uppercase tracking-[0.22em] text-cyan-400">
         {CATEGORY_LABELS[category]}
-      </h3>
+      </h4>
       <div className="flex flex-wrap gap-2">
         {items.map((item, i) => (
           <TechChip
@@ -144,10 +144,13 @@ function CategoryBlock({
 }
 
 export function TechStack({ title }: { title: string }): React.JSX.Element {
-  const grouped = CATEGORIES.map((category) => ({
-    category,
-    items: TECH_STACK.filter((t) => t.category === category),
-  }));
+  const grouped = CATEGORIES.map((category) => {
+    const items = TECH_STACK.filter((t) => t.category === category);
+    return {
+      category,
+      items: [...items.filter((t) => t.core), ...items.filter((t) => !t.core)],
+    };
+  });
 
   return (
     <div className="max-w-4xl mx-auto">

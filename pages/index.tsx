@@ -14,6 +14,7 @@ import { TechStack } from "@/components/features/TechStack";
 import { Certifications } from "@/components/features/Certifications";
 import { Testimonials } from "@/components/features/Testimonials";
 import { WorkHistory } from "@/components/features/WorkHistory";
+import { Services } from "@/components/features/Services";
 import { Watermark } from "@/components/common/Watermark";
 import { useLanguage } from "@/hooks/useLanguage";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -81,13 +82,61 @@ export default function Home(): React.JSX.Element {
     ],
     jobTitle: t("hero.title", language),
     knowsAbout: [
-      "Next.js",
-      "React",
-      "TypeScript",
-      "Node.js",
-      "AWS",
-      "Frontend Development",
-      "Backend Development",
+      "Next.js", "React", "Angular", "TypeScript", "Node.js", "NestJS",
+      "PostgreSQL", "Prisma", "AWS", "Vercel", "Azure", "React Native",
+      "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Zustand",
+      "Stripe", "PayPal", "Docker", "Terraform", "GitHub Actions",
+      "Frontend Development", "Backend Development", "Cloud Infrastructure",
+    ],
+    makesOffer: [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Custom Web Application Development",
+          "description": "Design and development of modern, scalable web applications using Next.js, React, Angular, and TypeScript.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "System Migration & Modernization",
+          "description": "Migration and improvement of legacy systems to modern technologies with better performance and maintainability.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Payment Integration",
+          "description": "Integration of Stripe and PayPal payment gateways with subscriptions, webhooks, and transaction management.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Cloud Deployment & DevOps",
+          "description": "Application deployment on AWS, Vercel, and Azure with automated CI/CD pipelines and infrastructure as code.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Mobile App Development",
+          "description": "Cross-platform mobile applications for iOS and Android using React Native and Expo.",
+        },
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Performance Optimization & SEO",
+          "description": "Website performance optimization achieving Lighthouse scores above 90, Core Web Vitals improvement, and technical SEO.",
+        },
+      },
     ],
   };
 
@@ -95,9 +144,9 @@ export default function Home(): React.JSX.Element {
     <>
       <Seo
         title="Arthur Torres | Full Stack Developer"
-        description="Portfolio de Arthur Torres: desarrollo web full stack con Next.js, React, TypeScript, Node.js y AWS. Proyectos, experiencia y contacto."
+        description="Arthur Torres — Desarrollador Full Stack con +8 años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos."
         path="/"
-        keywords="Arthur Torres, Full Stack Developer, Next.js, React, TypeScript, Portfolio"
+        keywords="Arthur Torres, Full Stack Developer, desarrollo web, Next.js, React, Angular, TypeScript, Node.js, NestJS, PostgreSQL, AWS, Azure, Vercel, React Native, integración de pagos, Stripe, PayPal, freelance, remoto"
       />
       <Head>
         <script
@@ -246,6 +295,16 @@ export default function Home(): React.JSX.Element {
               {t("projects.viewAll", language)} →
             </a>
           </div>
+        </Section>
+
+        {/* Servicios Section */}
+        <Section
+          id="servicios"
+          title={t("services.title", language)}
+          subtitle={t("services.subtitle", language)}
+          className="bg-gradient-to-b from-blue-950/20 to-black"
+        >
+          <Services />
         </Section>
 
         {/* Testimonios Section */}
