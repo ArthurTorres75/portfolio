@@ -15,7 +15,6 @@ import { Certifications } from "@/components/features/Certifications";
 import { Testimonials } from "@/components/features/Testimonials";
 import { WorkHistory } from "@/components/features/WorkHistory";
 import { Services } from "@/components/features/Services";
-import { Watermark } from "@/components/common/Watermark";
 import { useLanguage } from "@/hooks/useLanguage";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
@@ -146,10 +145,10 @@ export default function Home(): React.JSX.Element {
   return (
     <>
       <Seo
-        title="Arthur Torres | Full Stack Developer"
+        title="Arthur Torres | Ingeniero en Informática · Full Stack Developer"
         description="Arthur Torres — Desarrollador Full Stack con +8 años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos."
         path="/"
-        keywords="Arthur Torres, Full Stack Developer, desarrollo web, Next.js, React, Angular, TypeScript, Node.js, NestJS, PostgreSQL, AWS, Azure, Vercel, React Native, integración de pagos, Stripe, PayPal, freelance, remoto"
+        keywords="Arthur Torres, Ingeniero en Informática, Computer Engineer, Full Stack Developer, desarrollo web, Next.js, React, Angular, TypeScript, Node.js, NestJS, PostgreSQL, AWS, Azure, Vercel, React Native, integración de pagos, Stripe, PayPal, freelance, remoto"
       />
       <Head>
         <script
@@ -163,7 +162,6 @@ export default function Home(): React.JSX.Element {
       </Head>
 
       <div className="min-h-screen bg-black text-white flex flex-col relative">
-        <Watermark />
         <Header name={name} />
 
       <main className="flex-grow">
@@ -204,6 +202,25 @@ export default function Home(): React.JSX.Element {
             <p className="text-white/80 text-lg leading-relaxed">
               {t("about.intro", language)}
             </p>
+          </motion.div>
+
+          {/* My Story */}
+          <motion.div
+            className="max-w-3xl mx-auto mb-12"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={animationVariants.fadeUp}
+            custom={0}
+          >
+            <div className="glass-effect about-card p-6 rounded-lg border border-cyan-500/30">
+              <h3 className="text-xl font-semibold text-cyan-400 mb-4">
+                {t("about.storyTitle", language)}
+              </h3>
+              <p className="text-white/70 leading-relaxed">
+                {t("about.storyDesc", language)}
+              </p>
+            </div>
           </motion.div>
 
           {/* Skills Grid */}

@@ -34,18 +34,24 @@ export const translations: Translations = {
     en: "Contact",
   },
 
+  // Watermark
+  "watermark.text": {
+    es: "El Señor es mi proveedor ✝ El Shaddai",
+    en: "The Lord is my provider ✝ El Shaddai",
+  },
+
   // Hero Section
   "hero.greeting": {
     es: "Hola, soy",
     en: "Hello, I'm",
   },
   "hero.title": {
-    es: "Desarrollador Full Stack",
-    en: "Full Stack Developer",
+    es: "Ingeniero en Informática · Desarrollador Full Stack",
+    en: "Computer Engineer · Full Stack Developer",
   },
   "hero.description": {
-    es: "Especializado en crear aplicaciones web modernas, rápidas y escalables con las últimas tecnologías. Transformo ideas en soluciones digitales innovadoras.",
-    en: "Specialized in creating modern, fast and scalable web applications with the latest technologies. I transform ideas into innovative digital solutions.",
+    es: "Ingeniero en Informática. Construyo aplicaciones web que funcionan rápido, no se rompen y crecen con tu negocio. Trabajo con método: mido, decido con criterio y dejo procesos que se sostienen solos. Y cuando no existe un camino, lo diseño.",
+    en: "Computer Engineer. I build web applications that run fast, don't break, and grow with your business. I work with method: I measure, decide with criteria, and leave processes that run on their own. And when no path exists, I design one.",
   },
   "hero.viewProjects": {
     es: "Ver Mis Proyectos",
@@ -132,12 +138,20 @@ export const translations: Translations = {
     en: "About Me",
   },
   "about.subtitle": {
-    es: "Desarrollador Full Stack con más de 8 años de experiencia",
-    en: "Full Stack Developer with over 8 years of experience",
+    es: "Ingeniero en Informática · Desarrollador Full Stack con más de 8 años de experiencia",
+    en: "Computer Engineer · Full Stack Developer with over 8 years of experience",
   },
   "about.intro": {
-    es: "Soy desarrollador web especializado en brindar a las empresas una presencia digital sólida y orientada a resultados. Diseño y desarrollo sitios profesionales que atraen y convierten clientes, automatizo procesos para ahorrar tiempo y reducir errores, y gestiono el alojamiento en la nube para garantizar rendimiento y disponibilidad. Trabajo de forma personalizada con cada cliente para ofrecer soluciones prácticas que impulsan el crecimiento de su negocio.",
-    en: "I am a web developer specializing in providing businesses with a strong, results-driven digital presence. I design and build professional websites that attract and convert customers, automate processes to save time and reduce errors, and manage cloud hosting to ensure performance and availability. I work closely with each client to deliver practical solutions that drive business growth.",
+    es: "Soy Ingeniero en Informática y abordo cada proyecto con método: entiendo el problema, mido, decido con criterio y construyo soluciones que se sostienen en el tiempo. Diseño y desarrollo plataformas profesionales que atraen y convierten clientes, automatizo procesos para ahorrar tiempo y reducir errores, y gestiono la nube para garantizar rendimiento y disponibilidad. Y cuando no existe un proceso claro, lo diseño. Trabajo de forma personalizada con cada cliente para entregar resultados prácticos que impulsan el crecimiento de su negocio.",
+    en: "I am a Computer Engineer, and I approach every project with method: I understand the problem, measure, decide with criteria, and build solutions that hold up over time. I design and develop professional platforms that attract and convert customers, automate processes to save time and reduce errors, and manage the cloud to ensure performance and availability. And when no clear process exists, I design one. I work closely with each client to deliver practical results that drive their business growth.",
+  },
+  "about.storyTitle": {
+    es: "🌱 Mi Historia",
+    en: "🌱 My Story",
+  },
+  "about.storyDesc": {
+    es: "Vengo de una familia humilde que me enseñó dos cosas: a creer en Dios y a no rendirme nunca. Me enamoré de la informática antes de la universidad, de pura curiosidad: trasteando scripts, haciendo mods para juegos como Counter-Strike y armando mi primera página web. Así aprendí HTML, CSS, JavaScript, PHP y SQL por mi cuenta. En la universidad sumé C, pero mis proyectos siempre fueron la web. Después, por la situación económica, hice una pausa y trabajé seis años en Timberland — empecé en el depósito y crecí hasta gerente de tienda, una etapa que me dio disciplina, trato con la gente y experiencia liderando un equipo. En 2018 volví a mi verdadero camino: reinicié mi carrera en el desarrollo de software, primero como frontend y luego como full stack. Mi fe es el centro de todo lo que hago: de ahí saco la constancia, la honestidad y las ganas de hacer las cosas bien, no solo rápido.",
+    en: "I come from a humble family that taught me two things: to believe in God and to never give up. I fell in love with computing before university, out of pure curiosity — tinkering with scripts, building mods for games like Counter-Strike, and putting together my first website. That's how I taught myself HTML, CSS, JavaScript, PHP, and SQL. At university I added C, but my projects were always the web. Later, due to financial circumstances, I paused and spent six years at Timberland — I started in the warehouse and worked my way up to store manager, a stage that gave me discipline, people skills, and real experience leading a team. In 2018 I returned to my true path: I restarted my career in software development, first as a frontend developer and then full stack. My faith is at the center of everything I do: it's where my consistency, honesty, and drive to do things right — not just fast — come from.",
   },
   "about.frontendTitle": {
     es: "🎨 Desarrollador Front-End",
@@ -216,6 +230,22 @@ export const translations: Translations = {
   "workHistory.other2.desc": {
     es: "Portfolio temático con enfoque creativo, animaciones inmersivas y diseño visual orientado a destacar identidad y storytelling del proyecto.",
     en: "Thematic portfolio with a creative approach, immersive animations, and visual design focused on highlighting project identity and storytelling.",
+  },
+  "workHistory.other3.title": {
+    es: "Sistema Multi-Agente de Orquestación con IA",
+    en: "AI Multi-Agent Orchestration System",
+  },
+  "workHistory.other3.desc": {
+    es: "Diseñé un sistema multi-agente que orquesta sub-agentes especializados aplicando Specification-Driven Development (SDD): yo escribo y soy dueño de la especificación, y la IA implementa contra ese contrato bajo mi dirección y supervisión. Incluye lógica de decisión y escalación, ruteo de modelos por tarea, integraciones MCP y memoria persistente. La IA es una herramienta para acelerar mi trabajo — la dirección siempre es humana.",
+    en: "I designed a multi-agent system that orchestrates specialized sub-agents using Specification-Driven Development (SDD): I write and own the specification, and the AI implements against that contract under my direction and supervision. It includes decision and escalation logic, per-task model routing, MCP integrations, and persistent memory. AI is a tool to accelerate my work — direction always stays human.",
+  },
+  "workHistory.other4.title": {
+    es: "Olimpiadas Venezolanas de Informática — Software Educativo",
+    en: "Venezuelan Informatics Olympics — Educational Software",
+  },
+  "workHistory.other4.desc": {
+    es: "Participante en las III Olimpiadas Venezolanas de Informática (2011-2012), categoría Software Educativo, representando al IUT Táchira en la I Gran Feria Nacional de Edumática y Telemática. Mi primer acercamiento formal a construir software con propósito educativo — la misma vocación que hoy impulsa mi proyecto School SaaS.",
+    en: "Participant in the III Venezuelan Informatics Olympics (2011-2012), Educational Software category, representing IUT Táchira at the I National Edumática & Telemática Fair. My first formal experience building software with an educational purpose — the same drive behind my School SaaS project today.",
   },
 
   // Job 12 — Upwork (MERN Stack)
@@ -470,6 +500,40 @@ export const translations: Translations = {
     en: "Built the admin panel, optimized SEO and Lighthouse performance scores, configured CI/CD with GitHub Actions, deployed on Vercel, set up a PostgreSQL server on Azure, configured email delivery via Microsoft Graph API, implemented image uploads with Azure Blob Storage, and performed overall code quality improvements.",
   },
 
+  // Education Section
+  "education.title": {
+    es: "Formación Académica",
+    en: "Education",
+  },
+  "education.subtitle": {
+    es: "Mi trayectoria académica",
+    en: "My academic background",
+  },
+  "education.degree.title": {
+    es: "Ingeniero en Informática",
+    en: "Computer Engineer (Ingeniero en Informática)",
+  },
+  "education.degree.issuer": {
+    es: "Instituto Universitario de Tecnología Agro-Industrial — San Cristóbal, Táchira (Venezuela)",
+    en: "Instituto Universitario de Tecnología Agro-Industrial — San Cristóbal, Táchira (Venezuela)",
+  },
+  "education.degree.date": {
+    es: "Diciembre 2013",
+    en: "December 2013",
+  },
+  "education.bachelor.title": {
+    es: "Bachiller en Ciencias",
+    en: "High School Diploma, Science (Bachiller en Ciencias)",
+  },
+  "education.bachelor.issuer": {
+    es: "Unidad Educativa Monseñor Sanmiguel — San Cristóbal, Táchira (Venezuela)",
+    en: "Unidad Educativa Monseñor Sanmiguel — San Cristóbal, Táchira (Venezuela)",
+  },
+  "education.bachelor.date": {
+    es: "2005",
+    en: "2005",
+  },
+
   // Certifications Section
   "certifications.title": {
     es: "Certificaciones",
@@ -626,6 +690,20 @@ export const translations: Translations = {
   "cert10.date": {
     es: "Abr 2026",
     en: "Apr 2026",
+  },
+
+  // Cert 11 — Technical Support (IUT, trayecto I)
+  "cert11.title": {
+    es: "Soporte Técnico a Usuarios y Equipos",
+    en: "Technical Support for Users & Equipment",
+  },
+  "cert11.issuer": {
+    es: "Instituto Universitario de Tecnología Agro-Industrial (IUT)",
+    en: "Instituto Universitario de Tecnología Agro-Industrial (IUT)",
+  },
+  "cert11.date": {
+    es: "Jul 2011",
+    en: "Jul 2011",
   },
 
   // Testimonials Section
