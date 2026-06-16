@@ -1,6 +1,7 @@
 import type { AppProps } from "next/app";
 import Script from "next/script";
 import { LanguageProvider } from "@/hooks/useLanguage";
+import { Watermark } from "@/components/common/Watermark";
 import "@/styles/globals.css";
 
 const GA_MEASUREMENT_ID = "G-D3GHQWJ6HV";
@@ -20,6 +21,7 @@ export default function App({ Component, pageProps }: AppProps) {
           gtag('config', '${GA_MEASUREMENT_ID}');
         `}
       </Script>
+      <Watermark />
       <Component {...pageProps} />
     </LanguageProvider>
   );

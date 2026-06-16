@@ -142,6 +142,13 @@ export function Certifications(): React.JSX.Element {
       icon: "☁️",
       credentialUrl: "",
     },
+    {
+      title: t("cert11.title", language),
+      issuer: t("cert11.issuer", language),
+      date: t("cert11.date", language),
+      icon: "🖥️",
+      credentialUrl: "",
+    },
   ];
 
   const inProgress = [
@@ -163,6 +170,54 @@ export function Certifications(): React.JSX.Element {
 
   return (
     <div className="max-w-6xl mx-auto">
+      {/* Education — university degree */}
+      <motion.div
+        className="max-w-4xl mx-auto mb-14"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.3 }}
+        variants={animationVariants.fadeUp}
+        custom={0}
+      >
+        <h3 className="text-xl font-semibold text-cyan-300 mb-1 text-center">
+          {t("education.title", language)}
+        </h3>
+        <p className="text-white/60 text-sm mb-6 text-center">
+          {t("education.subtitle", language)}
+        </p>
+        <div className="glass-effect p-6 md:p-8 rounded-xl border border-cyan-400/40 bg-cyan-500/5 flex items-center gap-5">
+          <div className="text-5xl shrink-0" aria-hidden="true">
+            🎓
+          </div>
+          <div className="flex-1">
+            <h4 className="text-lg md:text-xl font-bold text-white">
+              {t("education.degree.title", language)}
+            </h4>
+            <p className="text-cyan-400/90 text-sm font-medium mt-1">
+              {t("education.degree.issuer", language)}
+            </p>
+            <p className="text-white/50 text-xs mt-1">
+              {t("education.degree.date", language)}
+            </p>
+          </div>
+        </div>
+
+        {/* Secondary: high-school diploma */}
+        <div className="mt-3 rounded-lg border border-cyan-400/20 bg-white/[0.02] px-5 py-4 flex items-center gap-4">
+          <div className="text-2xl shrink-0" aria-hidden="true">
+            📜
+          </div>
+          <div className="flex-1">
+            <h4 className="text-sm md:text-base font-semibold text-white/90">
+              {t("education.bachelor.title", language)}
+            </h4>
+            <p className="text-white/50 text-xs mt-0.5">
+              {t("education.bachelor.issuer", language)} · {t("education.bachelor.date", language)}
+            </p>
+          </div>
+        </div>
+      </motion.div>
+
       {/* Completed */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
         {certifications.map((cert, index) => (

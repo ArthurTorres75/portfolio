@@ -42,6 +42,14 @@ const OTHER_EXPERIENCES: OtherExperience[] = [
     titleKey: "workHistory.other2.title",
     descKey: "workHistory.other2.desc",
   },
+  {
+    titleKey: "workHistory.other3.title",
+    descKey: "workHistory.other3.desc",
+  },
+  {
+    titleKey: "workHistory.other4.title",
+    descKey: "workHistory.other4.desc",
+  },
 ];
 
 function TimelineItem({
