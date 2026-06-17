@@ -60,6 +60,7 @@ export default function Home(): React.JSX.Element {
     description: t(p.descKey, language),
     technologies: p.technologies,
     link: p.link,
+    image: p.image,
   }));
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/";
@@ -79,7 +80,7 @@ export default function Home(): React.JSX.Element {
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/",
     sameAs: [
       "https://github.com/ArthurTorres75",
-      "https://www.linkedin.com/in/arthur-torres-9b41a2184/",
+      "https://www.linkedin.com/in/arthur-torres-9b41a2184",
       "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
     ],
     jobTitle: t("hero.title", language),

@@ -968,8 +968,8 @@ export const translations: Translations = {
     en: "OtherWorld Gift — Inventory & Sales System",
   },
   "project2.desc": {
-    es: "Sistema full stack con reportes automatizados en Excel/PDF, autorización de ventas, gestión de inventario, cron jobs y módulo de caja con transferencias bancarias.",
-    en: "Full-stack system with automated Excel/PDF reports, sales authorization, inventory management, cron jobs, and a cash module with bank transfers.",
+    es: "Sistema de inventario y ventas para The Chicken Kings (Argentina), con integración a AFIP para facturación electrónica, reportes automatizados en Excel/PDF, autorización de ventas, gestión de inventario, cron jobs y módulo de caja con transferencias bancarias.",
+    en: "Inventory and sales system for The Chicken Kings (Argentina), with AFIP integration for electronic invoicing, automated Excel/PDF reports, sales authorization, inventory management, cron jobs, and a cash module with bank transfers.",
   },
   "project3.title": {
     es: "Speedy Delivery — App Móvil de Delivery",

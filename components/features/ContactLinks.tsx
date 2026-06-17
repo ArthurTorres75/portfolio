@@ -164,7 +164,7 @@ export function ContactLinks(): React.JSX.Element {
       isExternal: true,
     },
     {
-      href: "https://www.linkedin.com/in/arthur-torres-9b41a2184/",
+      href: "https://www.linkedin.com/in/arthur-torres-9b41a2184",
       icon: <LinkedInIcon />,
       label: t("contact.linkedinLabel", language),
       description: t("contact.linkedinDesc", language),
