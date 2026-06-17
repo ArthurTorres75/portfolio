@@ -15,6 +15,7 @@ export default function Projects(): React.JSX.Element {
     description: t(p.descKey, language),
     technologies: p.technologies,
     link: p.link,
+    image: p.image,
   }));
 
   return (
