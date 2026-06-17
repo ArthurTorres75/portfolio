@@ -1,5 +1,6 @@
 import type React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
@@ -23,6 +24,8 @@ export function ProjectCard({
   index = 0,
 }: ProjectCardProps): React.JSX.Element {
   const { language } = useLanguage();
+  const { basePath } = useRouter();
+  const imageSrc = image ? `${basePath}${image}` : undefined;
   return (
     <motion.div
       className="group card-hover glass-effect rounded-lg p-6 border border-cyan-500/25"
@@ -32,18 +35,27 @@ export function ProjectCard({
       variants={animationVariants.fadeUp}
       custom={index * 0.1}
     >
-      {/* Project image */}
-      {image && (
-        <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
+      {/* Project image (falls back to the iridescent gradient when none is set) */}
+      <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
+        {imageSrc ? (
           <Image
-            src={image}
+            src={imageSrc}
             alt={title}
             fill
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
-        </div>
-      )}
+        ) : (
+          <div
+            aria-hidden="true"
+            className="iridescent-gradient absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
+          >
+            <span className="text-2xl font-bold text-white/90 px-4 text-center line-clamp-2">
+              {title}
+            </span>
+          </div>
+        )}
+      </div>
 
       {/* Header */}
       <div className="mb-4">
