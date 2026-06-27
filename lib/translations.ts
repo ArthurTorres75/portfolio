@@ -7,6 +7,8 @@ export interface Translations {
   };
 }
 
+type TranslationParams = Record<string, string | number>;
+
 export const translations: Translations = {
   // Navigation
   "nav.inicio": {
@@ -46,8 +48,8 @@ export const translations: Translations = {
     en: "Hello, I'm",
   },
   "hero.title": {
-    es: "Ingeniero en Informática · Desarrollador Full Stack",
-    en: "Computer Engineer · Full Stack Developer",
+    es: "Senior Full-Stack Software Engineer",
+    en: "Senior Full-Stack Software Engineer",
   },
   "hero.description": {
     es: "Ingeniero en Informática. Construyo aplicaciones web que funcionan rápido, no se rompen y crecen con tu negocio. Trabajo con método: mido, decido con criterio y dejo procesos que se sostienen solos. Y cuando no existe un camino, lo diseño.",
@@ -138,28 +140,28 @@ export const translations: Translations = {
     en: "About Me",
   },
   "about.subtitle": {
-    es: "Ingeniero en Informática · Desarrollador Full Stack con más de 8 años de experiencia",
-    en: "Computer Engineer · Full Stack Developer with over 8 years of experience",
+    es: "Senior Full-Stack Software Engineer · +{fullStackYears} años en desarrollo full stack · Soluciones Web y Móviles Escalables · Desarrollo asistido por IA · SDD · Trabajo remoto",
+    en: "Senior Full-Stack Software Engineer · +{fullStackYears} years in full-stack development · Building Scalable Web & Mobile Solutions · AI-assisted development · SDD · Remote work",
   },
   "about.intro": {
-    es: "Soy Ingeniero en Informática y abordo cada proyecto con método: entiendo el problema, mido, decido con criterio y construyo soluciones que se sostienen en el tiempo. Diseño y desarrollo plataformas profesionales que atraen y convierten clientes, automatizo procesos para ahorrar tiempo y reducir errores, y gestiono la nube para garantizar rendimiento y disponibilidad. Y cuando no existe un proceso claro, lo diseño. Trabajo de forma personalizada con cada cliente para entregar resultados prácticos que impulsan el crecimiento de su negocio.",
-    en: "I am a Computer Engineer, and I approach every project with method: I understand the problem, measure, decide with criteria, and build solutions that hold up over time. I design and develop professional platforms that attract and convert customers, automate processes to save time and reduce errors, and manage the cloud to ensure performance and availability. And when no clear process exists, I design one. I work closely with each client to deliver practical results that drive their business growth.",
+    es: "Soy un Senior Full-Stack Software Engineer especializado en construir soluciones web y móviles escalables. Trabajo con desarrollo asistido por IA y Specification-Driven Development (SDD) para entregar software confiable, mantenible y alineado al negocio. Colaboro de forma remota con equipos y clientes, cuidando arquitectura, rendimiento y una ejecución clara de punta a punta.",
+    en: "I am a Senior Full-Stack Software Engineer focused on building scalable web and mobile solutions. I work with AI-assisted development and Specification-Driven Development (SDD) to deliver reliable, maintainable software aligned with business goals. I collaborate remotely with teams and clients while maintaining strong architecture, performance, and clear end-to-end execution.",
   },
   "about.storyTitle": {
     es: "🌱 Mi Historia",
     en: "🌱 My Story",
   },
   "about.storyDesc": {
-    es: "Vengo de una familia humilde que me enseñó dos cosas: a creer en Dios y a no rendirme nunca. Me enamoré de la informática antes de la universidad, de pura curiosidad: trasteando scripts, haciendo mods para juegos como Counter-Strike y armando mi primera página web. Así aprendí HTML, CSS, JavaScript, PHP y SQL por mi cuenta. En la universidad sumé C, pero mis proyectos siempre fueron la web. Después, por la situación económica, hice una pausa y trabajé seis años en Timberland — empecé en el depósito y crecí hasta gerente de tienda, una etapa que me dio disciplina, trato con la gente y experiencia liderando un equipo. En 2018 volví a mi verdadero camino: reinicié mi carrera en el desarrollo de software, primero como frontend y luego como full stack. Mi fe es el centro de todo lo que hago: de ahí saco la constancia, la honestidad y las ganas de hacer las cosas bien, no solo rápido.",
-    en: "I come from a humble family that taught me two things: to believe in God and to never give up. I fell in love with computing before university, out of pure curiosity — tinkering with scripts, building mods for games like Counter-Strike, and putting together my first website. That's how I taught myself HTML, CSS, JavaScript, PHP, and SQL. At university I added C, but my projects were always the web. Later, due to financial circumstances, I paused and spent six years at Timberland — I started in the warehouse and worked my way up to store manager, a stage that gave me discipline, people skills, and real experience leading a team. In 2018 I returned to my true path: I restarted my career in software development, first as a frontend developer and then full stack. My faith is at the center of everything I do: it's where my consistency, honesty, and drive to do things right — not just fast — come from.",
+    es: "Vengo de una familia humilde que me enseñó dos cosas: a creer en Dios y a no rendirme nunca. Me enamoré de la informática antes de la universidad, de pura curiosidad: trasteando scripts, haciendo mods para juegos como Counter-Strike y armando mi primera página web. Así aprendí HTML, CSS, JavaScript, PHP y SQL por mi cuenta. En la universidad sumé C y Java, pero mis proyectos siempre fueron la web. Después, por la situación económica, hice una pausa y trabajé seis años en Timberland — empecé en el depósito y crecí hasta gerente de tienda, una etapa que me dio disciplina, trato con la gente y experiencia liderando un equipo. En 2018 volví a mi verdadero camino: reinicié mi carrera en el desarrollo de software, primero como frontend y luego como full stack. Mi fe es el centro de todo lo que hago: de ahí saco la constancia, la honestidad y las ganas de hacer las cosas bien, no solo rápido.",
+    en: "I come from a humble family that taught me two things: to believe in God and to never give up. I fell in love with computing before university, out of pure curiosity — tinkering with scripts, building mods for games like Counter-Strike, and putting together my first website. That's how I taught myself HTML, CSS, JavaScript, PHP, and SQL. At university I added C and Java, but my projects were always the web. Later, due to financial circumstances, I paused and spent six years at Timberland — I started in the warehouse and worked my way up to store manager, a stage that gave me discipline, people skills, and real experience leading a team. In 2018 I returned to my true path: I restarted my career in software development, first as a frontend developer and then full stack. My faith is at the center of everything I do: it's where my consistency, honesty, and drive to do things right — not just fast — come from.",
   },
   "about.frontendTitle": {
     es: "🎨 Desarrollador Front-End",
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de 4 años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente aprendiendo Three.js y Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
-    en: "Over 4 years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. Currently learning Three.js and Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Más de {frontendYears} años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente aprendiendo Three.js y Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
+    en: "Over {frontendYears} years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. Currently learning Three.js and Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
@@ -1057,11 +1059,20 @@ export const translations: Translations = {
   },
 };
 
-export function t(key: string, language: Language): string {
+export function t(key: string, language: Language, params?: TranslationParams): string {
   const translation = translations[key];
   if (!translation) {
     console.warn(`Translation key not found: ${key}`);
     return key;
   }
-  return translation[language];
+
+  const value = translation[language];
+  if (!params) {
+    return value;
+  }
+
+  return value.replace(/\{(\w+)\}/g, (_match, paramKey: string) => {
+    const paramValue = params[paramKey];
+    return paramValue === undefined ? `{${paramKey}}` : String(paramValue);
+  });
 }
