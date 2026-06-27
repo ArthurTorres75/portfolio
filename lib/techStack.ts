@@ -33,6 +33,8 @@ export const TECH_STACK: TechItem[] = [
   { name: "Node.js", slug: "nodedotjs", category: "backend", core: true },
   { name: "Express", slug: "express", category: "backend" },
   { name: "NestJS", slug: "nestjs", category: "backend", core: true },
+  { name: "C", slug: "c", category: "backend", noIcon: true },
+  { name: "Java", slug: "java", category: "backend", noIcon: true },
   { name: "PHP", slug: "php", category: "backend" },
   { name: "Laravel", slug: "laravel", category: "backend", core: true },
   { name: "Prisma", slug: "prisma", category: "backend", core: true },

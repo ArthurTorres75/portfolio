@@ -25,9 +25,19 @@ const WaterSurface3D = dynamic(
   { ssr: false }
 );
 
+const FULLSTACK_START_YEAR = 2022;
+const FRONTEND_START_YEAR = 2022;
+const FULLSTACK_UNIVERSITY_YEARS = 2;
+
+function getYearsSince(startYear: number): number {
+  return Math.max(0, new Date().getFullYear() - startYear);
+}
+
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
   const [isDesktop, setIsDesktop] = useState(false);
+  const fullStackYears = getYearsSince(FULLSTACK_START_YEAR) + FULLSTACK_UNIVERSITY_YEARS;
+  const frontendYears = getYearsSince(FRONTEND_START_YEAR);
 
   useEffect(() => {
     setIsDesktop(!window.matchMedia("(hover: none), (pointer: coarse)").matches);
@@ -41,7 +51,7 @@ export default function Home(): React.JSX.Element {
     {
       key: "frontend",
       title: t("about.frontendTitle", language),
-      description: t("about.frontendDesc", language),
+      description: t("about.frontendDesc", language, { frontendYears }),
     },
     {
       key: "backend",
@@ -85,7 +95,7 @@ export default function Home(): React.JSX.Element {
     ],
     jobTitle: t("hero.title", language),
     knowsAbout: [
-      "Next.js", "React", "Angular", "TypeScript", "Node.js", "NestJS",
+      "Next.js", "React", "Angular", "TypeScript", "Node.js", "NestJS", "C", "Java",
       "PostgreSQL", "Prisma", "AWS", "Vercel", "Azure", "React Native",
       "Tailwind CSS", "TanStack Query", "Redux Toolkit", "Zustand",
       "Stripe", "PayPal", "Docker", "Terraform", "GitHub Actions",
@@ -147,7 +157,7 @@ export default function Home(): React.JSX.Element {
     <>
       <Seo
         title="Arthur Torres | Ingeniero en Informática · Full Stack Developer"
-        description="Arthur Torres — Desarrollador Full Stack con +8 años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos."
+        description={`Arthur Torres — Desarrollador Full Stack con +${fullStackYears} años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos.`}
         path="/"
         keywords="Arthur Torres, Ingeniero en Informática, Computer Engineer, Full Stack Developer, desarrollo web, Next.js, React, Angular, TypeScript, Node.js, NestJS, PostgreSQL, AWS, Azure, Vercel, React Native, integración de pagos, Stripe, PayPal, freelance, remoto"
       />
@@ -177,7 +187,7 @@ export default function Home(): React.JSX.Element {
         <Section
           id="sobre-mi"
           title={t("about.title", language)}
-          subtitle={t("about.subtitle", language)}
+          subtitle={t("about.subtitle", language, { fullStackYears })}
           className="bg-gradient-to-b from-black to-blue-950/20"
         >
           <motion.div
