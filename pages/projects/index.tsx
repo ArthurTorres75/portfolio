@@ -16,6 +16,7 @@ export default function Projects(): React.JSX.Element {
     technologies: p.technologies,
     link: p.link,
     image: p.image,
+    category: t(p.categoryKey, language),
   }));
 
   return (
