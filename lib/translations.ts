@@ -956,6 +956,18 @@ export const translations: Translations = {
     en: "All rights reserved.",
   },
 
+  // Project Categories
+  "category.corporateWebsite": { es: "Sitio Corporativo", en: "Corporate Website" },
+  "category.adminPanel": { es: "Panel Admin", en: "Admin Panel" },
+  "category.saas": { es: "SaaS", en: "SaaS" },
+  "category.eventPlatform": { es: "Plataforma de Eventos", en: "Event Platform" },
+  "category.erp": { es: "ERP / Inventario", en: "ERP / Inventory" },
+  "category.mobileApp": { es: "App Móvil", en: "Mobile App" },
+  "category.ecommerce": { es: "E-commerce", en: "E-commerce" },
+  "category.frontendSuite": { es: "Frontend Suite", en: "Frontend Suite" },
+  "category.enterpriseDashboard": { es: "Dashboard Empresarial", en: "Enterprise Dashboard" },
+  "category.saasTool": { es: "SaaS Tool", en: "SaaS Tool" },
+
   // Project Examples
   "project1.title": {
     es: "Hacking HR — Plataforma de Eventos Escalable",

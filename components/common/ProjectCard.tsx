@@ -13,6 +13,7 @@ interface ProjectCardProps {
   link?: string;
   image?: string;
   index?: number;
+  category?: string;
 }
 
 export function ProjectCard({
@@ -22,6 +23,7 @@ export function ProjectCard({
   link,
   image,
   index = 0,
+  category,
 }: ProjectCardProps): React.JSX.Element {
   const { language } = useLanguage();
   const { basePath } = useRouter();
@@ -59,6 +61,11 @@ export function ProjectCard({
 
       {/* Header */}
       <div className="mb-4">
+        {category && (
+          <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 mb-2 font-medium tracking-wide">
+            {category}
+          </span>
+        )}
         <h3 className="text-xl font-bold text-white group-hover:iridescent-text transition-all duration-300">
           {title}
         </h3>
