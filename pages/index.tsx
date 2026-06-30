@@ -71,6 +71,7 @@ export default function Home(): React.JSX.Element {
     technologies: p.technologies,
     link: p.link,
     image: p.image,
+    category: t(p.categoryKey, language),
   }));
 
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/";
