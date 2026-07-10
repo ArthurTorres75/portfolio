@@ -22,8 +22,8 @@ export default function Projects(): React.JSX.Element {
   return (
     <>
       <Seo
-        title="Projects | Arthur Torres"
-        description="Explora los proyectos de Arthur Torres: soluciones web y mobile con Next.js, React, Angular, TypeScript y arquitecturas escalables."
+        title={t("seo.projects.title", language)}
+        description={t("seo.projects.description", language)}
         path="/projects/"
         keywords="Arthur Torres projects, Next.js portfolio, React projects, TypeScript"
       />

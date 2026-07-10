@@ -160,8 +160,8 @@ export const translations: Translations = {
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de {frontendYears} años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Actualmente aprendiendo Three.js y Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
-    en: "Over {frontendYears} years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. Currently learning Three.js and Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Más de {frontendYears} años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Implementé Three.js y React Three Fiber para el efecto 3D de agua que ves en la portada de este sitio, y estoy explorando Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
+    en: "Over {frontendYears} years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. I implemented Three.js and React Three Fiber to build the 3D water effect you see on this site's homepage, and I'm currently exploring Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
@@ -848,6 +848,24 @@ export const translations: Translations = {
     en: "View All Projects",
   },
 
+  // SEO Metadata
+  "seo.home.title": {
+    es: "Arthur Torres | Ingeniero en Informática · Full Stack Developer",
+    en: "Arthur Torres | Computer Engineer · Full Stack Developer",
+  },
+  "seo.home.description": {
+    es: "Arthur Torres — Desarrollador Full Stack con +{fullStackYears} años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos.",
+    en: "Arthur Torres — Full Stack Developer with +{fullStackYears} years of experience. I build web applications, mobile apps, and integrate payments with Next.js, React, Angular, Node.js, NestJS, AWS, and Azure. Available for remote projects.",
+  },
+  "seo.projects.title": {
+    es: "Proyectos | Arthur Torres",
+    en: "Projects | Arthur Torres",
+  },
+  "seo.projects.description": {
+    es: "Explora los proyectos de Arthur Torres: soluciones web y mobile con Next.js, React, Angular, TypeScript y arquitecturas escalables.",
+    en: "Explore Arthur Torres's projects: web and mobile solutions with Next.js, React, Angular, TypeScript, and scalable architectures.",
+  },
+
   // Contact Section
   "contact.title": {
     es: "Ponte en Contacto",
@@ -856,34 +874,6 @@ export const translations: Translations = {
   "contact.subtitle": {
     es: "¿Tienes un proyecto en mente? Hablemos",
     en: "Do you have a project in mind? Let's talk",
-  },
-  "contact.name": {
-    es: "Nombre",
-    en: "Name",
-  },
-  "contact.namePlaceholder": {
-    es: "Tu nombre",
-    en: "Your name",
-  },
-  "contact.email": {
-    es: "Email",
-    en: "Email",
-  },
-  "contact.emailPlaceholder": {
-    es: "tu@email.com",
-    en: "your@email.com",
-  },
-  "contact.message": {
-    es: "Mensaje",
-    en: "Message",
-  },
-  "contact.messagePlaceholder": {
-    es: "Tu mensaje aquí...",
-    en: "Your message here...",
-  },
-  "contact.send": {
-    es: "Enviar Mensaje",
-    en: "Send Message",
   },
   "contact.directMessage": {
     es: "Elige tu método de contacto preferido:",
