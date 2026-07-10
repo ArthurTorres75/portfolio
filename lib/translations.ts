@@ -140,12 +140,12 @@ export const translations: Translations = {
     en: "About Me",
   },
   "about.subtitle": {
-    es: "Senior Full-Stack Software Engineer · +{fullStackYears} años en desarrollo full stack · Soluciones Web y Móviles Escalables · Desarrollo asistido por IA · SDD · Trabajo remoto",
-    en: "Senior Full-Stack Software Engineer · +{fullStackYears} years in full-stack development · Building Scalable Web & Mobile Solutions · AI-assisted development · SDD · Remote work",
+    es: "Senior Full-Stack Engineer, +{fullStackYears} años — entrego sistemas en producción y elijo el trade-off que se ajusta a la restricción, no la respuesta de manual.",
+    en: "Senior Full-Stack Engineer, {fullStackYears}+ years — I ship production systems and choose the tradeoff that fits the constraint, not the textbook fix.",
   },
   "about.intro": {
-    es: "Soy un Senior Full-Stack Software Engineer especializado en construir soluciones web y móviles escalables. Trabajo con desarrollo asistido por IA y Specification-Driven Development (SDD) para entregar software confiable, mantenible y alineado al negocio. Colaboro de forma remota con equipos y clientes, cuidando arquitectura, rendimiento y una ejecución clara de punta a punta.",
-    en: "I am a Senior Full-Stack Software Engineer focused on building scalable web and mobile solutions. I work with AI-assisted development and Specification-Driven Development (SDD) to deliver reliable, maintainable software aligned with business goals. I collaborate remotely with teams and clients while maintaining strong architecture, performance, and clear end-to-end execution.",
+    es: "Soy un Senior Full-Stack Engineer con más de {fullStackYears} años de experiencia en React, Next.js, Angular, Node.js y NestJS. Mido antes de corregir, y elijo el trade-off que se ajusta a la restricción real — no la respuesta de manual. En Hacking HR, una consulta lenta de MongoDB en AWS parecía un caso para indexación — pero indexar hubiera aumentado el costo de infraestructura en ese setup, así que optimicé las consultas y agregué caché del lado del cliente en su lugar, sin gasto adicional en AWS. En Chamco Digital, migré un stack legacy de WordPress a Azure PostgreSQL + Blob Storage + Vercel, reduciendo el costo de hosting y mejorando los tiempos de carga.",
+    en: "I'm a Senior Full-Stack Engineer with {fullStackYears}+ years across React, Next.js, Angular, Node.js, and NestJS. I measure before I fix, then choose the tradeoff that fits the real constraint — not the textbook answer. At Hacking HR, a slow MongoDB query on AWS looked like a job for indexing — except indexing would have raised infra cost on that setup, so I optimized the queries and added client-side caching instead, zero extra AWS spend. At Chamco Digital, I migrated a legacy WordPress stack to Azure PostgreSQL + Blob Storage + Vercel, cutting hosting cost while improving load times.",
   },
   "about.storyTitle": {
     es: "🌱 Mi Historia",
@@ -160,36 +160,36 @@ export const translations: Translations = {
     en: "🎨 Front-End Developer",
   },
   "about.frontendDesc": {
-    es: "Más de {frontendYears} años con Angular (Signals, RxJS), React.js y Next.js, implementando interfaces interactivas con Material UI, TailwindCSS, shadcn/ui y Payload CMS. Gestión de estado con Zustand y Redux Toolkit, formularios con React Hook Form, data fetching con TanStack Query y Axios sobre REST APIs. Librerías de visualización como D3.js, Chart.js y Plotly.js. Implementé Three.js y React Three Fiber para el efecto 3D de agua que ves en la portada de este sitio, y estoy explorando Anime.js. Experto en APIs de Google Maps, GoJS para diagramas y optimización de diseños responsivos.",
-    en: "Over {frontendYears} years with Angular (Signals, RxJS), React.js and Next.js, building interactive interfaces with Material UI, TailwindCSS, shadcn/ui, and Payload CMS. State management with Zustand and Redux Toolkit, forms with React Hook Form, data fetching with TanStack Query and Axios over REST APIs. Visualization libraries such as D3.js, Chart.js, and Plotly.js. I implemented Three.js and React Three Fiber to build the 3D water effect you see on this site's homepage, and I'm currently exploring Anime.js. Expert in Google Maps APIs, GoJS for diagrams, and responsive layout optimization.",
+    es: "Implementé Three.js y React Three Fiber para construir el efecto 3D de agua en la portada de este sitio — prueba, no un ítem de lista. En el día a día: {frontendYears}+ años con Angular (Signals, RxJS), React.js/Next.js, Material UI, TailwindCSS, shadcn/ui y Payload CMS, con Zustand/Redux Toolkit para estado, React Hook Form y TanStack Query/Axios sobre REST APIs. D3.js, Chart.js y Plotly.js para visualización de datos, Google Maps API y GoJS para diagramas interactivos.",
+    en: "I implemented Three.js and React Three Fiber to build the 3D water effect on this site's homepage — proof, not a bullet point. Day to day: {frontendYears}+ years with Angular (Signals, RxJS), React.js/Next.js, Material UI, TailwindCSS, shadcn/ui, and Payload CMS, with Zustand/Redux Toolkit for state, React Hook Form and TanStack Query/Axios over REST APIs. D3.js, Chart.js, and Plotly.js for data visualization, Google Maps API and GoJS for interactive diagrams.",
   },
   "about.backendTitle": {
     es: "⚙️ Desarrollador Full-Stack",
     en: "⚙️ Full-Stack Developer",
   },
   "about.backendDesc": {
-    es: "Experiencia con Node.js, NestJS, Prisma ORM, construyendo aplicaciones escalables con PostgreSQL, MongoDB, Firebase y Supabase. Implementación de autenticación JWT, RBAC, generación de reportes (PDF/Excel), cron jobs, Redis para caché, y SendGrid para emails automatizados.",
-    en: "Experience with Node.js, NestJS, Prisma ORM, building scalable applications with PostgreSQL, MongoDB, Firebase and Supabase. Implementation of JWT authentication, RBAC, report generation (PDF/Excel), cron jobs, Redis for caching, and SendGrid for automated emails.",
+    es: "Backends en Node.js y NestJS con Prisma ORM sobre PostgreSQL, MongoDB, Firebase y Supabase — autenticación JWT/RBAC, generación de reportes PDF/Excel, caché con Redis, cron jobs y SendGrid para emails automatizados.",
+    en: "Node.js and NestJS backends with Prisma ORM across PostgreSQL, MongoDB, Firebase, and Supabase — JWT/RBAC auth, PDF/Excel report generation, Redis caching, cron jobs, and SendGrid for automated emails.",
   },
   "about.cloudTitle": {
     es: "☁️ Cloud & DevOps",
     en: "☁️ Cloud & DevOps",
   },
   "about.cloudDesc": {
-    es: "Experiencia desplegando aplicaciones en AWS (S3, Lambda, EC2), Vercel, Terraform para infraestructura como código, Firebase (authentication, hosting, Firestore), Supabase y Hostinger. Familiarizado con CI/CD, Git, GitLab, GitHub, y herramientas de gestión como Jira y Trello.",
-    en: "Experience deploying applications on AWS (S3, Lambda, EC2), Vercel, Terraform for infrastructure as code, Firebase (authentication, hosting, Firestore), Supabase and Hostinger. Familiar with CI/CD, Git, GitLab, GitHub, and management tools like Jira and Trello.",
+    es: "AWS (S3, Lambda, EC2), Azure, Vercel y Terraform para infraestructura como código — el mismo criterio de costo vs. rendimiento de las historias anteriores, aplicado al despliegue, no solo al código. CI/CD con Git, GitLab, GitHub, Firebase, Supabase y Hostinger.",
+    en: "AWS (S3, Lambda, EC2), Azure, Vercel, and Terraform for infrastructure as code — the same cost-vs-performance judgment from the stories above, applied to deployment, not just code. CI/CD with Git, GitLab, GitHub, Firebase, Supabase, and Hostinger.",
   },
   "about.techStack": {
     es: "🛠️ Stack Tecnológico",
     en: "🛠️ Tech Stack",
   },
   "about.workEthic": {
-    es: "💼 Enfoque Profesional",
-    en: "💼 Work Ethic",
+    es: "🧠 Método de Ingeniería",
+    en: "🧠 Engineering Method",
   },
   "about.workEthicDesc": {
-    es: "Altamente organizado y comprometido con las mejores prácticas de programación. Tomo mi trabajo con seriedad, asegurando resultados de alta calidad mientras mantengo un enfoque colaborativo y comunicativo con mi equipo.",
-    en: "Highly organized and committed to best programming practices. I take my work seriously, ensuring high-quality results while maintaining a collaborative and communicative approach with my team.",
+    es: "Diseño con SOLID y Arquitectura Limpia/Hexagonal — lógica de dominio aislada de la infraestructura, dependencias apuntando hacia adentro. Esa misma disciplina es la que uso para dirigir IA: escribo la especificación y soy dueño de cada decisión de arquitectura, un orquestador multiagente que construí yo mismo ejecuta contra ese contrato usando Specification-Driven Development (SDD), y reviso cada resultado antes de que salga a producción. La IA acelera el trabajo — el criterio de ingeniería sigue siendo mío.",
+    en: "I design around SOLID and Clean/Hexagonal Architecture — domain logic isolated from infrastructure, dependencies pointing inward. That same discipline is how I direct AI: I write the specification and own every architecture decision, a multi-agent orchestrator I built myself executes against that contract using Specification-Driven Development (SDD), and I review every output before it ships. AI accelerates the work — the engineering judgment stays mine.",
   },
 
   // Work History Section
