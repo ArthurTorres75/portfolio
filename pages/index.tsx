@@ -157,8 +157,8 @@ export default function Home(): React.JSX.Element {
   return (
     <>
       <Seo
-        title="Arthur Torres | Ingeniero en Informática · Full Stack Developer"
-        description={`Arthur Torres — Desarrollador Full Stack con +${fullStackYears} años de experiencia. Creo aplicaciones web, apps móviles e integro pagos con Next.js, React, Angular, Node.js, NestJS, AWS y Azure. Disponible para proyectos remotos.`}
+        title={t("seo.home.title", language)}
+        description={t("seo.home.description", language, { fullStackYears })}
         path="/"
         keywords="Arthur Torres, Ingeniero en Informática, Computer Engineer, Full Stack Developer, desarrollo web, Next.js, React, Angular, TypeScript, Node.js, NestJS, PostgreSQL, AWS, Azure, Vercel, React Native, integración de pagos, Stripe, PayPal, freelance, remoto"
       />
