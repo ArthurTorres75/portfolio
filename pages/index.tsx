@@ -212,7 +212,7 @@ export default function Home(): React.JSX.Element {
             custom={0.03}
           >
             <p className="text-white/80 text-lg leading-relaxed">
-              {t("about.intro", language)}
+              {t("about.intro", language, { fullStackYears })}
             </p>
           </motion.div>
 
