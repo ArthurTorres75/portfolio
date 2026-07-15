@@ -94,6 +94,20 @@ export function Testimonials(): React.JSX.Element {
 
   const testimonials: TestimonialProps[] = [
     {
+      clientName: "Chamco Digital",
+      role: t("testimonial6.role", language),
+      comment: t("testimonial6.comment", language),
+      rating: 5.0,
+      duration: "May 2026 - Jun 2026",
+      amount: "$820",
+      hours: t("testimonial.fixedPrice", language),
+      badges: [
+        { text: t("badge.quality", language), icon: "⭐" },
+        { text: t("badge.communicator", language), icon: "💬" },
+        { text: t("badge.reliable", language), icon: "✅" },
+      ],
+    },
+    {
       clientName: "React & Node Client",
       role: t("testimonial1.role", language),
       comment: t("testimonial1.comment", language),
@@ -180,7 +194,7 @@ export function Testimonials(): React.JSX.Element {
           </div>
           <div className="h-12 w-px bg-white/20" />
           <div>
-            <p className="text-4xl font-bold text-cyan-400">6</p>
+            <p className="text-4xl font-bold text-cyan-400">8</p>
             <p className="text-white/70 text-sm">{t("testimonial.totalJobs", language)}</p>
           </div>
           <div className="h-12 w-px bg-white/20" />
@@ -190,7 +204,7 @@ export function Testimonials(): React.JSX.Element {
           </div>
           <div className="h-12 w-px bg-white/20" />
           <div>
-            <p className="text-4xl font-bold text-cyan-400">$66K+</p>
+            <p className="text-4xl font-bold text-cyan-400">$67K+</p>
             <p className="text-white/70 text-sm">{t("testimonial.totalEarned", language)}</p>
           </div>
         </div>
