@@ -729,6 +729,10 @@ export const translations: Translations = {
     es: "Horas",
     en: "Hours",
   },
+  "testimonial.fixedPrice": {
+    es: "Precio fijo",
+    en: "Fixed price",
+  },
   "testimonial.avgRating": {
     es: "Calificación Promedio",
     en: "Average Rating",
@@ -794,6 +798,16 @@ export const translations: Translations = {
   "testimonial5.comment": {
     es: "Arthur trabajó excelentemente y como se esperaba. Pudimos cerrar las tareas planificadas a tiempo para nuestro cliente y él también quedó satisfecho con lo entregado. ¡Gracias Arthur!",
     en: "Arthur worked excellently and as expected. We were able to close the planned tasks on time for our client and he was also satisfied with what was delivered. Thank you Arthur!",
+  },
+
+  // Testimonial 6 - Chamco Digital
+  "testimonial6.role": {
+    es: "Finalización de sitio Next.js, optimización móvil y despliegue en Vercel",
+    en: "Next.js website finalization, mobile optimization, and Vercel deployment",
+  },
+  "testimonial6.comment": {
+    es: "Arthur superó todas las expectativas en este proyecto. Entregó un sitio en Next.js impactante y de alto rendimiento que capturó perfectamente nuestra visión, además de aportar criterio técnico y creatividad durante todo el proceso. Su comunicación fue excelente, cumplió los plazos de forma consistente y la calidad del trabajo fue verdaderamente excepcional. Lo que más me impresionó fue su atención al detalle, profesionalismo y compromiso con entregar un producto de primer nivel. El sitio final es moderno, rápido, escalable y elevó significativamente la presencia online de nuestra empresa. Lo volvería a contratar sin dudarlo y lo recomiendo ampliamente a cualquiera que busque un desarrollador full stack de primer nivel.",
+    en: "Arthur exceeded every expectation on this project. He delivered a stunning, high-performance Next.js website that perfectly captured our vision while bringing valuable technical expertise and creative insight to the process. His communication was excellent, deadlines were consistently met, and the quality of his work was truly exceptional. What impressed me most was his attention to detail, professionalism, and commitment to delivering a world-class product. The final website is modern, fast, scalable, and has significantly elevated our company's online presence. I would not hesitate to hire Arthur again and highly recommend him to anyone looking for a top-tier full-stack developer.",
   },
 
   // Badges
