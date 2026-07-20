@@ -1,6 +1,10 @@
-import React from "react";
+import type React from "react";
+import Image from "next/image";
+import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { animationVariants } from "@/hooks/useScrollAnimation";
 
 interface ProjectCardProps {
   title: string;
@@ -8,6 +12,8 @@ interface ProjectCardProps {
   technologies: string[];
   link?: string;
   image?: string;
+  index?: number;
+  category?: string;
 }
 
 export function ProjectCard({
@@ -15,12 +21,51 @@ export function ProjectCard({
   description,
   technologies,
   link,
+  image,
+  index = 0,
+  category,
 }: ProjectCardProps): React.JSX.Element {
   const { language } = useLanguage();
+  const { basePath } = useRouter();
+  const imageSrc = image ? `${basePath}${image}` : undefined;
   return (
-    <div className="group card-hover glass-effect rounded-lg p-6 hover:border-cyan-400/50">
-      {/* Header con efecto tornasolado */}
+    <motion.div
+      className="group card-hover glass-effect rounded-lg p-6 border border-cyan-500/25"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.15 }}
+      variants={animationVariants.fadeUp}
+      custom={index * 0.1}
+    >
+      {/* Project image (falls back to the iridescent gradient when none is set) */}
+      <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
+        {imageSrc ? (
+          <Image
+            src={imageSrc}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        ) : (
+          <div
+            aria-hidden="true"
+            className="iridescent-gradient absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
+          >
+            <span className="text-2xl font-bold text-white/90 px-4 text-center line-clamp-2">
+              {title}
+            </span>
+          </div>
+        )}
+      </div>
+
+      {/* Header */}
       <div className="mb-4">
+        {category && (
+          <span className="inline-block text-xs px-2 py-0.5 rounded-full bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 mb-2 font-medium tracking-wide">
+            {category}
+          </span>
+        )}
         <h3 className="text-xl font-bold text-white group-hover:iridescent-text transition-all duration-300">
           {title}
         </h3>
@@ -47,7 +92,7 @@ export function ProjectCard({
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors group/link"
+          className="inline-flex items-center text-cyan-300 project-link group/link"
         >
           {t("projects.viewProject", language)}
           <svg
@@ -65,6 +110,6 @@ export function ProjectCard({
           </svg>
         </a>
       )}
-    </div>
+    </motion.div>
   );
 }

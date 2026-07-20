@@ -2,12 +2,12 @@ import { Html, Head, Main, NextScript } from "next/document";
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="es">
       <Head>
-        <link
-          href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
-          rel="stylesheet"
-        />
+        <meta charSet="utf-8" />
+        <meta name="theme-color" content="#020617" />
+        <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
+        <link rel="shortcut icon" href="/portfolio/favicon.svg" />
       </Head>
       <body>
         <Main />

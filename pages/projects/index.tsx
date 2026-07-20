@@ -1,73 +1,35 @@
-import React from "react";
+import type React from "react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/common/Section";
 import { ProjectCard } from "@/components/common/ProjectCard";
+import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
+import { PROJECTS } from "@/lib/projects";
 
 export default function Projects(): React.JSX.Element {
   const { language } = useLanguage();
-  const projects = [
-    {
-      title: t("project1.title", language),
-      description: t("project1.desc", language),
-      technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project2.title", language),
-      description: t("project2.desc", language),
-      technologies: ["Node.js", "Express", "PostgreSQL", "React"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project3.title", language),
-      description: t("project3.desc", language),
-      technologies: ["React Native", "JavaScript", "Firebase"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project4.title", language),
-      description: t("project4.desc", language),
-      technologies: ["Next.js", "Chart.js", "TypeScript", "Tailwind"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project5.title", language),
-      description: t("project5.desc", language),
-      technologies: ["Next.js", "Stripe", "MongoDB", "React"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project6.title", language),
-      description: t("project6.desc", language),
-      technologies: ["Next.js", "TypeScript", "PostgreSQL", "Tailwind"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project7.title", language),
-      description: t("project7.desc", language),
-      technologies: ["Next.js", "Socket.io", "MongoDB", "Redux"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project8.title", language),
-      description: t("project8.desc", language),
-      technologies: ["Next.js", "TypeScript", "Tailwind", "Next.js"],
-      link: "https://github.com",
-    },
-    {
-      title: t("project9.title", language),
-      description: t("project9.desc", language),
-      technologies: ["Node.js", "Express", "Jest", "PostgreSQL"],
-      link: "https://github.com",
-    },
-  ];
+  const projects = PROJECTS.map((p) => ({
+    title: t(p.titleKey, language),
+    description: t(p.descKey, language),
+    technologies: p.technologies,
+    link: p.link,
+    image: p.image,
+    category: t(p.categoryKey, language),
+  }));
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      <Header name="Arthur Torres" />
+    <>
+      <Seo
+        title={t("seo.projects.title", language)}
+        description={t("seo.projects.description", language)}
+        path="/projects/"
+        keywords="Arthur Torres projects, Next.js portfolio, React projects, TypeScript"
+      />
+
+      <div className="min-h-screen bg-black text-white flex flex-col">
+        <Header name="Arthur Torres" />
 
       <main className="flex-grow">
         {/* Hero Section */}
@@ -101,7 +63,8 @@ export default function Projects(): React.JSX.Element {
         </Section>
       </main>
 
-      <Footer />
-    </div>
+        <Footer />
+      </div>
+    </>
   );
 }

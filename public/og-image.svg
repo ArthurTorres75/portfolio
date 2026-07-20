@@ -1,0 +1,108 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#020617"/>
+      <stop offset="60%" style="stop-color:#0a1628"/>
+      <stop offset="100%" style="stop-color:#0c1a3a"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="50%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#0891b2"/>
+    </linearGradient>
+    <linearGradient id="glow1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#06b6d4;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#06b6d4;stop-opacity:0"/>
+    </linearGradient>
+    <linearGradient id="glow2" x1="100%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.12"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0"/>
+    </linearGradient>
+    <filter id="blur1">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+    <filter id="blur2">
+      <feGaussianBlur stdDeviation="80"/>
+    </filter>
+    <clipPath id="clip">
+      <rect width="1200" height="630"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Glow orbs -->
+  <g clip-path="url(#clip)">
+    <circle cx="950" cy="120" r="280" fill="url(#glow1)" filter="url(#blur1)"/>
+    <circle cx="180" cy="520" r="260" fill="url(#glow2)" filter="url(#blur2)"/>
+  </g>
+
+  <!-- Grid lines (subtle) -->
+  <g stroke="#1e40af" stroke-opacity="0.08" stroke-width="1">
+    <line x1="0" y1="157" x2="1200" y2="157"/>
+    <line x1="0" y1="314" x2="1200" y2="314"/>
+    <line x1="0" y1="471" x2="1200" y2="471"/>
+    <line x1="300" y1="0" x2="300" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="900" y1="0" x2="900" y2="630"/>
+  </g>
+
+  <!-- Top accent bar -->
+  <rect x="80" y="80" width="120" height="4" rx="2" fill="url(#accent)"/>
+
+  <!-- Main name -->
+  <text x="80" y="240" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="84" font-weight="800" letter-spacing="-2" fill="white">Arthur Torres</text>
+
+  <!-- Title with gradient -->
+  <text x="82" y="310" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="38" font-weight="500" fill="#67e8f9">Full Stack Developer</text>
+
+  <!-- Separator -->
+  <rect x="80" y="348" width="600" height="2" rx="1" fill="url(#accent)" opacity="0.4"/>
+
+  <!-- Tech stack tags -->
+  <g font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="20" font-weight="500">
+    <!-- Next.js tag -->
+    <rect x="80" y="372" width="110" height="36" rx="18" fill="#1e3a5f" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="135" y="395" text-anchor="middle" fill="#67e8f9">Next.js</text>
+
+    <!-- React tag -->
+    <rect x="204" y="372" width="90" height="36" rx="18" fill="#1e3a5f" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="249" y="395" text-anchor="middle" fill="#67e8f9">React</text>
+
+    <!-- TypeScript tag -->
+    <rect x="308" y="372" width="130" height="36" rx="18" fill="#1e3a5f" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="373" y="395" text-anchor="middle" fill="#67e8f9">TypeScript</text>
+
+    <!-- Node.js tag -->
+    <rect x="452" y="372" width="104" height="36" rx="18" fill="#1e3a5f" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="504" y="395" text-anchor="middle" fill="#67e8f9">Node.js</text>
+
+    <!-- AWS tag -->
+    <rect x="570" y="372" width="80" height="36" rx="18" fill="#1e3a5f" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="610" y="395" text-anchor="middle" fill="#67e8f9">AWS</text>
+  </g>
+
+  <!-- URL bottom left -->
+  <text x="80" y="550" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#94a3b8">arthurtorres75.github.io/portfolio</text>
+
+  <!-- Right side decoration — abstract circuit/dots -->
+  <g opacity="0.25">
+    <circle cx="960" cy="315" r="120" stroke="#06b6d4" stroke-width="1" fill="none"/>
+    <circle cx="960" cy="315" r="80" stroke="#3b82f6" stroke-width="1" fill="none"/>
+    <circle cx="960" cy="315" r="40" stroke="#06b6d4" stroke-width="1.5" fill="none"/>
+    <circle cx="960" cy="315" r="6" fill="#06b6d4"/>
+    <!-- radial lines -->
+    <line x1="960" y1="195" x2="960" y2="175" stroke="#06b6d4" stroke-width="1.5"/>
+    <line x1="960" y1="435" x2="960" y2="455" stroke="#06b6d4" stroke-width="1.5"/>
+    <line x1="840" y1="315" x2="820" y2="315" stroke="#06b6d4" stroke-width="1.5"/>
+    <line x1="1080" y1="315" x2="1100" y2="315" stroke="#06b6d4" stroke-width="1.5"/>
+    <line x1="875" y1="230" x2="861" y2="216" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="1045" y1="230" x2="1059" y2="216" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="875" y1="400" x2="861" y2="414" stroke="#3b82f6" stroke-width="1"/>
+    <line x1="1045" y1="400" x2="1059" y2="414" stroke="#3b82f6" stroke-width="1"/>
+  </g>
+
+  <!-- Bottom accent bar -->
+  <rect x="0" y="618" width="1200" height="12" fill="url(#accent)" opacity="0.6"/>
+</svg>
