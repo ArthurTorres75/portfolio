@@ -360,8 +360,8 @@ export const translations: Translations = {
 
   // Job 5 — Little Taller
   "job5.title": {
-    es: "Desarrollador Frontend",
-    en: "Frontend Developer",
+    es: "Ingeniero Frontend",
+    en: "Frontend Engineer",
   },
   "job5.company": {
     es: "Little Taller — Remoto (EE. UU.)",
@@ -372,8 +372,8 @@ export const translations: Translations = {
     en: "Aug 2022 – Jan 2024",
   },
   "job5.desc": {
-    es: "Desarrollo frontend con React, Material UI, Firebase, Tailwind CSS y TypeScript. Despliegues en Vercel. Comunicación efectiva en equipo y optimización de aplicaciones web.",
-    en: "Frontend development with React, Material UI, Firebase, Tailwind CSS, and TypeScript. Deployments on Vercel. Effective team communication and web application optimization.",
+    es: "Desarrollé una SPA para el cliente EarkMarkz usando React y Tailwind CSS. Diseñé e implementé el frontend siguiendo una arquitectura Atomic Design para maximizar la reutilización de componentes, la consistencia y el mantenimiento en toda la aplicación. Construí una biblioteca de componentes UI reutilizables a partir de diseños en Figma, incluyendo componentes altamente configurables como un botón personalizable con múltiples variantes, tamaños y estados. Este enfoque redujo código duplicado y aseguró un sistema de diseño consistente en todo el proyecto. Traducí los diseños de Figma a interfaces responsive pixel-perfect con Tailwind CSS, logrando una fidelidad visual muy alta y manteniendo un código limpio, escalable y mantenible. Tecnologías clave: React, Tailwind CSS, Atomic Design, Figma, Responsive Design, Component-Based Architecture.",
+    en: "Developed a Single Page Application (SPA) for the client EarkMarkz using React and Tailwind CSS. Designed and implemented the frontend following an Atomic Design architecture to maximize component reusability, consistency, and maintainability across the application. Built a reusable UI component library from Figma designs, including highly configurable components such as a single customizable button that supported multiple variants, sizes, and states. This approach reduced duplicated code and ensured a consistent design system throughout the project. Translated Figma designs into pixel-perfect responsive interfaces using Tailwind CSS, achieving a very high level of visual fidelity while maintaining clean, scalable, and maintainable code. Key technologies: React, Tailwind CSS, Atomic Design, Figma, Responsive Design, Component-Based Architecture.",
   },
 
   // Job 6 — Montrix
