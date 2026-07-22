@@ -91,7 +91,7 @@ export default function Home(): React.JSX.Element {
     url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/",
     sameAs: [
       "https://github.com/ArthurTorres75",
-      "https://www.linkedin.com/in/arthur-torres-9b41a2184",
+      "https://www.linkedin.com/in/arthur-torres-dev",
       "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
     ],
     jobTitle: t("hero.title", language),
