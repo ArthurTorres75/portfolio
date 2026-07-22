@@ -1,5 +1,6 @@
 import type React from "react";
 import Head from "next/head";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
@@ -18,7 +19,7 @@ import { Services } from "@/components/features/Services";
 import { useLanguage } from "@/hooks/useLanguage";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
-import { PROJECTS } from "@/lib/projects";
+import { getProjectPath, PROJECTS } from "@/lib/projects";
 
 const WaterSurface3D = dynamic(
   () => import("@/components/common/WaterSurface3D").then((mod) => mod.WaterSurface3D),
@@ -69,12 +70,12 @@ export default function Home(): React.JSX.Element {
     title: t(p.titleKey, language),
     description: t(p.descKey, language),
     technologies: p.technologies,
-    link: p.link,
+    link: getProjectPath(p.slug),
     image: p.image,
     category: t(p.categoryKey, language),
   }));
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/";
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -88,7 +89,7 @@ export default function Home(): React.JSX.Element {
     "@context": "https://schema.org",
     "@type": "Person",
     name,
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/portfolio/",
+    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/",
     sameAs: [
       "https://github.com/ArthurTorres75",
       "https://www.linkedin.com/in/arthur-torres-dev",
@@ -322,12 +323,12 @@ export default function Home(): React.JSX.Element {
             ))}
           </div>
           <div className="flex justify-center mt-10">
-            <a
-              href="/portfolio/projects"
+            <Link
+              href="/projects"
               className="px-8 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
             >
               {t("projects.viewAll", language)} →
-            </a>
+            </Link>
           </div>
         </Section>
 

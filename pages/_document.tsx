@@ -6,8 +6,8 @@ export default function Document() {
       <Head>
         <meta charSet="utf-8" />
         <meta name="theme-color" content="#020617" />
-        <link rel="icon" type="image/svg+xml" href="/portfolio/favicon.svg" />
-        <link rel="shortcut icon" href="/portfolio/favicon.svg" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.svg" />
       </Head>
       <body>
         <Main />

@@ -1,4 +1,5 @@
 export interface Project {
+  slug: string;
   titleKey: string;
   descKey: string;
   technologies: string[];
@@ -9,6 +10,7 @@ export interface Project {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "gmvykon",
     titleKey: "project12.title",
     descKey: "project12.desc",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Vercel"],
@@ -17,6 +19,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.corporateWebsite",
   },
   {
+    slug: "chamco-digital",
     titleKey: "project11.title",
     descKey: "project11.desc",
     technologies: ["Next.js", "PostgreSQL", "Azure", "Vercel"],
@@ -25,6 +28,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.adminPanel",
   },
   {
+    slug: "school-platform",
     titleKey: "project10.title",
     descKey: "project10.desc",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
@@ -32,6 +36,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.saas",
   },
   {
+    slug: "hacking-hr",
     titleKey: "project1.title",
     descKey: "project1.desc",
     technologies: ["Next.js", "TypeScript", "Payload CMS", "AWS Amplify"],
@@ -40,6 +45,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.eventPlatform",
   },
   {
+    slug: "otherworld-gift-erp",
     titleKey: "project2.title",
     descKey: "project2.desc",
     technologies: ["Next.js", "NestJS", "Prisma", "MySQL", "AFIP"],
@@ -47,6 +53,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.erp",
   },
   {
+    slug: "speedy-delivery-mobile",
     titleKey: "project3.title",
     descKey: "project3.desc",
     technologies: ["React Native", "Expo", "Tailwind CSS", "TypeScript"],
@@ -54,6 +61,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.mobileApp",
   },
   {
+    slug: "piggyback-network",
     titleKey: "project4.title",
     descKey: "project4.desc",
     technologies: ["Next.js", "React", "Stripe", "PayPal"],
@@ -62,6 +70,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.ecommerce",
   },
   {
+    slug: "little-taller",
     titleKey: "project5.title",
     descKey: "project5.desc",
     technologies: ["React", "TypeScript", "Firebase", "Material UI"],
@@ -70,6 +79,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.frontendSuite",
   },
   {
+    slug: "enterprise-dashboard",
     titleKey: "project6.title",
     descKey: "project6.desc",
     technologies: ["Angular", "Angular Material", "Google Maps API", "AWS"],
@@ -77,6 +87,7 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.enterpriseDashboard",
   },
   {
+    slug: "cloudshim",
     titleKey: "project7.title",
     descKey: "project7.desc",
     technologies: ["Angular", "GoJS", "D3.js", "TypeScript"],
@@ -85,3 +96,11 @@ export const PROJECTS: Project[] = [
     categoryKey: "category.saasTool",
   },
 ];
+
+export function getProjectPath(slug: string): string {
+  return `/projects/${slug}`;
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return PROJECTS.find((project) => project.slug === slug);
+}

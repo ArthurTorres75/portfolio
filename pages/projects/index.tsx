@@ -6,7 +6,7 @@ import { ProjectCard } from "@/components/common/ProjectCard";
 import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
-import { PROJECTS } from "@/lib/projects";
+import { getProjectPath, PROJECTS } from "@/lib/projects";
 
 export default function Projects(): React.JSX.Element {
   const { language } = useLanguage();
@@ -14,7 +14,7 @@ export default function Projects(): React.JSX.Element {
     title: t(p.titleKey, language),
     description: t(p.descKey, language),
     technologies: p.technologies,
-    link: p.link,
+    link: getProjectPath(p.slug),
     image: p.image,
     category: t(p.categoryKey, language),
   }));
@@ -24,7 +24,7 @@ export default function Projects(): React.JSX.Element {
       <Seo
         title={t("seo.projects.title", language)}
         description={t("seo.projects.description", language)}
-        path="/projects/"
+        path="/projects"
         keywords="Arthur Torres projects, Next.js portfolio, React projects, TypeScript"
       />
 
