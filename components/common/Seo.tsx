@@ -11,7 +11,7 @@ interface SeoProps {
   noindex?: boolean;
 }
 
-const DEFAULT_SITE_URL = "https://arthurtorres75.github.io/portfolio/";
+const DEFAULT_SITE_URL = "https://arthurtorres75.github.io/";
 const DEFAULT_OG_IMAGE = "/og-image.svg";
 
 function normalizeSiteUrl(url: string): string {

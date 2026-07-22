@@ -1,10 +1,15 @@
 import type React from "react";
-import Image from "next/image";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { useLanguage } from "@/hooks/useLanguage";
 import { t } from "@/lib/translations";
 import { animationVariants } from "@/hooks/useScrollAnimation";
+import { ProjectImage } from "@/components/common/OptimizedImage";
+import {
+  isExternalNavigationTarget,
+  normalizeInternalHref,
+} from "@/lib/assets/paths";
 
 interface ProjectCardProps {
   title: string;
@@ -27,7 +32,11 @@ export function ProjectCard({
 }: ProjectCardProps): React.JSX.Element {
   const { language } = useLanguage();
   const { basePath } = useRouter();
-  const imageSrc = image ? `${basePath}${image}` : undefined;
+  const normalizedLink = link
+    ? normalizeInternalHref(link, { basePath })
+    : undefined;
+  const isExternalLink = link ? isExternalNavigationTarget(link) : false;
+
   return (
     <motion.div
       className="group card-hover glass-effect rounded-lg p-6 border border-cyan-500/25"
@@ -38,16 +47,20 @@ export function ProjectCard({
       custom={index * 0.1}
     >
       {/* Project image (falls back to the iridescent gradient when none is set) */}
-      <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
-        {imageSrc ? (
-          <Image
-            src={imageSrc}
-            alt={title}
-            fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
-          />
+      {image ? (
+        normalizedLink && !isExternalLink ? (
+          <Link
+            href={normalizedLink}
+            className="block mb-4"
+            aria-label={`${title} image link`}
+          >
+            <ProjectImage src={image} alt={title} />
+          </Link>
         ) : (
+          <ProjectImage src={image} alt={title} className="mb-4" />
+        )
+      ) : (
+        <div className="relative w-full h-40 mb-4 rounded-md overflow-hidden">
           <div
             aria-hidden="true"
             className="iridescent-gradient absolute inset-0 flex items-center justify-center transition-transform duration-500 group-hover:scale-105"
@@ -56,8 +69,8 @@ export function ProjectCard({
               {title}
             </span>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
       {/* Header */}
       <div className="mb-4">
@@ -88,27 +101,49 @@ export function ProjectCard({
 
       {/* Link */}
       {link && (
-        <a
-          href={link}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-cyan-300 project-link group/link"
-        >
-          {t("projects.viewProject", language)}
-          <svg
-            className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
+        isExternalLink ? (
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center text-cyan-300 project-link group/link"
           >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M13 7l5 5m0 0l-5 5m5-5H6"
-            />
-          </svg>
-        </a>
+            {t("projects.viewProject", language)}
+            <svg
+              className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </a>
+        ) : (
+          <Link
+            href={normalizedLink ?? "#"}
+            className="inline-flex items-center text-cyan-300 project-link group/link"
+          >
+            {t("projects.viewProject", language)}
+            <svg
+              className="w-4 h-4 ml-2 group-hover/link:translate-x-1 transition-transform"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M13 7l5 5m0 0l-5 5m5-5H6"
+              />
+            </svg>
+          </Link>
+        )
       )}
     </motion.div>
   );
