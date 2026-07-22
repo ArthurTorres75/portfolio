@@ -25,7 +25,7 @@ export function Footer(): React.JSX.Element {
               </li>
               <li>
                 <a
-                  href="https://www.linkedin.com/in/arthur-torres-9b41a2184"
+                  href="https://www.linkedin.com/in/arthur-torres-dev"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="footer-link"
