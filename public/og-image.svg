@@ -84,7 +84,7 @@
   </g>
 
   <!-- URL bottom left -->
-  <text x="80" y="550" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#94a3b8">arthurtorres75.github.io/portfolio</text>
+  <text x="80" y="550" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" fill="#94a3b8">arthurtorres75.github.io</text>
 
   <!-- Right side decoration — abstract circuit/dots -->
   <g opacity="0.25">

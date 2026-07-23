@@ -3,6 +3,7 @@ import type React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { useLanguage } from "@/hooks/useLanguage";
+import { normalizeInternalHref } from "@/lib/assets/paths";
 import { t } from "@/lib/translations";
 
 interface HeaderProps {
@@ -100,7 +101,9 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
       sectionId: "servicios",
     },
     {
-      href: isProjectsPage ? "/projects/" : `${homeBase}#proyectos`,
+      href: isProjectsPage
+        ? normalizeInternalHref("/projects", { basePath: router.basePath })
+        : `${homeBase}#proyectos`,
       label: t("nav.proyectos", language),
       sectionId: "proyectos",
       route: "/projects",
@@ -145,7 +148,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex space-x-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={`nav-link ${
@@ -153,7 +156,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
                 }`}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
@@ -210,7 +213,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
         {isMenuOpen && (
           <nav id="mobile-nav" className="lg:hidden pb-4 space-y-2 flex flex-col items-start">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className={`block py-2 transition-colors duration-300 nav-link-mobile ${
@@ -221,7 +224,7 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
                 onClick={() => setIsMenuOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             
             {/* Mobile Language Selector */}

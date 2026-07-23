@@ -1,5 +1,7 @@
 import type React from "react";
 import Image from "next/image";
+import { useRouter } from "next/router";
+import { normalizeAssetPath } from "@/lib/assets/paths";
 
 interface ProjectImageProps {
   src: string;
@@ -12,10 +14,13 @@ export function ProjectImage({
   alt,
   className = "",
 }: ProjectImageProps): React.JSX.Element {
+  const { basePath } = useRouter();
+  const normalizedSrc = normalizeAssetPath(src, { basePath });
+
   return (
     <div className={`relative w-full h-40 rounded-md overflow-hidden ${className}`}>
       <Image
-        src={src}
+        src={normalizedSrc}
         alt={alt}
         fill
         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -40,13 +45,16 @@ export function AvatarImage({
   size = 80,
   className = "",
 }: AvatarImageProps): React.JSX.Element {
+  const { basePath } = useRouter();
+  const normalizedSrc = normalizeAssetPath(src, { basePath });
+
   return (
     <div
       className={`relative rounded-full overflow-hidden shrink-0 ${className}`}
       style={{ width: size, height: size }}
     >
       <Image
-        src={src}
+        src={normalizedSrc}
         alt={alt}
         fill
         sizes={`${size}px`}

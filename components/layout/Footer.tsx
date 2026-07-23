@@ -46,7 +46,7 @@ export function Footer(): React.JSX.Element {
                 </Link>
               </li>
               <li>
-                <Link href="/projects/" className="footer-link">
+                <Link href="/projects" className="footer-link">
                   {t("nav.proyectos", language)}
                 </Link>
               </li>

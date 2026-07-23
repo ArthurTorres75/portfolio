@@ -4,7 +4,7 @@ Instrucciones de routing para sub-agentes en este proyecto.
 
 ## Stack
 
-- Next.js 15.2.0 · Pages Router · Static Export (GitHub Pages)
+- Next.js 16.1.5 · Pages Router · Static Export (GitHub Pages)
 - React 19.0.0 · React Compiler
 - TypeScript 5+ strict
 - Tailwind CSS 4
