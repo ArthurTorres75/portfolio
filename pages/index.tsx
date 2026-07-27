@@ -75,7 +75,7 @@ export default function Home(): React.JSX.Element {
     category: t(p.categoryKey, language),
   }));
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-three-ashen-72.vercel.app/";
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -89,7 +89,7 @@ export default function Home(): React.JSX.Element {
     "@context": "https://schema.org",
     "@type": "Person",
     name,
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/",
+    url: siteUrl,
     sameAs: [
       "https://github.com/ArthurTorres75",
       "https://www.linkedin.com/in/arthur-torres-dev",
