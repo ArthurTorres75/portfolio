@@ -1,10 +1,10 @@
 # Arthur Torres — Portfolio
 
-Personal portfolio site for Arthur Torres, Senior Full-Stack Software Engineer. Built with [Next.js 15](https://nextjs.org) (Pages Router), bilingual (Spanish/English) via a client-side language toggle, and deployed as a static export to GitHub Pages.
+Personal portfolio site for Arthur Torres, Senior Full-Stack Software Engineer. Built with [Next.js 15](https://nextjs.org) (Pages Router), bilingual (Spanish/English) via a client-side language toggle, and deployed on Vercel.
 
 ## Stack
 
-- Next.js 15 · Pages Router · Static Export
+- Next.js 15 · Pages Router
 - React 19 · React Compiler
 - TypeScript 5 (strict mode)
 - Tailwind CSS 4

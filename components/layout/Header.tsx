@@ -22,7 +22,6 @@ export function Header({ name }: HeaderProps): React.JSX.Element {
 
   useEffect(() => {
     if (router.pathname !== "/") {
-      setActiveSection("");
       return;
     }
 

@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://arthurtorres75.github.io/sitemap.xml
+Sitemap: https://portfolio-three-ashen-72.vercel.app/sitemap.xml

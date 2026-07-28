@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/@stryker-mutator/core/schema/stryker-schema.json",
+  "packageManager": "pnpm",
+  "testRunner": "vitest",
+  "checkers": ["typescript"],
+  "tsconfigFile": "tsconfig.json",
+  "coverageAnalysis": "perTest",
+  "mutate": [
+    "lib/**/*.ts",
+    "lib/**/*.tsx",
+    "hooks/**/*.ts",
+    "hooks/**/*.tsx",
+    "!lib/**/*.test.ts",
+    "!lib/**/*.test.tsx",
+    "!hooks/**/*.test.ts",
+    "!hooks/**/*.test.tsx"
+  ],
+  "thresholds": {
+    "high": 80,
+    "low": 65,
+    "break": 50
+  },
+  "reporters": ["clear-text", "progress", "html"]
+}

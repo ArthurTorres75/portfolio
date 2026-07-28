@@ -1,10 +1,5 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  output: "export", // Static export para GitHub Pages
-  images: {
-    unoptimized: true, // Requerido para exportación estática
-  },
-};
+const nextConfig: NextConfig = {};
 
 export default nextConfig;

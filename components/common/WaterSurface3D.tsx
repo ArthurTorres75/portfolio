@@ -1,5 +1,5 @@
 import type React from "react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { DoubleSide, Vector2 } from "three";
 import type { Mesh, ShaderMaterial } from "three";
@@ -16,13 +16,16 @@ function WaterPlane({ isVisible }: WaterPlaneProps): React.JSX.Element {
   const [isTouchLikeDevice, setIsTouchLikeDevice] = useState(false);
   const meshRef = useRef<Mesh | null>(null);
   const materialRef = useRef<ShaderMaterial | null>(null);
-  const uniformsRef = useRef({
-    uTime: { value: 0 },
-    uWaveAmp: { value: 0.18 },
-    uWaveFreq: { value: 2.4 },
-    uWaveSpeed: { value: 0.95 },
-    uMouse: { value: new Vector2(0, 0) },
-  });
+  const uniforms = useMemo(
+    () => ({
+      uTime: { value: 0 },
+      uWaveAmp: { value: 0.18 },
+      uWaveFreq: { value: 2.4 },
+      uWaveSpeed: { value: 0.95 },
+      uMouse: { value: new Vector2(0, 0) },
+    }),
+    []
+  );
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(hover: none)");
@@ -63,7 +66,7 @@ function WaterPlane({ isVisible }: WaterPlaneProps): React.JSX.Element {
       <planeGeometry args={[8.4, 8.4, 180, 180]} />
       <shaderMaterial
         ref={materialRef}
-        uniforms={uniformsRef.current}
+        uniforms={uniforms}
         transparent
         side={DoubleSide}
         vertexShader={`
