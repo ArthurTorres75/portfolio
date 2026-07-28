@@ -8,6 +8,8 @@ auditConfig:
 minimumReleaseAgeExclude:
   - baseline-browser-mapping
   - postcss@8.5.24
+  - framer-motion@12.43.0
+  - motion-dom@12.43.0
 overrides:
   "postcss@<8.5.18": "^8.5.24"
   "undici@<7.28.0": "^7.29.0"
