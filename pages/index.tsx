@@ -1,7 +1,6 @@
 import type React from "react";
 import Head from "next/head";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import { Header } from "@/components/layout/Header";
@@ -17,6 +16,7 @@ import { Testimonials } from "@/components/features/Testimonials";
 import { WorkHistory } from "@/components/features/WorkHistory";
 import { Services } from "@/components/features/Services";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { animationVariants, useScrollAnimation } from "@/hooks/useScrollAnimation";
 import { t } from "@/lib/translations";
 import { getProjectPath, PROJECTS } from "@/lib/projects";
@@ -36,13 +36,10 @@ function getYearsSince(startYear: number): number {
 
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
-  const [isDesktop, setIsDesktop] = useState(false);
+  const isDesktop = useIsDesktop();
   const fullStackYears = getYearsSince(FULLSTACK_START_YEAR) + FULLSTACK_UNIVERSITY_YEARS;
   const frontendYears = getYearsSince(FRONTEND_START_YEAR);
 
-  useEffect(() => {
-    setIsDesktop(!window.matchMedia("(hover: none), (pointer: coarse)").matches);
-  }, []);
   const { ref: aboutRef, isInView: isAboutInView } = useScrollAnimation({
     once: true,
     amount: 0.2,
@@ -75,7 +72,7 @@ export default function Home(): React.JSX.Element {
     category: t(p.categoryKey, language),
   }));
 
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://portfolio-three-ashen-72.vercel.app/";
 
   const websiteSchema = {
     "@context": "https://schema.org",
@@ -89,7 +86,7 @@ export default function Home(): React.JSX.Element {
     "@context": "https://schema.org",
     "@type": "Person",
     name,
-    url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://arthurtorres75.github.io/",
+    url: siteUrl,
     sameAs: [
       "https://github.com/ArthurTorres75",
       "https://www.linkedin.com/in/arthur-torres-dev",
