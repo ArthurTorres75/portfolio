@@ -6,6 +6,13 @@ updates:
       interval: "weekly"
       day: "monday"
     open-pull-requests-limit: 10
+    ignore:
+      # typescript-eslint doesn't support TS 7.0 yet (confirmed 2026-07-28:
+      # `typescript-eslint does not support TS 7.0`, tracked at
+      # https://github.com/typescript-eslint/typescript-eslint/issues/10940).
+      # Remove this ignore once that issue closes.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
     groups:
       next-ecosystem:
         patterns:
