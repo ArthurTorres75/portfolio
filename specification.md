@@ -58,6 +58,27 @@ Two HIGH advisories are ignored via `pnpm-workspace.yaml`'s `auditConfig.ignoreG
 
 **Re-evaluate both on every dependency bump** (`pnpm audit` will still list them, just non-blocking) — drop the ignore entries the moment `next` or the ESLint toolchain ship a compatible fix.
 
+## Git Workflow & PR Conventions
+
+Binding for humans and agents, same as the QA standards above — matches this repo's actual history (verified via `git log`), not an aspirational process.
+
+### Branches
+- Base/integration branch: **`development`** — not `main`. `main` is production; it only receives `development` via its own promotion, never a direct feature-branch PR.
+- Feature branches: `type/short-kebab-description`, lowercase. Types in active use: `feat`, `fix`, `chore`, `docs`, `refactor`, `test`, `ci`.
+- `dependabot/npm_and_yarn/*` branches are automated (see `.github/dependabot.yml`) — don't hand-create branches in that namespace.
+
+### Commits — Conventional Commits
+- `type(scope): description` or `type: description`. Types: `feat`, `fix`, `chore`, `refactor`, `test`, `docs`, `ci`, `perf`, `build`, `style`, `revert`.
+- **No AI attribution** (`Co-Authored-By: Claude`, etc.) — conventional commits only, human authorship.
+- One commit per logical unit of work. Don't bundle unrelated concerns (e.g. a dependency fix + a new feature) into a single commit — separate commits keep `git blame`/revert meaningful. (Lesson from this repo's own history: a QA-standards commit and a lint-bugfix commit got bundled together on 2026-07-28 and had to be untangled after the fact.)
+
+### Pull Requests
+- Target `development`, never `main` directly.
+- **Merge strategy: merge commit** (not squash, not rebase) — confirmed from existing history (`git log --merges` shows real 2-parent merge commits, e.g. PR #32).
+- Title: mirrors the primary commit type, `type: short description`, under 70 characters.
+- Body: 1-3 bullet summary + a test-plan checklist (lint/typecheck/test/build/manual verification actually run, not assumed).
+- No mandatory issue-linking — this repo has no issue-tracker workflow and no `.github/PULL_REQUEST_TEMPLATE.md`; don't import that convention from unrelated projects/skills.
+
 ## Internationalization (i18n)
 
 - Custom client-side implementation: React Context (`hooks/useLanguage.tsx`) + dictionary (`lib/translations.ts`).
@@ -119,43 +140,63 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 **Framing note**: backend is organized by domain modules (content/CMS, media, roles/auth kept separate) — this is pragmatic modular architecture, not a formally-run DDD process (no event storming, no ubiquitous language, no explicit aggregates/domain events). Do not describe this as "DDD" or "bounded contexts" without that caveat.
 
 ### 3. School Platform — SaaS
-`Next.js, TypeScript, Tailwind CSS, Vercel`
-- X / Y / Z: TBD
+`lib/projects.ts` lists: `Next.js, TypeScript, Tailwind CSS, Vercel` — **incomplete**, see below.
+
+**Partially recovered from memory (not a fresh interview — verify before publishing)**: solo personal project (not client work — frame accordingly, unlike GMVYKON/Chamco). Real stack is broader than the current tags: Next.js/Vercel frontend, **NestJS backend, PostgreSQL on Neon, deployed via Railway, Turborepo monorepo**. Feature scope: enrollment + admin workflows, "modern UX." Multi-tenant isolation has **never been technically confirmed** — don't claim it. **No AI/agent feature exists today** (a parent-complaints-triage agent is a *future plan*, not built) — do not describe this project as having a "súper agente" or AI-driven multi-tenant isolation.
+- X / Y / Z: still TBD — needs a real interview for accomplishment/metrics, but the honest scope/stack above should replace the current thin tag list regardless.
 
 ### 4. Hacking HR — Event Platform
-`Next.js, TypeScript, Payload CMS, AWS Amplify`
-- X / Y / Z: TBD
+`Next.js, TypeScript, Payload CMS, AWS Amplify` (frontend tags confirmed correct)
+
+**Partially recovered from memory**: Full-Stack Developer, Oct 2025–Mar 2026. Real live URL: **https://www.hackinghrlab.io/** (currently NOT used as the project link — it points to the generic Upwork profile instead; this is a quick win for backlog item "replace broken links").
+- Backend: helped design (**collaborative, not sole architect**) two MongoDB modules — "jobs" (job search) and "pods." Added TanStack Query (React Query) for pagination/query speed.
+- Real trade-off story: team considered adding DB indexes to speed queries, but indexes would raise cloud cost and the client wanted minimum spend — so they deliberately skipped indexing and solved it client-side (TanStack Query + pagination) instead. Genuine cost-vs-performance judgment call, citable as-is.
+- Owned Stripe payments **end-to-end** (frontend + backend) — subscription-mode checkout with coupon discounts across two membership tiers (Premium $199/yr, Premium+ $359/yr, live-verified 2026-07-24). This is Arthur's only confirmed backend-Stripe project — do not attribute backend/webhook Stripe work to Piggyback Network (frontend-only there, see #7).
+- X / Y / Z: TBD for a formal write-up, but the pieces above (payments ownership + cost-aware architecture trade-off) are strong X/Y/Z material once phrased with metrics.
 
 ### 5. Otherworld Gift — ERP
-`Next.js, NestJS, Prisma, MySQL, AFIP`
-- X / Y / Z: TBD
+`Next.js, NestJS, Prisma, MySQL, AFIP` (tags confirmed correct)
+
+**Partially recovered from memory**: confirmed feature scope — AFIP e-invoicing (Argentina's tax-compliant invoice generation, the direct analog to "GST invoicing" asks), inventory management, sales authorization. No formal XYZ interview has been run yet (only Upwork-proposal framing exists) — do not publish metrics that don't exist.
+- **Correction**: the "found hardcoded secrets, moved to env vars" anecdote belongs to a *different, undocumented* project (Wya Group / mymoldtech.com) — Arthur previously mis-attributed it to Otherworld Gift. Do not use that story for this case study.
+- X / Y / Z: TBD — needs a real interview.
 
 ### 6. Speedy Delivery — Mobile App
-`React Native, Expo, Tailwind CSS, TypeScript`
-- X / Y / Z: TBD
+`React Native, Expo, Tailwind CSS, TypeScript` (tags confirmed correct)
+
+**Partially recovered from memory**: **not published on the Play Store** — no public install link exists; never describe it as a "live/downloadable app."
+- Real project story (useful for interviews/proposals, needs careful framing for a public case study): Arthur estimated 15 days; the MVP itself took ~1 month, but unscoped revision requests ("arreglos y arreglos") pushed the total to ~3 months. If used publicly, frame as a lesson applied going forward (now caps revision rounds and writes scope boundaries into proposals) rather than as a raw timeline miss.
+- X / Y / Z: TBD — needs a real interview focused on what was actually built (features/architecture), separate from the timeline lesson above.
 
 ### 7. Piggyback Network — E-commerce
-`Next.js, React, Stripe, PayPal`
-- X / Y / Z: TBD
+`Next.js, React, Stripe, PayPal` — **needs a scope caveat**, see below.
+
+**Partially recovered from memory**: real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — same quick-win as Hacking HR above). **Scope is frontend-only**: Stripe/PayPal checkout UI, no backend integration or webhook handling. Currently listed alongside Hacking HR's Stripe work with no distinction — this needs the same kind of scope caveat GMVYKON already has, or a recruiter will assume backend payments ownership here too.
+- X / Y / Z: TBD — needs a real interview.
 
 ### 8. Little Taller — Frontend Suite
 `React, TypeScript, Firebase, Material UI`
-- X / Y / Z: TBD
+- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
 
 ### 9. Enterprise Dashboard
 `Angular, Angular Material, Google Maps API, AWS`
-- X / Y / Z: TBD
+- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
 
 ### 10. Cloudshim — SaaS Tool
-`Angular, GoJS, D3.js, TypeScript`
-- X / Y / Z: TBD
+`Angular, GoJS, D3.js, TypeScript` (tags confirmed correct)
+
+**Partially recovered from memory**: Frontend Developer on a **team project** (not solo) — custom diagramming canvas built with Angular + GoJS + D3.js. Real live URL: **https://www.cloudshim.com/** (currently NOT used as the project link — third quick-win for the broken-links backlog item).
+- X / Y / Z: TBD — needs a real interview for accomplishment/metrics.
 
 ## Open Decisions / Backlog
 
 - [ ] Fix `lib/translations.ts:1072-1075` (`project12.desc`) — currently reads "Sitio web corporativo **construido con**..." implying Arthur built the whole site; real scope was 3 pages + responsive fixes on an existing project (see GMVYKON case study above). Rewrite to reflect honest scope before a client/recruiter catches the gap in an interview.
-- [ ] Replace the 8 broken project links (Upwork → live demo or repo per project)
-- [ ] Buy a custom domain; update `NEXT_PUBLIC_SITE_URL` and all references
-- [ ] Disable GitHub Pages source / delete `gh-pages` branch; merge + trigger the redirect stub
+- [ ] Replace broken project links in `lib/projects.ts` — 3 have real URLs recovered from memory and are quick wins: **Hacking HR** → `https://www.hackinghrlab.io/`, **Piggyback Network** → `https://www.piggybacknetwork.com/`, **Cloudshim** → `https://www.cloudshim.com/` (all currently point to the generic Upwork profile). The other 4 Upwork-linked projects (Otherworld Gift, Speedy Delivery, Little Taller, Enterprise Dashboard) have no known public URL — need a repo/demo link or stay Upwork-linked.
+- [ ] Write real X/Y/Z case studies for projects #3–#10 using the "Partially recovered from memory" notes above as a starting point (School, Hacking HR, Otherworld Gift, Speedy Delivery, Piggyback Network) or from scratch (Little Taller, Enterprise Dashboard have no memory at all; Cloudshim has scope but no metrics).
+- [ ] Fix School Platform's stack tags in `lib/projects.ts` — currently frontend-only (`Next.js, TypeScript, Tailwind CSS, Vercel`), real stack also includes NestJS backend, PostgreSQL/Neon, Railway, Turborepo.
+- [ ] Add a scope caveat to Piggyback Network's copy (frontend-only Stripe/PayPal, no backend/webhooks) so it doesn't read as backend payments ownership — that's Hacking HR's story, not this one.
+- [ ] Buy a custom domain — not resolved; `NEXT_PUBLIC_SITE_URL` set to the Vercel URL as an interim value (2026-07-28)
+- [ ] Disable GitHub Pages source / delete `gh-pages` branch; merge + trigger the redirect stub (source is already GitHub Actions — just needs the workflow run, see Hosting & Deployment)
 - [ ] Add `<lastmod>` to `sitemap.xml`
 - [ ] Decide on locale routing / `hreflang` strategy
-- [ ] `eslint-config-next` is pinned to `15.2.9` while `next` is `16.1.5` — version mismatch, not yet addressed
+- [x] `eslint-config-next` version mismatch — resolved 2026-07-28 (bumped to match `next`, migrated to flat config)
