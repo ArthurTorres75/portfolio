@@ -1,8 +1,9 @@
 import type React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import dynamic from "next/dynamic";
 import { useLanguage } from "@/hooks/useLanguage";
+import { useIsDesktop } from "@/hooks/useIsDesktop";
 import { t } from "@/lib/translations";
 import { animationVariants } from "@/hooks/useScrollAnimation";
 
@@ -53,11 +54,7 @@ function sandCharVariants(i: number) {
 export function Hero({ name, title, description }: HeroProps): React.JSX.Element {
   const { language } = useLanguage();
   const heroSectionRef = useRef<HTMLElement | null>(null);
-  const [isDesktop, setIsDesktop] = useState(false);
-
-  useEffect(() => {
-    setIsDesktop(!window.matchMedia("(hover: none), (pointer: coarse)").matches);
-  }, []);
+  const isDesktop = useIsDesktop();
 
   return (
     <section

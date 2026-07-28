@@ -13,6 +13,43 @@ Project case studies are captured through a structured technical interview (see 
 - **Testing**: Vitest 4 + React Testing Library, colocated `*.test.tsx` pattern, Strict TDD Mode enabled
 - **Package manager**: pnpm
 
+## Software Engineering & QA Standards
+
+Binding for every change in this repo — human or agent. Any Claude Code agent (`sdd-apply`, `full-stack-delivery`, `testing-quality-gatekeeper`, etc.) working on this project MUST comply with this section in addition to its own instructions. If an agent's own instructions are silent on testing/coverage/QA (several are — see audit note below), this section is the fallback contract.
+
+**Audit note (2026-07-27)**: none of the project's existing sub-agents enforce all of the below as a single contract — `sdd-apply` only requires TDD mode when detected, `sdd-tasks` doesn't reference testing at all, `testing-quality-gatekeeper` explicitly rejects a numeric coverage floor, and no agent mentions mutation testing. This section closes that gap explicitly rather than relying on any one agent to cover it.
+
+### Testing conventions
+- **Vitest 4 + React Testing Library**, colocated `*.test.tsx` / `*.test.ts` next to the file under test.
+- **Strict TDD Mode**: RED → GREEN → REFACTOR for new logic. Write the failing test first.
+- **Test pyramid**: mostly unit, some integration, minimal e2e — only for critical user flows (nav, project detail routing, language toggle).
+- **Behavior-first**: assert the externally visible contract (rendered output, exported function behavior), never internal implementation details. Don't test library internals (React, Next.js) — trust the framework.
+- **No `test.only`/`test.skip` committed** — CI must run with `forbidOnly` (or equivalent) so an accidentally-focused test fails the build instead of silently skipping coverage.
+- **Mock only at system boundaries** (network, `localStorage`, browser APIs) — never mock code you own just to make a test pass.
+
+### Quality metrics — coverage thresholds
+Baseline for a solo-maintained portfolio project — intentionally not 100%; ratchet upward as the suite matures, never downward:
+- **Lines / Statements / Functions**: ≥ 70%
+- **Branches**: ≥ 60%
+- Enforced via `vitest.config.mts` `test.coverage.thresholds` — a PR that drops below the floor fails CI, not just a local warning.
+- No blind coverage-chasing: business logic (`lib/*`, `hooks/*`, data transforms) takes priority over presentational components with no branching logic.
+
+### Mutation testing
+- **Tool**: StrykerJS (`@stryker-mutator/core` + `@stryker-mutator/vitest-runner` + `@stryker-mutator/typescript-checker`), config at `stryker.conf.json`.
+- **Purpose**: coverage % alone doesn't prove tests catch bugs — mutation testing verifies the suite actually fails when logic is deliberately broken.
+- **Scope**: run against `lib/`, `hooks/`, and other non-UI business logic first — mutating JSX-heavy presentational components has low signal-to-noise for this codebase.
+- **Baseline mutation score threshold**: break build < 50%, warn < 65% — starting floor for a project with only 4 test files today; raise as coverage matures.
+- Run on-demand (`pnpm test:mutation`), not on every CI run — mutation testing is slow; reserve it for pre-merge on `lib/`/`hooks/` changes or a scheduled weekly run.
+
+### QA gate order (CI-enforced, matches global CI/CD Standards)
+1. Lint (`eslint . --max-warnings=0`)
+2. Type-check (`tsc --noEmit`)
+3. Tests + coverage thresholds (`vitest run --coverage`)
+4. Security audit (`pnpm audit --audit-level=high`)
+5. Build (`next build`)
+
+No step may be skipped or reordered. A failing gate blocks merge — this must be a real GitHub Actions workflow, not just a documented intention (see Hosting & Deployment: this repo currently has no CI workflow that runs these gates — only a GitHub Pages redirect stub).
+
 ## Internationalization (i18n)
 
 - Custom client-side implementation: React Context (`hooks/useLanguage.tsx`) + dictionary (`lib/translations.ts`).

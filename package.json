@@ -16,7 +16,8 @@
     "test": "vitest",
     "test:watch": "vitest --watch",
     "test:coverage": "vitest run --coverage",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "test:mutation": "stryker run"
   },
   "dependencies": {
     "@react-three/fiber": "^9.6.1",
@@ -29,6 +30,9 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@stryker-mutator/core": "^9.6.1",
+    "@stryker-mutator/typescript-checker": "^9.6.1",
+    "@stryker-mutator/vitest-runner": "^9.6.1",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.1",
     "@testing-library/jest-dom": "^6.9.1",
@@ -39,8 +43,9 @@
     "@types/react-dom": "^19",
     "@types/three": "^0.184.0",
     "@vitejs/plugin-react": "^6.0.1",
+    "@vitest/coverage-v8": "^4.1.8",
     "eslint": "^9",
-    "eslint-config-next": "15.2.9",
+    "eslint-config-next": "16.2.11",
     "jsdom": "^29.1.0",
     "tailwindcss": "^4",
     "typescript": "^5",
