@@ -1,5 +1,15 @@
 allowBuilds:
   sharp: false
   unrs-resolver: false
+auditConfig:
+  ignoreGhsas:
+    - GHSA-f88m-g3jw-g9cj
+    - GHSA-mh99-v99m-4gvg
 minimumReleaseAgeExclude:
   - baseline-browser-mapping
+  - postcss@8.5.24
+overrides:
+  "postcss@<8.5.18": "^8.5.24"
+  "undici@<7.28.0": "^7.29.0"
+  "brace-expansion@<1.1.16": "^1.1.16"
+  "js-yaml@<4.3.0": "^4.3.0"

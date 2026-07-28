@@ -48,7 +48,15 @@ Baseline for a solo-maintained portfolio project — intentionally not 100%; rat
 4. Security audit (`pnpm audit --audit-level=high`)
 5. Build (`next build`)
 
-No step may be skipped or reordered. A failing gate blocks merge — this must be a real GitHub Actions workflow, not just a documented intention (see Hosting & Deployment: this repo currently has no CI workflow that runs these gates — only a GitHub Pages redirect stub).
+No step may be skipped or reordered. A failing gate blocks merge — enforced by `.github/workflows/ci.yml`.
+
+### Accepted security-audit risk (2026-07-28)
+Two HIGH advisories are ignored via `pnpm-workspace.yaml`'s `auditConfig.ignoreGhsas` — both verified unfixable without breaking the build, and both judged zero real-world exploitability for this app:
+
+- **`GHSA-f88m-g3jw-g9cj`** (sharp/libvips CVEs) — `next@16.2.12` (latest as of this writing) still pins `sharp@^0.34.5`; the patched `>=0.35.0` isn't installable without overriding next's own dependency. `next.config.ts` sets no `images.remotePatterns`, so Next's Image Optimization only ever processes our own trusted `/public` assets — no path exists for an attacker to feed sharp a malicious image.
+- **`GHSA-mh99-v99m-4gvg`** (brace-expansion DoS) — pulled in by ESLint's `minimatch@3` (via `@eslint/eslintrc` and `@eslint/config-array`), which calls `brace-expansion` as a callable CJS function; forcing the patched `>=5.0.8` line breaks that contract (confirmed: `pnpm lint` crashes with `TypeError: expand is not a function`). Dev-only glob matching over our own `eslint.config.mjs` ignore patterns — never reachable with attacker-controlled input.
+
+**Re-evaluate both on every dependency bump** (`pnpm audit` will still list them, just non-blocking) — drop the ignore entries the moment `next` or the ESLint toolchain ship a compatible fix.
 
 ## Internationalization (i18n)
 
