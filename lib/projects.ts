@@ -104,9 +104,28 @@ export const PROJECTS: Project[] = [
     slug: "speedy-delivery-mobile",
     titleKey: "project3.title",
     descKey: "project3.desc",
-    technologies: ["React Native", "Expo", "Tailwind CSS", "TypeScript"],
+    technologies: ["React Native", "Firebase", "TypeScript"],
     link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    image: "/photos/projects/speedy-delivery.webp",
     categoryKey: "category.mobileApp",
+    highlights: [
+      {
+        en: "Built the entire mobile app solo: authentication with password recovery via verification code, and two distinct role-based flows — restaurant (order creation) and rider (order fulfillment).",
+        es: "Construí toda la app móvil en solitario: autenticación con recuperación de contraseña por código de verificación, y dos flujos de rol distintos — restaurante (creación de pedidos) y motorizado (cumplimiento de pedidos).",
+      },
+      {
+        en: "Designed a real-time order-assignment queue: incoming orders route to riders in arrival order, automatically reassigning to the next rider if one doesn't accept in time — powered by Firebase real-time notifications.",
+        es: "Diseñé una cola de asignación de pedidos en tiempo real: los pedidos entrantes se asignan a motorizados por orden de llegada, reasignándose automáticamente al siguiente si no se acepta a tiempo — con notificaciones instantáneas vía Firebase.",
+      },
+      {
+        en: "Migrated the app from Expo's managed workflow to bare React Native to get reliable Firebase Cloud Messaging push notifications in production.",
+        es: "Migré la app del modo managed de Expo a React Native nativo puro para lograr que las notificaciones push de Firebase Cloud Messaging funcionaran de forma confiable en producción.",
+      },
+      {
+        en: "Implemented ~20 screens pixel-perfect from Figma, covering onboarding, both role dashboards, and order tracking.",
+        es: "Implementé ~20 pantallas pixel-perfect desde Figma, cubriendo onboarding, ambos dashboards de rol y seguimiento de pedidos.",
+      },
+    ],
   },
   {
     slug: "piggyback-network",

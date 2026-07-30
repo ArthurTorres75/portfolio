@@ -1014,8 +1014,8 @@ export const translations: Translations = {
     en: "Speedy Delivery — Food Delivery Mobile App",
   },
   "project3.desc": {
-    es: "Aplicación móvil para delivery de comida desarrollada con React Native y Expo, con interfaz responsiva y flujo de pedidos en tiempo real.",
-    en: "Food delivery mobile app developed with React Native and Expo, featuring a responsive UI and real-time order flow.",
+    es: "Aplicación móvil de delivery de comida desarrollada en React Native, con roles separados para restaurante y motorizado y notificaciones en tiempo real vía Firebase.",
+    en: "Food delivery mobile app built in React Native, with separate restaurant and rider roles and real-time notifications via Firebase.",
   },
   "project4.title": {
     es: "PiggyBack Network — Plataforma E-commerce con Pagos",

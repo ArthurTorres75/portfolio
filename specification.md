@@ -175,14 +175,19 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 
 **Partially recovered from memory**: confirmed feature scope — AFIP e-invoicing (Argentina's tax-compliant invoice generation, the direct analog to "GST invoicing" asks), inventory management, sales authorization. No formal XYZ interview has been run yet (only Upwork-proposal framing exists) — do not publish metrics that don't exist.
 - **Correction**: the "found hardcoded secrets, moved to env vars" anecdote belongs to a *different, undocumented* project (Wya Group / mymoldtech.com) — Arthur previously mis-attributed it to Otherworld Gift. Do not use that story for this case study.
+- **No cover image**: `lib/projects.ts` has no `image` field for this entry. A `public/photos/projects/otherworld-gift.webp` file existed but was actually a screenshot of Moldtech's public marketing site (an unrelated Wya Group client, not Arthur's work) mislabeled with this project's name — removed 2026-07-30. Don't re-add an image here without a real Otherworld Gift screenshot.
 - X / Y / Z: TBD — needs a real interview.
 
 ### 6. Speedy Delivery — Mobile App
-`React Native, Expo, Tailwind CSS, TypeScript` (tags confirmed correct)
+`React Native, Expo, Tailwind CSS, TypeScript` — **"Expo" tag is misleading, see stack note below**.
 
-**Partially recovered from memory**: **not published on the Play Store** — no public install link exists; never describe it as a "live/downloadable app."
+**Confirmed via interview (2026-07-30)**: **not published on the Play Store** — no public install link exists; never describe it as a "live/downloadable app." A companion web app also exists for this product, but it was built by a different developer — Arthur's scope is the mobile app only; do not use web screenshots/UI as evidence of his work here.
+- Built all screens solo: login + password recovery (verification code sent via message), admin dashboard, and two distinct role-based flows — restaurant (creates orders) and rider/"motorizado" (fulfills orders).
+- Real-time order-assignment logic: incoming orders form a first-in-first-out queue per rider; if a rider doesn't accept within the window, the order automatically reassigns to the next rider in the queue. Both sides get instant push notifications on status changes.
+- **Stack note**: started on React Native + Expo (managed workflow), then **fully ejected to bare React Native** because Expo's managed push-notification setup wasn't reliable enough for Firebase Cloud Messaging in production. EAS Build is still used as the CI/build tool, but the actual build is always produced without the Expo managed runtime. Update `lib/projects.ts` tags to `React Native, Firebase, TypeScript` (drop "Expo" as a standalone tag, or footnote it as "EAS Build only, ejected app" if kept).
+- **Design fidelity confirmed (Figma screenshots reviewed 2026-07-30)**: implemented the full screen set pixel-perfect from Figma — ~20 screens covering the splash/brand screen, login, dual-role signup (Driver vs. Restaurant, each with its own registration form), password recovery with OTP code entry, driver dashboard/profile/history, and restaurant order-status tracking with an embedded map plus delivery history.
 - Real project story (useful for interviews/proposals, needs careful framing for a public case study): Arthur estimated 15 days; the MVP itself took ~1 month, but unscoped revision requests ("arreglos y arreglos") pushed the total to ~3 months. If used publicly, frame as a lesson applied going forward (now caps revision rounds and writes scope boundaries into proposals) rather than as a raw timeline miss.
-- X / Y / Z: TBD — needs a real interview focused on what was actually built (features/architecture), separate from the timeline lesson above.
+- X / Y / Z: pixel-perfect Figma-to-code implementation across ~20 screens, plus the order-queue reassignment logic + Firebase real-time notifications (rider/restaurant sync), is the strongest technical material here. No hard performance/scale metrics confirmed yet (e.g. number of riders, order volume) — don't publish numbers that weren't given.
 
 ### 7. Piggyback Network — E-commerce
 `Next.js, React, Stripe, PayPal` — **needs a scope caveat**, see below.
