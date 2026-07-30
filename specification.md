@@ -139,11 +139,27 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 
 **Framing note**: backend is organized by domain modules (content/CMS, media, roles/auth kept separate) — this is pragmatic modular architecture, not a formally-run DDD process (no event storming, no ubiquitous language, no explicit aggregates/domain events). Do not describe this as "DDD" or "bounded contexts" without that caveat.
 
-### 3. School Platform — SaaS
-`lib/projects.ts` lists: `Next.js, TypeScript, Tailwind CSS, Vercel` — **incomplete**, see below.
+### 3. School Platform ("Aula") — School Management SaaS (Multi-tenant)
+`lib/projects.ts` lists: `Next.js, TypeScript, Tailwind CSS, Vercel` — **significantly incomplete**, see below.
 
-**Partially recovered from memory (not a fresh interview — verify before publishing)**: solo personal project (not client work — frame accordingly, unlike GMVYKON/Chamco). Real stack is broader than the current tags: Next.js/Vercel frontend, **NestJS backend, PostgreSQL on Neon, deployed via Railway, Turborepo monorepo**. Feature scope: enrollment + admin workflows, "modern UX." Multi-tenant isolation has **never been technically confirmed** — don't claim it. **No AI/agent feature exists today** (a parent-complaints-triage agent is a *future plan*, not built) — do not describe this project as having a "súper agente" or AI-driven multi-tenant isolation.
-- X / Y / Z: still TBD — needs a real interview for accomplishment/metrics, but the honest scope/stack above should replace the current thin tag list regardless.
+**Confirmed against real `package.json` files + repo structure (2026-07-29)**: solo personal project (not client work — frame accordingly, unlike GMVYKON/Chamco). **Still in active construction** — MVP + Stripe billing + login/logout complete. Do not describe it as finished/production-ready.
+
+- **Architecture**: Hexagonal/Clean with Screaming Architecture on the backend — each NestJS module splits `domain/application/infrastructure`, domain has zero infrastructure imports. Monorepo: pnpm workspaces + Turborepo.
+- **CRUD surface is deliberately uneven by module type — this is a design decision, not incomplete work**:
+  - Full CRUD (`GET/POST/PATCH/DELETE`): students, teachers, courses, sections, evaluation-plans — these are manageable entities.
+  - `GET/POST/DELETE`, no `PATCH`: enrollments, representatives — a relationship is created/broken, not edited.
+  - `GET/PUT` only, no separate `POST`/`DELETE`: grades — upsert via `PUT`, no delete, consistent with an audit trail for grading.
+  - `GET/POST` only: attendance — marking attendance is an upsert-by-day `POST`, no edit/delete exposed.
+  - `GET/POST` only, immutable by design: payments, billing — a financial record is never edited or deleted.
+  - No REST controller at all: notifications — cross-cutting concern via a `NotificationPort` with Resend/Telegram adapters, not exposed over REST.
+- **Frontend** (`apps/web`): Next.js 16 (App Router, Turbopack) + React 19, TypeScript; Auth.js (NextAuth v5 beta) + `jose` for JWT; Radix UI + Tailwind CSS 3 + shadcn-style components (`class-variance-authority`, `tailwind-merge`); React Hook Form + Zod 4; Stripe (`@stripe/react-stripe-js`); testing via Vitest + Testing Library + Playwright (E2E) + `@axe-core/playwright`.
+- **Backend** (`apps/api`): NestJS 11 + Express 5, TypeScript; Prisma 6 + PostgreSQL with **real multi-tenant Row-Level Security** — RLS enforced at the DB level (not just a `WHERE` clause in code), `tenantId` on every tenant-scoped table, `forTenant()` as the sole Prisma client access point; Passport + JWT (`passport-jwt`), `nestjs-cls` for per-request context, `nestjs-zod` for validated DTOs; Stripe SDK for billing, Resend for transactional emails, Helmet + Throttler for security/rate-limiting; testing via Vitest + Supertest.
+- **Domain modules implemented** (`apps/api/src/modules`): auth, tenants/tenancy, students, teachers, courses, sections, enrollments, grades, evaluation-plans, attendance, representatives, billing, payments, notifications.
+- **Shared**: `packages/shared` (shared TS types), `packages/config` (ESLint/tsconfig/Vitest base) — zero type duplication between frontend and backend.
+- **CI/CD**: GitHub Actions (`ci.yml`), Node 24 LTS pinned via `.nvmrc`, pnpm 10.
+- **Correction to prior memory**: multi-tenant isolation was previously flagged as "never technically confirmed — don't claim it." That's now outdated — it's confirmed real via a **4-layer tenant-isolation model**: `tenantId` column + DB-level RLS policy + mandatory `forTenant()` + JWT as the sole tenant-identity source (never the `Host` header). This is a genuine architectural-maturity signal, citable as-is.
+- **No AI/agent feature exists today** (a parent-complaints-triage agent is a *future plan*, not built) — do not describe this project as having a "súper agente."
+- X / Y / Z: still TBD for a formal write-up — project is mid-build, so avoid publishing completion/scale claims. The 4-layer tenant-isolation model above is strong citable material once the case study is written.
 
 ### 4. Hacking HR — Event Platform
 `Next.js, TypeScript, Payload CMS, AWS Amplify` (frontend tags confirmed correct)
@@ -152,7 +168,7 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 - Backend: helped design (**collaborative, not sole architect**) two MongoDB modules — "jobs" (job search) and "pods." Added TanStack Query (React Query) for pagination/query speed.
 - Real trade-off story: team considered adding DB indexes to speed queries, but indexes would raise cloud cost and the client wanted minimum spend — so they deliberately skipped indexing and solved it client-side (TanStack Query + pagination) instead. Genuine cost-vs-performance judgment call, citable as-is.
 - Owned Stripe payments **end-to-end** (frontend + backend) — subscription-mode checkout with coupon discounts across two membership tiers (Premium $199/yr, Premium+ $359/yr, live-verified 2026-07-24). This is Arthur's only confirmed backend-Stripe project — do not attribute backend/webhook Stripe work to Piggyback Network (frontend-only there, see #7).
-- X / Y / Z: TBD for a formal write-up, but the pieces above (payments ownership + cost-aware architecture trade-off) are strong X/Y/Z material once phrased with metrics.
+- X / Y / Z (Arthur's recall, approximate — not independently verified against dashboards/invoices, mark accordingly if published): cut monthly AWS query costs from ~$11 to ~$3–4 and reduced page load time from ~3s to ~1.5s, by replacing DB indexing with client-side pagination via TanStack Query.
 
 ### 5. Otherworld Gift — ERP
 `Next.js, NestJS, Prisma, MySQL, AFIP` (tags confirmed correct)

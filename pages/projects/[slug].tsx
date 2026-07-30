@@ -1,6 +1,7 @@
 import type React from "react";
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 import Link from "next/link";
+import { siTelegram } from "simple-icons";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { Section } from "@/components/common/Section";
@@ -9,10 +10,37 @@ import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
 import { getProjectBySlug, getProjectPath, PROJECTS, type Project } from "@/lib/projects";
 import { t } from "@/lib/translations";
+import { CALCOM_URL, getTelegramUrl } from "@/lib/contact";
 
 type ProjectDetailPageProps = {
   project: Project;
 };
+
+function CalendarIcon(): React.JSX.Element {
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className="h-4 w-4"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+    >
+      <rect x="3" y="5" width="18" height="16" rx="2" />
+      <path d="M3 10h18" />
+      <path d="M8 3v4" />
+      <path d="M16 3v4" />
+    </svg>
+  );
+}
+
+function TelegramIcon(): React.JSX.Element {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+      <path d={siTelegram.path} />
+    </svg>
+  );
+}
 
 export const getStaticPaths: GetStaticPaths = async () => {
   return {
@@ -51,6 +79,8 @@ export default function ProjectDetailPage({
   const description = t(project.descKey, language);
   const category = t(project.categoryKey, language);
   const pagePath = getProjectPath(project.slug);
+  const hasHighlights = Boolean(project.highlights && project.highlights.length > 0);
+  const isPrivateRepo = hasHighlights && !project.repoUrl;
 
   return (
     <>
@@ -103,15 +133,63 @@ export default function ProjectDetailPage({
                 </div>
               </div>
 
+              {hasHighlights ? (
+                <div className="glass-effect rounded-lg p-6 border border-cyan-500/25 mb-6">
+                  <h2 className="text-xl font-semibold text-cyan-300 mb-4">
+                    {t("projects.highlightsTitle", language)}
+                  </h2>
+                  <ul className="space-y-3">
+                    {(project.highlights ?? []).map((highlight) => (
+                      <li
+                        key={highlight[language]}
+                        className="flex gap-3 text-white/80 leading-relaxed"
+                      >
+                        <span className="mt-2 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-cyan-400" />
+                        <span>{highlight[language]}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ) : null}
+
+              {isPrivateRepo ? (
+                <p className="text-white/70 mb-4">
+                  {t("projects.privateRepoNote", language)}
+                </p>
+              ) : null}
+
               <div className="flex flex-wrap gap-4">
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-6 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
-                >
-                  {t("projects.viewProject", language)}
-                </a>
+                {isPrivateRepo ? (
+                  <>
+                    <a
+                      href={CALCOM_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
+                    >
+                      <CalendarIcon />
+                      {t("projects.scheduleCall", language)}
+                    </a>
+                    <a
+                      href={getTelegramUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-6 py-3 rounded-lg border border-white/30 text-white/85 font-semibold hover:bg-white/10 transition-all duration-300"
+                    >
+                      <TelegramIcon />
+                      {t("projects.messageTelegram", language)}
+                    </a>
+                  </>
+                ) : (
+                  <a
+                    href={project.repoUrl ?? project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
+                  >
+                    {t("projects.viewProject", language)}
+                  </a>
+                )}
                 <Link
                   href="/projects"
                   className="px-6 py-3 rounded-lg border border-white/30 text-white/85 font-semibold hover:bg-white/10 transition-all duration-300"

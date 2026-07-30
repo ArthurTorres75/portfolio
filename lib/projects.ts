@@ -6,6 +6,8 @@ export interface Project {
   link: string;
   image?: string;
   categoryKey: string;
+  repoUrl?: string;
+  highlights?: { es: string; en: string }[];
 }
 
 export const PROJECTS: Project[] = [
@@ -34,6 +36,24 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     link: "https://school-mauve-eight.vercel.app/",
     categoryKey: "category.saas",
+    highlights: [
+      {
+        en: "Hexagonal/Clean Architecture on the backend — each NestJS module separates domain, application, and infrastructure layers, with zero infrastructure imports in the domain.",
+        es: "Arquitectura Hexagonal/Clean en el backend — cada módulo de NestJS separa dominio, aplicación e infraestructura, sin imports de infraestructura en el dominio.",
+      },
+      {
+        en: "Real multi-tenant data isolation enforced with a 4-layer model: database-level Row-Level Security, a tenantId column on every tenant-scoped table, a single mandatory data-access point (forTenant()), and JWT as the only source of tenant identity.",
+        es: "Aislamiento multi-tenant real con un modelo de 4 capas: Row-Level Security a nivel de base de datos, columna tenantId en cada tabla, un único punto de acceso obligatorio a los datos (forTenant()) y JWT como única fuente de identidad de tenant.",
+      },
+      {
+        en: "Full-stack monorepo (Turborepo + pnpm workspaces): Next.js 16 / React 19 / Auth.js on the frontend, NestJS 11 / Prisma 6 / PostgreSQL on the backend.",
+        es: "Monorepo full-stack (Turborepo + pnpm workspaces): Next.js 16 / React 19 / Auth.js en el frontend, NestJS 11 / Prisma 6 / PostgreSQL en el backend.",
+      },
+      {
+        en: "In active development — MVP, Stripe billing, and authentication are complete; CRUD surface is intentionally scoped per module (full CRUD for manageable entities like students/courses, restricted verbs for immutable records like payments and grades).",
+        es: "En desarrollo activo — MVP, facturación con Stripe y autenticación completos; la superficie de CRUD está definida a propósito por módulo (CRUD completo para entidades gestionables como estudiantes/cursos, verbos restringidos para registros inmutables como pagos y calificaciones).",
+      },
+    ],
   },
   {
     slug: "hacking-hr",
@@ -43,6 +63,20 @@ export const PROJECTS: Project[] = [
     link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
     image: "/photos/projects/hacking-hr.webp",
     categoryKey: "category.eventPlatform",
+    highlights: [
+      {
+        en: "Owned Stripe payments end-to-end (frontend + backend): subscription checkout with coupon discounts across two membership tiers.",
+        es: "Responsable de pagos con Stripe de punta a punta (frontend + backend): checkout de suscripción con cupones de descuento en dos planes de membresía.",
+      },
+      {
+        en: "Co-designed two MongoDB backend modules (job search and community pods).",
+        es: "Co-diseñé dos módulos backend en MongoDB (búsqueda de empleos y comunidades/pods).",
+      },
+      {
+        en: "Cut monthly AWS query costs from ~$11 to ~$3–4 and page load time from ~3s to ~1.5s by replacing database indexing with client-side pagination (TanStack Query) — a deliberate cost-vs-performance trade-off.",
+        es: "Reduje el costo mensual de queries en AWS de ~$11 a ~$3–4 y el tiempo de carga de ~3s a ~1.5s, reemplazando índices de base de datos por paginación client-side (TanStack Query) — una decisión deliberada de costo vs. performance.",
+      },
+    ],
   },
   {
     slug: "otherworld-gift-erp",
@@ -51,6 +85,20 @@ export const PROJECTS: Project[] = [
     technologies: ["Next.js", "NestJS", "Prisma", "MySQL", "AFIP"],
     link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
     categoryKey: "category.erp",
+    highlights: [
+      {
+        en: "Built AFIP electronic-invoicing integration for tax-compliant billing in Argentina.",
+        es: "Integración de facturación electrónica con AFIP para cumplimiento fiscal en Argentina.",
+      },
+      {
+        en: "Delivered inventory management and sales authorization workflows.",
+        es: "Flujos de gestión de inventario y autorización de ventas.",
+      },
+      {
+        en: "Automated Excel/PDF reporting, scheduled cron jobs, and a cash module with bank-transfer reconciliation.",
+        es: "Reportes automatizados en Excel/PDF, cron jobs programados y módulo de caja con conciliación de transferencias bancarias.",
+      },
+    ],
   },
   {
     slug: "speedy-delivery-mobile",

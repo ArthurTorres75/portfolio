@@ -861,6 +861,26 @@ export const translations: Translations = {
     es: "Ver Todos los Proyectos",
     en: "View All Projects",
   },
+  "projects.highlightsTitle": {
+    es: "Aspectos técnicos",
+    en: "Technical Highlights",
+  },
+  "projects.privateRepoNote": {
+    es: "Código no público — pedime una demo o entrevista para verlo en detalle.",
+    en: "Code isn't public — request a demo or interview to walk through it.",
+  },
+  "projects.requestInterview": {
+    es: "Solicitar una entrevista",
+    en: "Request an interview",
+  },
+  "projects.scheduleCall": {
+    es: "Agendar una llamada",
+    en: "Schedule a call",
+  },
+  "projects.messageTelegram": {
+    es: "Escribir por Telegram",
+    en: "Message on Telegram",
+  },
 
   // SEO Metadata
   "seo.home.title": {
