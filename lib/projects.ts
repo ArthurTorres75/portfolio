@@ -18,10 +18,24 @@ export const PROJECTS: Project[] = [
     slug: "gmvykon",
     titleKey: "project12.title",
     descKey: "project12.desc",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "Vercel"],
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Strapi", "GSAP"],
     link: "https://www.gmvykon.com/",
     image: "/photos/projects/gmvykon.webp",
     categoryKey: "category.corporateWebsite",
+    highlights: [
+      {
+        en: "One of two senior frontend developers on the project — 118 of 266 commits, the largest individual contributor, building most of the site's pages: home, header, contact, about, login/register, user profile, careers, and equipment sale finder/detail.",
+        es: "Uno de los dos frontend developers senior del proyecto — 118 de 266 commits, el mayor contribuyente individual, construyendo la mayoría de las páginas del sitio: home, header, contacto, nosotros, login/registro, perfil de usuario, bolsa de trabajo y buscador/detalle de equipos en venta.",
+      },
+      {
+        en: "Built a PDF viewer feature from scratch (react-pdf-viewer + pdfjs-dist) for equipment spec sheets and documents.",
+        es: "Construí desde cero un visor de PDF (react-pdf-viewer + pdfjs-dist) para fichas técnicas y documentos de equipos.",
+      },
+      {
+        en: "Worked on the crane-rental cost simulator and added a permissions layer restricting certain content to registered users.",
+        es: "Trabajé en el simulador de costos de renta de grúas y agregué una capa de permisos que restringe cierto contenido a usuarios registrados.",
+      },
+    ],
   },
   {
     slug: "chamco-digital",
@@ -134,14 +148,14 @@ export const PROJECTS: Project[] = [
     slug: "piggyback-network",
     titleKey: "project4.title",
     descKey: "project4.desc",
-    technologies: ["Next.js", "React", "Stripe", "PayPal"],
+    technologies: ["Next.js", "React", "Stripe", "PayPal", "Google Maps API"],
     link: "https://www.piggybacknetwork.com/",
     image: "/photos/projects/piggyback-network.webp",
     categoryKey: "category.marketplace",
     highlights: [
       {
-        en: "Built the multi-step onboarding flow: first-time users save frequent locations (home, school, practice facility) via Google Places autocomplete, then combine them into origin-to-destination \"Routes.\"",
-        es: "Construí el flujo de onboarding multi-paso: los usuarios primerizos guardan ubicaciones frecuentes (casa, colegio, entrenamiento) con autocompletado de Google Places, y las combinan en \"Rutas\" de origen a destino.",
+        en: "Built the multi-step onboarding flow: first-time users save frequent locations (home, school, practice facility) via Google Places autocomplete, then combine them into origin-to-destination \"Routes\" traced on a Google Maps view (point A to point B).",
+        es: "Construí el flujo de onboarding multi-paso: los usuarios primerizos guardan ubicaciones frecuentes (casa, colegio, entrenamiento) con autocompletado de Google Places, y las combinan en \"Rutas\" de origen a destino trazadas sobre un mapa de Google Maps (punto A a punto B).",
       },
       {
         en: "Built the returning-user dashboard: Locations, Routes, Offers, Requests, and Matches, each independently editable, plus a stats sidebar and a \"Current Activity\" summary of upcoming trips.",
@@ -166,7 +180,7 @@ export const PROJECTS: Project[] = [
     slug: "enterprise-dashboard",
     titleKey: "project6.title",
     descKey: "project6.desc",
-    technologies: ["Angular", "Angular Material", "Google Maps API", "AWS"],
+    technologies: ["Angular", "Angular Material", "GoJS", "TypeScript"],
     link: UPWORK_PROFILE_FALLBACK,
     categoryKey: "category.enterpriseDashboard",
   },
@@ -175,9 +189,23 @@ export const PROJECTS: Project[] = [
     titleKey: "project7.title",
     descKey: "project7.desc",
     technologies: ["Angular", "GoJS", "D3.js", "TypeScript"],
-    link: UPWORK_PROFILE_FALLBACK,
+    link: "https://www.cloudshim.com/",
     image: "/photos/projects/cloudshim.webp",
     categoryKey: "category.saasTool",
+    highlights: [
+      {
+        en: "Built the GoJS diagramming canvas: draggable nodes that render as the specific AWS resource shape/icon the user selects (EC2, S3, Lambda, etc.).",
+        es: "Construí el canvas de diagramación con GoJS: nodos arrastrables que se renderizan con la forma/ícono del recurso de AWS que el usuario elige (EC2, S3, Lambda, etc.).",
+      },
+      {
+        en: "Built reusable, DRY Angular components for the screens hosting the GoJS diagrams, avoiding duplicated screen code across the app.",
+        es: "Construí componentes de Angular reutilizables y sin duplicación (DRY) para las pantallas que alojan los diagramas de GoJS.",
+      },
+      {
+        en: "Diagnosed and fixed a real rendering bottleneck with many nodes on screen: kept node templates minimal, reduced binding count, updated the GoJS model incrementally instead of replacing it, batched changes in transactions, ran layouts only when necessary, and disabled unneeded animations.",
+        es: "Diagnostiqué y resolví un cuello de botella real de renderizado con muchos nodos en pantalla: mantuve los node templates simples, reduje la cantidad de bindings, actualicé el modelo de GoJS de forma incremental en vez de reemplazarlo, agrupé cambios en transactions, ejecuté layouts solo cuando era necesario y desactivé animaciones innecesarias.",
+      },
+    ],
   },
 ];
 

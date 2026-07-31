@@ -120,13 +120,24 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 ### 1. GMVYKON — Corporate Website
 `Next.js, TypeScript, Tailwind CSS, Strapi, Vercel`
 
-**Verified scope** (interview 2026-07-23): Arthur joined an existing project — home page + ~3 pages already built by teammates, on a pre-existing component library. He did **not** architect the site, the Strapi CMS, or its SEO setup (already in place before he joined).
+**MAJOR REVISION (2026-07-30) — verified directly against the real git history, not recall.** The prior "3 pages + responsive fixes" framing significantly *underclaimed* Arthur's real scope — the opposite direction of most other corrections in this document. Ground truth checked via `git log` in the local repo (`C:\Users\Arthur\Documents\My Jobs\Fibotech\GMVykon\GMVykon-WebSite-Frontend`):
+- 266 total commits; **118 are Arthur's (44%)** — the single largest contributor by commit count.
+- Arthur confirmed: he and one teammate (commits under "Enrique Adelino Montes Araujo" / "emontes") were the **two senior frontend developers** on this project; two other contributors existed but did comparatively little.
+- Built for **Fibotech** (software agency); gmvykon.com sells/rents mobile cranes for construction in Mexico.
 
-- **X (Accomplished)**: Delivered 3 new pages and responsive-layout fixes across the existing page/component set for a live corporate website.
-- **Y (Measured by)**: 1-month turnaround for all 3 pages, full pixel-perfect fidelity to Figma specs, zero rework requested on SEO or backend.
-- **Z (By doing)**: Implementing pages in Next.js/TypeScript/Tailwind CSS from Figma using an AI-assisted scaffolding workflow (Lovable) to accelerate the design-to-code pass, extending a pre-built component library, adding new Strapi collections that mirrored the existing content schema (no CMS architecture from scratch), and going through peer code review before deploy to Vercel.
+**Real scope, frontend (confirmed via commit history)**: senior frontend developer across most of the site's major pages/features, not a narrow add-on — Home page (hero, blog/articles, CTA, segments — multiple iterations), Header, Contact page (multi-part), Nosotros (About), full Login/Register flow, "Mi Perfil" (user profile), Bolsa de Trabajo (careers/job board), equipment sale finder + detail pages, providers forms, and a WhatsApp chat integration.
+- Built the **PDF viewer feature** from scratch (`react-pdf-viewer` + `pdfjs-dist`), including dependency/version troubleshooting — used for viewing equipment spec sheets/documents.
+- Worked on the **rental simulator** ("renta simulator") — a calculator for crane rental costs, core to the business (rent/sell cranes).
+- Added a permissions layer restricting certain content to registered/logged-in users.
+- Real stack confirmed via `package.json`: Next.js 15.3.1, React 19, Tailwind CSS 4, `@strapi/client` + `graphql-request` (GraphQL against Strapi), GSAP (animations), Swiper (carousels), `react-markdown`.
+- Still **not** confirmed as his: Strapi CMS architecture/content-modeling, SEO setup — these predate his involvement or were owned by others; don't claim CMS architecture ownership.
+- Still a **team project**, not solo — heavy `git merge`/`dev`-branch activity throughout, don't claim sole ownership of the site.
 
-**Do NOT claim** for this project: Strapi architecture/content-modeling from scratch, SEO setup, or full site ownership — the current live copy overclaims this (see Open Decisions).
+- **X (Accomplished)**: One of two senior frontend developers who built the majority of gmvykon.com's pages and features (not a narrow 3-page add-on).
+- **Y (Measured by)**: 118 of 266 commits (44%, largest individual contributor); covers ~10 distinct pages/features including two built-from-scratch capabilities (PDF viewer, rental simulator).
+- **Z (By doing)**: Implementing pages in Next.js/TypeScript/Tailwind CSS from Figma (using Lovable to accelerate the design-to-code pass for some pages), building new capabilities (PDF viewer, rental simulator, permissions) end-to-end on the frontend, and integrating with the existing Strapi CMS via GraphQL — all through iterative PRs against a shared `dev` branch alongside one frontend peer.
+
+**Do NOT claim**: Strapi CMS architecture/content-modeling from scratch, or SEO setup — still someone else's work. Do NOT claim sole/solo ownership — it was a two-senior-plus-two-minor team effort.
 
 ### 2. Chamco Digital — Admin Panel
 `Next.js, PostgreSQL, Azure, Vercel`
@@ -190,12 +201,12 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 - X / Y / Z: pixel-perfect Figma-to-code implementation across ~20 screens, plus the order-queue reassignment logic + Firebase real-time notifications (rider/restaurant sync), is the strongest technical material here. No hard performance/scale metrics confirmed yet (e.g. number of riders, order volume) — don't publish numbers that weren't given.
 
 ### 7. Piggyback Network — Kids' Transportation Matching Platform
-`Next.js, React, Stripe, PayPal` — tags need a category fix too, see below.
+`Next.js, React, Stripe, PayPal, Google Maps API` — category fix applied, see below (Google Maps added 2026-07-30, used to trace routes point A → point B).
 
 **Major correction (2026-07-30): this is NOT an e-commerce site.** Current live copy (`project4.title`/`project4.desc` in `lib/translations.ts`, `categoryKey: "category.ecommerce"` in `lib/projects.ts`) is wrong and must be rewritten. The real product: a two-sided marketplace matching parents/drivers for **children's transportation** — a user registers and either offers a route (as a driver, setting their own availability) or requests a ride for their kids; a matching algorithm pairs supply and demand. Revenue model: users pay a **subscription** to Piggyback Network, which in turn pays participating drivers their share. Real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — quick-win, same as Hacking HR).
 
 **Confirmed scope (Figma reviewed + interview, 2026-07-30)**: **frontend-only** — the matching algorithm and driver payment-split logic were built by the project's lead programmer, NOT Arthur. Do not attribute that backend logic to him.
-- **Onboarding (multi-step)**: first-time users save frequent locations (home, school, practice facility, etc. — minimum 2, via Google Places autocomplete), then build "Routes" by combining saved locations into an origin → destination trip.
+- **Onboarding (multi-step)**: first-time users save frequent locations (home, school, practice facility, etc. — minimum 2, via Google Places autocomplete), then build "Routes" by combining saved locations into an origin → destination trip, traced on a Google Maps view (point A → point B).
 - **Returning-user dashboard**: sidebar with profile, a points/stats counter (gamification), and counts of routes/offers/requests. Main panel organized into editable sections — Locations, Routes, Offers, Request, and Matches.
 - **Matching UI**: a driver's "Offer" (available route) is matched against a parent's "Request" (needed ride) for the same route, with a visible Pending / Approve / Decline status workflow — Arthur built this UI, the underlying match logic is the lead programmer's.
 - **"Current Activity" widget**: summarizes upcoming trips (e.g. "You are driving" / "Your request is pending").
@@ -206,25 +217,32 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 `React, TypeScript, Firebase, Material UI`
 - No memory found. X / Y / Z: TBD — needs a real interview from scratch.
 
-### 9. Enterprise Dashboard
-`Angular, Angular Material, Google Maps API, AWS`
-- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
+### 9. Enterprise Dashboard (public title: "Montrix")
+`Angular, Angular Material, Google Maps API, AWS` — **wrong, see correction below**.
+
+**Correction (2026-07-30)**: "Google Maps API" does not belong here — that's actually Zippyttech's stack (see the orphaned Zippyttech note in the backlog below), and Arthur initially conflated the two before correcting himself. Montrix is a company that spun off from/was created out of Cloudshim; Arthur built (from scratch) an Angular + Angular Material SPA there using **GoJS**, essentially the same kind of diagramming tool as Cloudshim (#10) but for the Montrix brand. Corrected tags should be `Angular, Angular Material, GoJS, TypeScript` (dropping Google Maps API and AWS unless reconfirmed). Arthur tried to find the live site again but it's no longer online — possible domain change, unconfirmed. No live URL currently known.
+- X / Y / Z: TBD — needs a real interview from scratch on what was actually built (Arthur only recalled the stack/lineage so far, not concrete features).
 
 ### 10. Cloudshim — SaaS Tool
 `Angular, GoJS, D3.js, TypeScript` (tags confirmed correct)
 
-**Partially recovered from memory**: Frontend Developer on a **team project** (not solo) — custom diagramming canvas built with Angular + GoJS + D3.js. Real live URL: **https://www.cloudshim.com/** (currently NOT used as the project link — third quick-win for the broken-links backlog item).
-- X / Y / Z: TBD — needs a real interview for accomplishment/metrics.
+**Confirmed via interview (2026-07-30)**: Frontend Developer on a **team project** (not solo) — custom AWS-architecture diagramming canvas built with Angular + GoJS + D3.js. Real live URL: **https://www.cloudshim.com/** (currently NOT used as the project link — third quick-win for the broken-links backlog item).
+- Built the GoJS canvas: draggable nodes that render as the specific AWS resource shape/icon the user selects (EC2, S3, Lambda, etc.).
+- Built reusable, DRY Angular components (following the app's code-reuse conventions) for the screens that host the GoJS diagrams, avoiding duplicated screen code.
+- D3.js: used to build at least one diagram matching a specific Figma design — narrower/secondary usage compared to GoJS, not a separate charting layer.
+- **Concrete GoJS performance-optimization work** (real, citable technical depth — the team hit rendering slowdowns with many nodes/elements and worked through GoJS's own performance guidance): kept node templates minimal (fewer Panels/Shapes/TextBlocks per node); reduced binding count by grouping properties instead of binding many individual ones; updated the existing GoJS model incrementally (added/changed data) instead of replacing the whole model, so GoJS only redraws what changed; batched changes inside transactions/commits to avoid multiple re-renders; ran expensive layouts only when necessary instead of on every change; avoided recalculating layout per node; disabled animations where not needed.
+- X / Y / Z: the GoJS performance-tuning list above is the strongest, most specific technical material in this case study — frame it as a concrete "diagnosed a real rendering bottleneck at scale, applied documented GoJS techniques" story. No hard metrics (e.g. node count, before/after render time) confirmed — don't publish numbers that weren't given.
 
 ## Open Decisions / Backlog
 
-- [ ] Fix `lib/translations.ts:1072-1075` (`project12.desc`) — currently reads "Sitio web corporativo **construido con**..." implying Arthur built the whole site; real scope was 3 pages + responsive fixes on an existing project (see GMVYKON case study above). Rewrite to reflect honest scope before a client/recruiter catches the gap in an interview.
-- [ ] Replace broken project links in `lib/projects.ts` — 3 have real URLs recovered from memory and are quick wins: **Hacking HR** → `https://www.hackinghrlab.io/`, **Piggyback Network** → `https://www.piggybacknetwork.com/`, **Cloudshim** → `https://www.cloudshim.com/` (all currently point to the generic Upwork profile). The other 4 Upwork-linked projects (Otherworld Gift, Speedy Delivery, Little Taller, Enterprise Dashboard) have no known public URL — need a repo/demo link or stay Upwork-linked.
-- [ ] Write real X/Y/Z case studies for projects #3–#10 using the "Partially recovered from memory" notes above as a starting point (School, Hacking HR, Otherworld Gift, Speedy Delivery, Piggyback Network) or from scratch (Little Taller, Enterprise Dashboard have no memory at all; Cloudshim has scope but no metrics).
-- [ ] Fix School Platform's stack tags in `lib/projects.ts` — currently frontend-only (`Next.js, TypeScript, Tailwind CSS, Vercel`), real stack also includes NestJS backend, PostgreSQL/Neon, Railway, Turborepo.
-- [ ] Add a scope caveat to Piggyback Network's copy (frontend-only Stripe/PayPal, no backend/webhooks) so it doesn't read as backend payments ownership — that's Hacking HR's story, not this one.
+- [x] `project12.desc` (GMVYKON) — no longer needs a downward fix. GMVYKON's real scope turned out to be much bigger than previously thought (verified via git log 2026-07-30 — Arthur was one of two senior frontend devs, 44% of commits, built most of the site's pages/features, see case study above). The current "built with Next.js..." copy is accurate as a frontend-tech description and doesn't overclaim CMS ownership; no rewrite needed.
+- [ ] Replace remaining broken project links in `lib/projects.ts` — **Hacking HR** → `https://www.hackinghrlab.io/` still points to the generic Upwork profile. (**Piggyback Network** and **Cloudshim** done — both now point to their real live URLs.) The other 4 Upwork-linked projects (Otherworld Gift, Speedy Delivery, Little Taller, Enterprise Dashboard) have no known public URL — need a repo/demo link or stay Upwork-linked.
+- [x] Write real X/Y/Z case studies for School SaaS, Hacking HR, Otherworld Gift, Speedy Delivery, Piggyback Network — done. Still open: Little Taller, Enterprise Dashboard (no memory at all, need fresh interviews), Cloudshim (has scope but no metrics).
+- [x] Fix School Platform's stack tags in `lib/projects.ts` — done, full real stack documented and applied.
+- [x] Add a scope caveat to Piggyback Network's copy — done, corrected the whole description (was mislabeled as e-commerce) and clarified frontend-only scope.
 - [ ] Buy a custom domain — not resolved; `NEXT_PUBLIC_SITE_URL` set to the Vercel URL as an interim value (2026-07-28)
 - [ ] Disable GitHub Pages source / delete `gh-pages` branch; merge + trigger the redirect stub (source is already GitHub Actions — just needs the workflow run, see Hosting & Deployment)
 - [ ] Add `<lastmod>` to `sitemap.xml`
+- [ ] **Decide what to do with Zippyttech**: `lib/translations.ts` already has `project8.title`/`project8.desc` written ("Zippyttech — Portal Web de Operaciones", Angular + TypeScript + Google Maps) but this key is **not referenced by any entry in `lib/projects.ts`** — it's currently invisible on the live site. Confirmed via interview (2026-07-30): Zippyttech is a software agency where Arthur worked on multiple Angular projects, including a real incremental migration story — AngularJS → Angular 2, then upgraded through Angular 3 through 11. That migration story is strong, concrete material (legacy-upgrade experience is high-value for recruiters) but has no case study yet. Decide: add Zippyttech as a new project card (needs image, live URL if any, full X/Y/Z interview), or leave it unused.
 - [ ] Decide on locale routing / `hreflang` strategy
 - [x] `eslint-config-next` version mismatch — resolved 2026-07-28 (bumped to match `next`, migrated to flat config)

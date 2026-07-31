@@ -1035,20 +1035,20 @@ export const translations: Translations = {
     en: "Collection of frontend interfaces using React, TypeScript, Firebase, and Material UI, deployed on Vercel for customer-facing web products.",
   },
   "project6.title": {
-    es: "Montrix — Dashboard Operacional con Mapas",
-    en: "Montrix — Operational Dashboard with Maps",
+    es: "Montrix — Herramienta de Diagramación Empresarial",
+    en: "Montrix — Enterprise Diagramming Tool",
   },
   "project6.desc": {
-    es: "Aplicación empresarial con Angular, Angular Material y Google Maps API para visualización operativa, experiencia UX mejorada y alto rendimiento.",
-    en: "Enterprise application using Angular, Angular Material, and Google Maps API for operational visualization, improved UX, and high performance.",
+    es: "SPA construida desde cero con Angular y Angular Material, con un canvas de diagramación basado en GoJS.",
+    en: "SPA built from scratch with Angular and Angular Material, featuring a GoJS-based diagramming canvas.",
   },
   "project7.title": {
     es: "Cloudshim — Herramienta de Diagramación Avanzada",
     en: "Cloudshim — Advanced Diagramming Tool",
   },
   "project7.desc": {
-    es: "Plataforma frontend con Angular y GoJS para diagramación compleja, gráficos interactivos con D3.js y diseño responsivo para entornos cloud.",
-    en: "Frontend platform with Angular and GoJS for complex diagramming, interactive D3.js charts, and responsive design for cloud environments.",
+    es: "Plataforma frontend en equipo para diagramar arquitecturas AWS: canvas de nodos arrastrables con GoJS que representan recursos de AWS, componentes reutilizables y optimización de rendimiento para diagramas con muchos elementos.",
+    en: "Team frontend platform for diagramming AWS architectures: a draggable-node GoJS canvas representing AWS resources, reusable components, and performance optimization for diagrams with many elements.",
   },
   "project8.title": {
     es: "Zippyttech — Portal Web de Operaciones",
