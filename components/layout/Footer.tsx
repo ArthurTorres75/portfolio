@@ -77,6 +77,17 @@ export function Footer(): React.JSX.Element {
           </div>
         </div>
 
+        <div className="border-t border-cyan-500/20 pt-6 text-center text-sm">
+          <a
+            href="https://mountain-portfolio.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="footer-link text-white/60 hover:text-cyan-400"
+          >
+            {t("footer.experimentalPortfolio", language)}
+          </a>
+        </div>
+
         <div className="border-t border-cyan-500/20 pt-6 text-center text-white/50 text-sm">
           <p>© {currentYear} Arthur Torres. {t("footer.copyright", language)}</p>
         </div>
