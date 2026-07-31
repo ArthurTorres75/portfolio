@@ -983,6 +983,10 @@ export const translations: Translations = {
     es: "Todos los derechos reservados.",
     en: "All rights reserved.",
   },
+  "footer.experimentalPortfolio": {
+    es: "🏔️ Portfolio experimental en 3D",
+    en: "🏔️ Experimental 3D Portfolio",
+  },
 
   // Project Categories
   "category.corporateWebsite": { es: "Sitio Corporativo", en: "Corporate Website" },
