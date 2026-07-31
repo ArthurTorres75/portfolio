@@ -10,6 +10,9 @@ export interface Project {
   highlights?: { es: string; en: string }[];
 }
 
+export const UPWORK_PROFILE_FALLBACK =
+  "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share";
+
 export const PROJECTS: Project[] = [
   {
     slug: "gmvykon",
@@ -60,7 +63,7 @@ export const PROJECTS: Project[] = [
     titleKey: "project1.title",
     descKey: "project1.desc",
     technologies: ["Next.js", "TypeScript", "Payload CMS", "AWS Amplify"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     image: "/photos/projects/hacking-hr.webp",
     categoryKey: "category.eventPlatform",
     highlights: [
@@ -83,7 +86,7 @@ export const PROJECTS: Project[] = [
     titleKey: "project2.title",
     descKey: "project2.desc",
     technologies: ["Next.js", "NestJS", "Prisma", "MySQL", "AFIP"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     categoryKey: "category.erp",
     highlights: [
       {
@@ -105,7 +108,7 @@ export const PROJECTS: Project[] = [
     titleKey: "project3.title",
     descKey: "project3.desc",
     technologies: ["React Native", "Firebase", "TypeScript"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     image: "/photos/projects/speedy-delivery.webp",
     categoryKey: "category.mobileApp",
     highlights: [
@@ -132,16 +135,30 @@ export const PROJECTS: Project[] = [
     titleKey: "project4.title",
     descKey: "project4.desc",
     technologies: ["Next.js", "React", "Stripe", "PayPal"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: "https://www.piggybacknetwork.com/",
     image: "/photos/projects/piggyback-network.webp",
-    categoryKey: "category.ecommerce",
+    categoryKey: "category.marketplace",
+    highlights: [
+      {
+        en: "Built the multi-step onboarding flow: first-time users save frequent locations (home, school, practice facility) via Google Places autocomplete, then combine them into origin-to-destination \"Routes.\"",
+        es: "Construí el flujo de onboarding multi-paso: los usuarios primerizos guardan ubicaciones frecuentes (casa, colegio, entrenamiento) con autocompletado de Google Places, y las combinan en \"Rutas\" de origen a destino.",
+      },
+      {
+        en: "Built the returning-user dashboard: Locations, Routes, Offers, Requests, and Matches, each independently editable, plus a stats sidebar and a \"Current Activity\" summary of upcoming trips.",
+        es: "Construí el dashboard del usuario recurrente: Locations, Routes, Offers, Requests y Matches, cada una editable de forma independiente, más una barra lateral de estadísticas y un resumen \"Current Activity\" de próximos viajes.",
+      },
+      {
+        en: "Implemented the offer/request matching UI, including the Pending / Approve / Decline status workflow — the matching algorithm and driver payment-split logic were owned by the project's lead engineer.",
+        es: "Implementé la UI de matching entre ofertas y pedidos, incluyendo el flujo de estados Pending / Approve / Decline — el algoritmo de matching y el reparto de pagos al conductor fueron responsabilidad del ingeniero líder del proyecto.",
+      },
+    ],
   },
   {
     slug: "little-taller",
     titleKey: "project5.title",
     descKey: "project5.desc",
     technologies: ["React", "TypeScript", "Firebase", "Material UI"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     image: "/photos/projects/little-taller.webp",
     categoryKey: "category.frontendSuite",
   },
@@ -150,7 +167,7 @@ export const PROJECTS: Project[] = [
     titleKey: "project6.title",
     descKey: "project6.desc",
     technologies: ["Angular", "Angular Material", "Google Maps API", "AWS"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     categoryKey: "category.enterpriseDashboard",
   },
   {
@@ -158,7 +175,7 @@ export const PROJECTS: Project[] = [
     titleKey: "project7.title",
     descKey: "project7.desc",
     technologies: ["Angular", "GoJS", "D3.js", "TypeScript"],
-    link: "https://www.upwork.com/freelancers/~0110023d7209510ffb?mp_source=share",
+    link: UPWORK_PROFILE_FALLBACK,
     image: "/photos/projects/cloudshim.webp",
     categoryKey: "category.saasTool",
   },

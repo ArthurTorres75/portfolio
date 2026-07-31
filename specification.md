@@ -189,11 +189,18 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 - Real project story (useful for interviews/proposals, needs careful framing for a public case study): Arthur estimated 15 days; the MVP itself took ~1 month, but unscoped revision requests ("arreglos y arreglos") pushed the total to ~3 months. If used publicly, frame as a lesson applied going forward (now caps revision rounds and writes scope boundaries into proposals) rather than as a raw timeline miss.
 - X / Y / Z: pixel-perfect Figma-to-code implementation across ~20 screens, plus the order-queue reassignment logic + Firebase real-time notifications (rider/restaurant sync), is the strongest technical material here. No hard performance/scale metrics confirmed yet (e.g. number of riders, order volume) — don't publish numbers that weren't given.
 
-### 7. Piggyback Network — E-commerce
-`Next.js, React, Stripe, PayPal` — **needs a scope caveat**, see below.
+### 7. Piggyback Network — Kids' Transportation Matching Platform
+`Next.js, React, Stripe, PayPal` — tags need a category fix too, see below.
 
-**Partially recovered from memory**: real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — same quick-win as Hacking HR above). **Scope is frontend-only**: Stripe/PayPal checkout UI, no backend integration or webhook handling. Currently listed alongside Hacking HR's Stripe work with no distinction — this needs the same kind of scope caveat GMVYKON already has, or a recruiter will assume backend payments ownership here too.
-- X / Y / Z: TBD — needs a real interview.
+**Major correction (2026-07-30): this is NOT an e-commerce site.** Current live copy (`project4.title`/`project4.desc` in `lib/translations.ts`, `categoryKey: "category.ecommerce"` in `lib/projects.ts`) is wrong and must be rewritten. The real product: a two-sided marketplace matching parents/drivers for **children's transportation** — a user registers and either offers a route (as a driver, setting their own availability) or requests a ride for their kids; a matching algorithm pairs supply and demand. Revenue model: users pay a **subscription** to Piggyback Network, which in turn pays participating drivers their share. Real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — quick-win, same as Hacking HR).
+
+**Confirmed scope (Figma reviewed + interview, 2026-07-30)**: **frontend-only** — the matching algorithm and driver payment-split logic were built by the project's lead programmer, NOT Arthur. Do not attribute that backend logic to him.
+- **Onboarding (multi-step)**: first-time users save frequent locations (home, school, practice facility, etc. — minimum 2, via Google Places autocomplete), then build "Routes" by combining saved locations into an origin → destination trip.
+- **Returning-user dashboard**: sidebar with profile, a points/stats counter (gamification), and counts of routes/offers/requests. Main panel organized into editable sections — Locations, Routes, Offers, Request, and Matches.
+- **Matching UI**: a driver's "Offer" (available route) is matched against a parent's "Request" (needed ride) for the same route, with a visible Pending / Approve / Decline status workflow — Arthur built this UI, the underlying match logic is the lead programmer's.
+- **"Current Activity" widget**: summarizes upcoming trips (e.g. "You are driving" / "Your request is pending").
+- Stripe/PayPal integration is frontend UI only (subscription payment forms), no backend/webhook handling — consistent with prior scope note; do not attribute backend-Stripe ownership here (that's Hacking HR, see #4).
+- X / Y / Z: the two-sided marketplace UI (onboarding → route builder → offer/request → match approval) is strong, concrete frontend material. No hard usage/scale metrics confirmed — don't publish numbers that weren't given.
 
 ### 8. Little Taller — Frontend Suite
 `React, TypeScript, Firebase, Material UI`

@@ -8,7 +8,13 @@ import { Section } from "@/components/common/Section";
 import { ProjectImage } from "@/components/common/OptimizedImage";
 import { Seo } from "@/components/common/Seo";
 import { useLanguage } from "@/hooks/useLanguage";
-import { getProjectBySlug, getProjectPath, PROJECTS, type Project } from "@/lib/projects";
+import {
+  getProjectBySlug,
+  getProjectPath,
+  PROJECTS,
+  UPWORK_PROFILE_FALLBACK,
+  type Project,
+} from "@/lib/projects";
 import { t } from "@/lib/translations";
 import { CALCOM_URL, getTelegramUrl } from "@/lib/contact";
 
@@ -81,6 +87,7 @@ export default function ProjectDetailPage({
   const pagePath = getProjectPath(project.slug);
   const hasHighlights = Boolean(project.highlights && project.highlights.length > 0);
   const isPrivateRepo = hasHighlights && !project.repoUrl;
+  const hasRealDemoLink = project.link !== UPWORK_PROFILE_FALLBACK;
 
   return (
     <>
@@ -159,6 +166,16 @@ export default function ProjectDetailPage({
               ) : null}
 
               <div className="flex flex-wrap gap-4">
+                {hasRealDemoLink ? (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-6 py-3 rounded-lg border border-cyan-500/60 text-cyan-300 font-semibold hover:bg-cyan-500/10 hover:border-cyan-400 transition-all duration-300"
+                  >
+                    {t("projects.viewProject", language)}
+                  </a>
+                ) : null}
                 {isPrivateRepo ? (
                   <>
                     <a
@@ -180,7 +197,7 @@ export default function ProjectDetailPage({
                       {t("projects.messageTelegram", language)}
                     </a>
                   </>
-                ) : (
+                ) : !hasRealDemoLink ? (
                   <a
                     href={project.repoUrl ?? project.link}
                     target="_blank"
@@ -189,7 +206,7 @@ export default function ProjectDetailPage({
                   >
                     {t("projects.viewProject", language)}
                   </a>
-                )}
+                ) : null}
                 <Link
                   href="/projects"
                   className="px-6 py-3 rounded-lg border border-white/30 text-white/85 font-semibold hover:bg-white/10 transition-all duration-300"

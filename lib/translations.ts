@@ -991,6 +991,7 @@ export const translations: Translations = {
   "category.frontendSuite": { es: "Frontend Suite", en: "Frontend Suite" },
   "category.enterpriseDashboard": { es: "Dashboard Empresarial", en: "Enterprise Dashboard" },
   "category.saasTool": { es: "SaaS Tool", en: "SaaS Tool" },
+  "category.marketplace": { es: "Marketplace", en: "Marketplace" },
 
   // Project Examples
   "project1.title": {
@@ -1018,12 +1019,12 @@ export const translations: Translations = {
     en: "Food delivery mobile app built in React Native, with separate restaurant and rider roles and real-time notifications via Firebase.",
   },
   "project4.title": {
-    es: "PiggyBack Network — Plataforma E-commerce con Pagos",
-    en: "PiggyBack Network — E-commerce Platform with Payments",
+    es: "PiggyBack Network — Marketplace de Transporte Escolar",
+    en: "PiggyBack Network — Kids' Transportation Marketplace",
   },
   "project4.desc": {
-    es: "Desarrollo frontend para plataforma de e-commerce con integración de Stripe y PayPal, optimización de rendimiento y arquitectura escalable en AWS.",
-    en: "Frontend development for an e-commerce platform with Stripe and PayPal integration, performance optimization, and scalable AWS architecture.",
+    es: "Frontend de un marketplace de dos lados que conecta padres y conductores para el transporte de niños: onboarding con ubicaciones frecuentes, rutas, ofertas/pedidos y un sistema de matching con pagos por suscripción vía Stripe y PayPal.",
+    en: "Frontend for a two-sided marketplace matching parents and drivers for children's transportation: onboarding with frequent locations, routes, offers/requests, and a matching system with subscription payments via Stripe and PayPal.",
   },
   "project5.title": {
     es: "Little Taller — Suite Frontend para Clientes",
