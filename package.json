@@ -2,7 +2,7 @@
   "name": "arthur-portfolio",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@11.15.1+sha512.81350b07e53c9538a02f1f2303b4290fa2d7be04e56e2a970c4cc4b417dc761de196edabd49d55c7dc9580db81007c44143e4e3d7e462b3000d23c255122d065",
+  "packageManager": "pnpm@11.18.0+sha512.33d83c77da82f49fba836925c6f1b841181ec3132b670639bd012f7075f5c7cf634c5f870147c19aae7478fac01df09d8892e880454896edd23ee9b33757563c",
   "engines": {
     "node": ">=24",
     "pnpm": ">=10"
@@ -44,9 +44,9 @@
     "@types/three": "^0.185.1",
     "@vitejs/plugin-react": "^6.0.1",
     "@vitest/coverage-v8": "^4.1.8",
-    "eslint": "^9",
+    "eslint": "^10.8.0",
     "eslint-config-next": "16.2.12",
-    "jsdom": "^29.1.0",
+    "jsdom": "^30.0.1",
     "tailwindcss": "^4",
     "typescript": "^5",
     "vite-tsconfig-paths": "^6.1.1",
