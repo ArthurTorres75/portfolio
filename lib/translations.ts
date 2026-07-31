@@ -853,6 +853,10 @@ export const translations: Translations = {
     es: "Portafolio Completo",
     en: "Complete Portfolio",
   },
+  "projects.detailsTitle": {
+    es: "Detalles del Proyecto",
+    en: "Project Details",
+  },
   "projects.portfolioSubtitle": {
     es: "Una selección de mis mejores trabajos",
     en: "A selection of my best work",

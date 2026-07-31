@@ -120,7 +120,7 @@ export default function ProjectDetailPage({
             </div>
           </section>
 
-          <Section className="bg-black" title={t("projects.portfolioTitle", language)}>
+          <Section className="bg-black" title={t("projects.detailsTitle", language)}>
             <div className="max-w-4xl mx-auto">
               {project.image ? (
                 <ProjectImage src={project.image} alt={title} className="mb-8 h-64 md:h-80" />
