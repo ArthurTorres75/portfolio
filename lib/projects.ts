@@ -171,10 +171,21 @@ export const PROJECTS: Project[] = [
     slug: "little-taller",
     titleKey: "project5.title",
     descKey: "project5.desc",
-    technologies: ["React", "TypeScript", "Firebase", "Material UI"],
+    technologies: ["Next.js", "React", "Firebase", "Material UI"],
     link: UPWORK_PROFILE_FALLBACK,
+    repoUrl: "https://github.com/Foster-Cooperative/foster-cooperative",
     image: "/photos/projects/little-taller.webp",
     categoryKey: "category.frontendSuite",
+    highlights: [
+      {
+        en: "Built the forgot-password / reset-password flow for Foster Cooperative (a Next.js/Firebase community platform connecting Phoenix's foster-care community), including token-expiration handling — verified directly against the project's public repo.",
+        es: "Construí el flujo de recuperación/reseteo de contraseña para Foster Cooperative (plataforma comunitaria en Next.js/Firebase que conecta a la comunidad de acogida familiar de Phoenix), incluyendo el manejo de expiración de tokens — verificado directamente contra el repo público del proyecto.",
+      },
+      {
+        en: "Also implemented Earmarkz (React + Tailwind CSS, frontend-only, pixel-perfect from Figma) for another Little Taller client — the project was paused and later finished by a different developer after Arthur had moved on to other work.",
+        es: "También implementé Earmarkz (React + Tailwind CSS, solo frontend, pixel-perfect desde Figma) para otro cliente de Little Taller — el proyecto se pausó y lo terminó otro desarrollador luego de que Arthur ya estaba en otro trabajo.",
+      },
+    ],
   },
   {
     slug: "enterprise-dashboard",
@@ -183,6 +194,16 @@ export const PROJECTS: Project[] = [
     technologies: ["Angular", "Angular Material", "GoJS", "TypeScript"],
     link: UPWORK_PROFILE_FALLBACK,
     categoryKey: "category.enterpriseDashboard",
+    highlights: [
+      {
+        en: "Built (with one other developer) a GoJS-based AWS-architecture diagramming canvas for Montrix, the same kind of tool as Cloudshim but for a separate brand.",
+        es: "Construí (con otro desarrollador) un canvas de diagramación de arquitecturas AWS basado en GoJS para Montrix, la misma clase de herramienta que Cloudshim pero para una marca separada.",
+      },
+      {
+        en: "Applied the same GoJS performance-optimization approach as Cloudshim to handle diagrams with many nodes: minimal node templates, fewer bindings, incremental model updates, batched transactions, and layouts run only when necessary.",
+        es: "Apliqué el mismo enfoque de optimización de performance en GoJS que en Cloudshim para manejar diagramas con muchos nodos: node templates mínimos, menos bindings, actualizaciones incrementales del modelo, transactions agrupadas y layouts ejecutados solo cuando era necesario.",
+      },
+    ],
   },
   {
     slug: "cloudshim",

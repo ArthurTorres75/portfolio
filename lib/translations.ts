@@ -1031,8 +1031,8 @@ export const translations: Translations = {
     en: "Little Taller — Client Frontend Suite",
   },
   "project5.desc": {
-    es: "Conjunto de interfaces frontend con React, TypeScript, Firebase y Material UI, desplegadas en Vercel para productos web orientados a cliente final.",
-    en: "Collection of frontend interfaces using React, TypeScript, Firebase, and Material UI, deployed on Vercel for customer-facing web products.",
+    es: "Trabajo freelance para clientes de Little Taller: flujo de recuperación de contraseña para Foster Cooperative (Next.js/Firebase) y pantallas pixel-perfect en React/Tailwind CSS para otros clientes.",
+    en: "Freelance work for Little Taller clients: password-recovery flow for Foster Cooperative (Next.js/Firebase) and pixel-perfect React/Tailwind CSS screens for other clients.",
   },
   "project6.title": {
     es: "Montrix — Herramienta de Diagramación Empresarial",

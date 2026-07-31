@@ -214,14 +214,20 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 - X / Y / Z: the two-sided marketplace UI (onboarding → route builder → offer/request → match approval) is strong, concrete frontend material. No hard usage/scale metrics confirmed — don't publish numbers that weren't given.
 
 ### 8. Little Taller — Frontend Suite
-`React, TypeScript, Firebase, Material UI`
-- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
+`Next.js, React, Firebase, Material UI` — corrected 2026-07-30 (dropped "TypeScript": Foster Cooperative's actual source files are `.js`, not typed).
+
+**Confirmed via interview + public repo verification (2026-07-30)**: Little Taller is a studio/agency Arthur freelanced for; this case study covers 2 of its client projects.
+
+- **Foster Cooperative** (primary showcase — **public repo**: https://github.com/Foster-Cooperative/foster-cooperative): a Next.js/Firebase/MongoDB community platform connecting Phoenix, Arizona's foster-care community (storytelling, events, programs). Verified directly via `git log` on the real repo: 298 total commits, **Arthur has 8 (~2.7%)** — a small, bounded contribution, not broad ownership (don't overclaim here, unlike the GMVYKON correction above). His confirmed, concrete work: built the **forgot-password / reset-password flow** from scratch (`pages/forgot-password.js` new, 174 lines; `pages/reset-password.js` substantially rewritten, 263 lines changed; plus a validator), over 2 days (2022-08-22 to 24) — package.json confirms `jwt-check-expiration` is used in this codebase, consistent with token-expiration handling on the reset link.
+- **Earmarkz** — a second Little Taller client project: React + Tailwind CSS, frontend-only, pixel-perfect implementation from Figma. **Arthur did not finish this one** — it was paused mid-project, and by the time the client reopened it, Arthur had already moved to other work; a different developer completed it. Mention as experience only, not a full case study — no repo/live link known.
+- X / Y / Z: the Foster Cooperative password-reset feature (real, verified, public code) is the strongest citable piece here — frame it as a bounded, concrete auth-flow contribution, not a claim of owning the whole platform.
 
 ### 9. Enterprise Dashboard (public title: "Montrix")
 `Angular, Angular Material, Google Maps API, AWS` — **wrong, see correction below**.
 
-**Correction (2026-07-30)**: "Google Maps API" does not belong here — that's actually Zippyttech's stack (see the orphaned Zippyttech note in the backlog below), and Arthur initially conflated the two before correcting himself. Montrix is a company that spun off from/was created out of Cloudshim; Arthur built (from scratch) an Angular + Angular Material SPA there using **GoJS**, essentially the same kind of diagramming tool as Cloudshim (#10) but for the Montrix brand. Corrected tags should be `Angular, Angular Material, GoJS, TypeScript` (dropping Google Maps API and AWS unless reconfirmed). Arthur tried to find the live site again but it's no longer online — possible domain change, unconfirmed. No live URL currently known.
-- X / Y / Z: TBD — needs a real interview from scratch on what was actually built (Arthur only recalled the stack/lineage so far, not concrete features).
+**Correction (2026-07-30)**: "Google Maps API" does not belong here — that's actually Zippyttech's stack (see the orphaned Zippyttech note in the backlog below), and Arthur initially conflated the two before correcting himself. Montrix is a company that spun off from/was created out of Cloudshim; Arthur built (from scratch) an Angular + Angular Material SPA there using **GoJS**, essentially the same kind of diagramming tool as Cloudshim (#10) but for the Montrix brand. Corrected tags should be `Angular, Angular Material, GoJS, TypeScript` (dropping Google Maps API and AWS unless reconfirmed). Arthur tried to find the live site again but it's no longer online — possible domain change, unconfirmed. No live URL currently known. Team also used to have GitHub repo access, but the repo is now private (access lost) — no repo link available either.
+- **Confirmed via interview (2026-07-30)**: same kind of work as Cloudshim (#10) — built with one other developer, and applied the same GoJS performance-optimization techniques (minimal node templates, fewer bindings, incremental model updates, batched transactions, layouts run only when necessary). Arthur says he worked more heavily on the GoJS layer specifically here than on Cloudshim, but didn't give further concrete detail beyond that.
+- X / Y / Z: TBD for a formal metrics write-up — real technical material exists (GoJS canvas + performance work, same lineage as Cloudshim) but no hard numbers confirmed.
 
 ### 10. Cloudshim — SaaS Tool
 `Angular, GoJS, D3.js, TypeScript` (tags confirmed correct)
