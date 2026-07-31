@@ -870,8 +870,8 @@ export const translations: Translations = {
     en: "Technical Highlights",
   },
   "projects.privateRepoNote": {
-    es: "Código no público — pedime una demo o entrevista para verlo en detalle.",
-    en: "Code isn't public — request a demo or interview to walk through it.",
+    es: "Código privado — pedime una entrevista y te cuento los detalles técnicos.",
+    en: "Private code — request an interview and I'll walk you through the technical details.",
   },
   "projects.requestInterview": {
     es: "Solicitar una entrevista",
