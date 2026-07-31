@@ -45,6 +45,24 @@ export const PROJECTS: Project[] = [
     link: "https://chamcodigital.com/",
     image: "/photos/projects/chamco-digital.webp",
     categoryKey: "category.adminPanel",
+    highlights: [
+      {
+        en: "Owned the architecture end to end: migrated a WordPress content site to a custom Next.js platform, choosing PostgreSQL over MongoDB for enterprise robustness and designing the schema from scratch (posts, users, articles, plus indexes anticipating future scale).",
+        es: "Fui responsable de la arquitectura de punta a punta: migré un sitio de contenido en WordPress a una plataforma custom en Next.js, eligiendo PostgreSQL por sobre MongoDB por robustez enterprise y diseñando el esquema desde cero (posts, usuarios, artículos, más índices pensando en escala futura).",
+      },
+      {
+        en: "Built a custom CMS with role-based access (admin/user/guest) and chose Azure Blob Storage for cost-efficient media storage within the client's budget.",
+        es: "Construí un CMS a medida con control de acceso por rol (admin/usuario/invitado) y elegí Azure Blob Storage para almacenamiento de medios costo-eficiente dentro del presupuesto del cliente.",
+      },
+      {
+        en: "Migrated the WordPress content using SSR + ISR (10-minute revalidation, plus on-demand revalidation on post updates), and applied lazy-loading, caching, and CDN delivery for images.",
+        es: "Migré el contenido de WordPress usando SSR + ISR (revalidación cada 10 minutos, más revalidación on-demand al actualizar un post), y apliqué lazy-loading, caching y entrega por CDN para las imágenes.",
+      },
+      {
+        en: "Result: Google PageSpeed Insights desktop Lighthouse 100 on the homepage and ≥90 across most pages (up from a 50-60 baseline); mobile scores 80-92+ across most pages (same baseline).",
+        es: "Resultado: Google PageSpeed Insights con Lighthouse desktop 100 en el home y ≥90 en la mayoría de las páginas (partiendo de una base de 50-60); mobile 80-92+ en la mayoría de las páginas (misma base).",
+      },
+    ],
   },
   {
     slug: "school-platform",
