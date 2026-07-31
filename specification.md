@@ -120,13 +120,24 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 ### 1. GMVYKON — Corporate Website
 `Next.js, TypeScript, Tailwind CSS, Strapi, Vercel`
 
-**Verified scope** (interview 2026-07-23): Arthur joined an existing project — home page + ~3 pages already built by teammates, on a pre-existing component library. He did **not** architect the site, the Strapi CMS, or its SEO setup (already in place before he joined).
+**MAJOR REVISION (2026-07-30) — verified directly against the real git history, not recall.** The prior "3 pages + responsive fixes" framing significantly *underclaimed* Arthur's real scope — the opposite direction of most other corrections in this document. Ground truth checked via `git log` in the local repo (`C:\Users\Arthur\Documents\My Jobs\Fibotech\GMVykon\GMVykon-WebSite-Frontend`):
+- 266 total commits; **118 are Arthur's (44%)** — the single largest contributor by commit count.
+- Arthur confirmed: he and one teammate (commits under "Enrique Adelino Montes Araujo" / "emontes") were the **two senior frontend developers** on this project; two other contributors existed but did comparatively little.
+- Built for **Fibotech** (software agency); gmvykon.com sells/rents mobile cranes for construction in Mexico.
 
-- **X (Accomplished)**: Delivered 3 new pages and responsive-layout fixes across the existing page/component set for a live corporate website.
-- **Y (Measured by)**: 1-month turnaround for all 3 pages, full pixel-perfect fidelity to Figma specs, zero rework requested on SEO or backend.
-- **Z (By doing)**: Implementing pages in Next.js/TypeScript/Tailwind CSS from Figma using an AI-assisted scaffolding workflow (Lovable) to accelerate the design-to-code pass, extending a pre-built component library, adding new Strapi collections that mirrored the existing content schema (no CMS architecture from scratch), and going through peer code review before deploy to Vercel.
+**Real scope, frontend (confirmed via commit history)**: senior frontend developer across most of the site's major pages/features, not a narrow add-on — Home page (hero, blog/articles, CTA, segments — multiple iterations), Header, Contact page (multi-part), Nosotros (About), full Login/Register flow, "Mi Perfil" (user profile), Bolsa de Trabajo (careers/job board), equipment sale finder + detail pages, providers forms, and a WhatsApp chat integration.
+- Built the **PDF viewer feature** from scratch (`react-pdf-viewer` + `pdfjs-dist`), including dependency/version troubleshooting — used for viewing equipment spec sheets/documents.
+- Worked on the **rental simulator** ("renta simulator") — a calculator for crane rental costs, core to the business (rent/sell cranes).
+- Added a permissions layer restricting certain content to registered/logged-in users.
+- Real stack confirmed via `package.json`: Next.js 15.3.1, React 19, Tailwind CSS 4, `@strapi/client` + `graphql-request` (GraphQL against Strapi), GSAP (animations), Swiper (carousels), `react-markdown`.
+- Still **not** confirmed as his: Strapi CMS architecture/content-modeling, SEO setup — these predate his involvement or were owned by others; don't claim CMS architecture ownership.
+- Still a **team project**, not solo — heavy `git merge`/`dev`-branch activity throughout, don't claim sole ownership of the site.
 
-**Do NOT claim** for this project: Strapi architecture/content-modeling from scratch, SEO setup, or full site ownership — the current live copy overclaims this (see Open Decisions).
+- **X (Accomplished)**: One of two senior frontend developers who built the majority of gmvykon.com's pages and features (not a narrow 3-page add-on).
+- **Y (Measured by)**: 118 of 266 commits (44%, largest individual contributor); covers ~10 distinct pages/features including two built-from-scratch capabilities (PDF viewer, rental simulator).
+- **Z (By doing)**: Implementing pages in Next.js/TypeScript/Tailwind CSS from Figma (using Lovable to accelerate the design-to-code pass for some pages), building new capabilities (PDF viewer, rental simulator, permissions) end-to-end on the frontend, and integrating with the existing Strapi CMS via GraphQL — all through iterative PRs against a shared `dev` branch alongside one frontend peer.
+
+**Do NOT claim**: Strapi CMS architecture/content-modeling from scratch, or SEO setup — still someone else's work. Do NOT claim sole/solo ownership — it was a two-senior-plus-two-minor team effort.
 
 ### 2. Chamco Digital — Admin Panel
 `Next.js, PostgreSQL, Azure, Vercel`
@@ -139,11 +150,27 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 
 **Framing note**: backend is organized by domain modules (content/CMS, media, roles/auth kept separate) — this is pragmatic modular architecture, not a formally-run DDD process (no event storming, no ubiquitous language, no explicit aggregates/domain events). Do not describe this as "DDD" or "bounded contexts" without that caveat.
 
-### 3. School Platform — SaaS
-`lib/projects.ts` lists: `Next.js, TypeScript, Tailwind CSS, Vercel` — **incomplete**, see below.
+### 3. School Platform ("Aula") — School Management SaaS (Multi-tenant)
+`lib/projects.ts` lists: `Next.js, TypeScript, Tailwind CSS, Vercel` — **significantly incomplete**, see below.
 
-**Partially recovered from memory (not a fresh interview — verify before publishing)**: solo personal project (not client work — frame accordingly, unlike GMVYKON/Chamco). Real stack is broader than the current tags: Next.js/Vercel frontend, **NestJS backend, PostgreSQL on Neon, deployed via Railway, Turborepo monorepo**. Feature scope: enrollment + admin workflows, "modern UX." Multi-tenant isolation has **never been technically confirmed** — don't claim it. **No AI/agent feature exists today** (a parent-complaints-triage agent is a *future plan*, not built) — do not describe this project as having a "súper agente" or AI-driven multi-tenant isolation.
-- X / Y / Z: still TBD — needs a real interview for accomplishment/metrics, but the honest scope/stack above should replace the current thin tag list regardless.
+**Confirmed against real `package.json` files + repo structure (2026-07-29)**: solo personal project (not client work — frame accordingly, unlike GMVYKON/Chamco). **Still in active construction** — MVP + Stripe billing + login/logout complete. Do not describe it as finished/production-ready.
+
+- **Architecture**: Hexagonal/Clean with Screaming Architecture on the backend — each NestJS module splits `domain/application/infrastructure`, domain has zero infrastructure imports. Monorepo: pnpm workspaces + Turborepo.
+- **CRUD surface is deliberately uneven by module type — this is a design decision, not incomplete work**:
+  - Full CRUD (`GET/POST/PATCH/DELETE`): students, teachers, courses, sections, evaluation-plans — these are manageable entities.
+  - `GET/POST/DELETE`, no `PATCH`: enrollments, representatives — a relationship is created/broken, not edited.
+  - `GET/PUT` only, no separate `POST`/`DELETE`: grades — upsert via `PUT`, no delete, consistent with an audit trail for grading.
+  - `GET/POST` only: attendance — marking attendance is an upsert-by-day `POST`, no edit/delete exposed.
+  - `GET/POST` only, immutable by design: payments, billing — a financial record is never edited or deleted.
+  - No REST controller at all: notifications — cross-cutting concern via a `NotificationPort` with Resend/Telegram adapters, not exposed over REST.
+- **Frontend** (`apps/web`): Next.js 16 (App Router, Turbopack) + React 19, TypeScript; Auth.js (NextAuth v5 beta) + `jose` for JWT; Radix UI + Tailwind CSS 3 + shadcn-style components (`class-variance-authority`, `tailwind-merge`); React Hook Form + Zod 4; Stripe (`@stripe/react-stripe-js`); testing via Vitest + Testing Library + Playwright (E2E) + `@axe-core/playwright`.
+- **Backend** (`apps/api`): NestJS 11 + Express 5, TypeScript; Prisma 6 + PostgreSQL with **real multi-tenant Row-Level Security** — RLS enforced at the DB level (not just a `WHERE` clause in code), `tenantId` on every tenant-scoped table, `forTenant()` as the sole Prisma client access point; Passport + JWT (`passport-jwt`), `nestjs-cls` for per-request context, `nestjs-zod` for validated DTOs; Stripe SDK for billing, Resend for transactional emails, Helmet + Throttler for security/rate-limiting; testing via Vitest + Supertest.
+- **Domain modules implemented** (`apps/api/src/modules`): auth, tenants/tenancy, students, teachers, courses, sections, enrollments, grades, evaluation-plans, attendance, representatives, billing, payments, notifications.
+- **Shared**: `packages/shared` (shared TS types), `packages/config` (ESLint/tsconfig/Vitest base) — zero type duplication between frontend and backend.
+- **CI/CD**: GitHub Actions (`ci.yml`), Node 24 LTS pinned via `.nvmrc`, pnpm 10.
+- **Correction to prior memory**: multi-tenant isolation was previously flagged as "never technically confirmed — don't claim it." That's now outdated — it's confirmed real via a **4-layer tenant-isolation model**: `tenantId` column + DB-level RLS policy + mandatory `forTenant()` + JWT as the sole tenant-identity source (never the `Host` header). This is a genuine architectural-maturity signal, citable as-is.
+- **No AI/agent feature exists today** (a parent-complaints-triage agent is a *future plan*, not built) — do not describe this project as having a "súper agente."
+- X / Y / Z: still TBD for a formal write-up — project is mid-build, so avoid publishing completion/scale claims. The 4-layer tenant-isolation model above is strong citable material once the case study is written.
 
 ### 4. Hacking HR — Event Platform
 `Next.js, TypeScript, Payload CMS, AWS Amplify` (frontend tags confirmed correct)
@@ -152,51 +179,76 @@ Status legend: `TBD` = pending technical interview. Order matches `lib/projects.
 - Backend: helped design (**collaborative, not sole architect**) two MongoDB modules — "jobs" (job search) and "pods." Added TanStack Query (React Query) for pagination/query speed.
 - Real trade-off story: team considered adding DB indexes to speed queries, but indexes would raise cloud cost and the client wanted minimum spend — so they deliberately skipped indexing and solved it client-side (TanStack Query + pagination) instead. Genuine cost-vs-performance judgment call, citable as-is.
 - Owned Stripe payments **end-to-end** (frontend + backend) — subscription-mode checkout with coupon discounts across two membership tiers (Premium $199/yr, Premium+ $359/yr, live-verified 2026-07-24). This is Arthur's only confirmed backend-Stripe project — do not attribute backend/webhook Stripe work to Piggyback Network (frontend-only there, see #7).
-- X / Y / Z: TBD for a formal write-up, but the pieces above (payments ownership + cost-aware architecture trade-off) are strong X/Y/Z material once phrased with metrics.
+- X / Y / Z (Arthur's recall, approximate — not independently verified against dashboards/invoices, mark accordingly if published): cut monthly AWS query costs from ~$11 to ~$3–4 and reduced page load time from ~3s to ~1.5s, by replacing DB indexing with client-side pagination via TanStack Query.
 
 ### 5. Otherworld Gift — ERP
 `Next.js, NestJS, Prisma, MySQL, AFIP` (tags confirmed correct)
 
 **Partially recovered from memory**: confirmed feature scope — AFIP e-invoicing (Argentina's tax-compliant invoice generation, the direct analog to "GST invoicing" asks), inventory management, sales authorization. No formal XYZ interview has been run yet (only Upwork-proposal framing exists) — do not publish metrics that don't exist.
 - **Correction**: the "found hardcoded secrets, moved to env vars" anecdote belongs to a *different, undocumented* project (Wya Group / mymoldtech.com) — Arthur previously mis-attributed it to Otherworld Gift. Do not use that story for this case study.
+- **No cover image**: `lib/projects.ts` has no `image` field for this entry. A `public/photos/projects/otherworld-gift.webp` file existed but was actually a screenshot of Moldtech's public marketing site (an unrelated Wya Group client, not Arthur's work) mislabeled with this project's name — removed 2026-07-30. Don't re-add an image here without a real Otherworld Gift screenshot.
 - X / Y / Z: TBD — needs a real interview.
 
 ### 6. Speedy Delivery — Mobile App
-`React Native, Expo, Tailwind CSS, TypeScript` (tags confirmed correct)
+`React Native, Expo, Tailwind CSS, TypeScript` — **"Expo" tag is misleading, see stack note below**.
 
-**Partially recovered from memory**: **not published on the Play Store** — no public install link exists; never describe it as a "live/downloadable app."
+**Confirmed via interview (2026-07-30)**: **not published on the Play Store** — no public install link exists; never describe it as a "live/downloadable app." A companion web app also exists for this product, but it was built by a different developer — Arthur's scope is the mobile app only; do not use web screenshots/UI as evidence of his work here.
+- Built all screens solo: login + password recovery (verification code sent via message), admin dashboard, and two distinct role-based flows — restaurant (creates orders) and rider/"motorizado" (fulfills orders).
+- Real-time order-assignment logic: incoming orders form a first-in-first-out queue per rider; if a rider doesn't accept within the window, the order automatically reassigns to the next rider in the queue. Both sides get instant push notifications on status changes.
+- **Stack note**: started on React Native + Expo (managed workflow), then **fully ejected to bare React Native** because Expo's managed push-notification setup wasn't reliable enough for Firebase Cloud Messaging in production. EAS Build is still used as the CI/build tool, but the actual build is always produced without the Expo managed runtime. Update `lib/projects.ts` tags to `React Native, Firebase, TypeScript` (drop "Expo" as a standalone tag, or footnote it as "EAS Build only, ejected app" if kept).
+- **Design fidelity confirmed (Figma screenshots reviewed 2026-07-30)**: implemented the full screen set pixel-perfect from Figma — ~20 screens covering the splash/brand screen, login, dual-role signup (Driver vs. Restaurant, each with its own registration form), password recovery with OTP code entry, driver dashboard/profile/history, and restaurant order-status tracking with an embedded map plus delivery history.
 - Real project story (useful for interviews/proposals, needs careful framing for a public case study): Arthur estimated 15 days; the MVP itself took ~1 month, but unscoped revision requests ("arreglos y arreglos") pushed the total to ~3 months. If used publicly, frame as a lesson applied going forward (now caps revision rounds and writes scope boundaries into proposals) rather than as a raw timeline miss.
-- X / Y / Z: TBD — needs a real interview focused on what was actually built (features/architecture), separate from the timeline lesson above.
+- X / Y / Z: pixel-perfect Figma-to-code implementation across ~20 screens, plus the order-queue reassignment logic + Firebase real-time notifications (rider/restaurant sync), is the strongest technical material here. No hard performance/scale metrics confirmed yet (e.g. number of riders, order volume) — don't publish numbers that weren't given.
 
-### 7. Piggyback Network — E-commerce
-`Next.js, React, Stripe, PayPal` — **needs a scope caveat**, see below.
+### 7. Piggyback Network — Kids' Transportation Matching Platform
+`Next.js, React, Stripe, PayPal, Google Maps API` — category fix applied, see below (Google Maps added 2026-07-30, used to trace routes point A → point B).
 
-**Partially recovered from memory**: real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — same quick-win as Hacking HR above). **Scope is frontend-only**: Stripe/PayPal checkout UI, no backend integration or webhook handling. Currently listed alongside Hacking HR's Stripe work with no distinction — this needs the same kind of scope caveat GMVYKON already has, or a recruiter will assume backend payments ownership here too.
-- X / Y / Z: TBD — needs a real interview.
+**Major correction (2026-07-30): this is NOT an e-commerce site.** Current live copy (`project4.title`/`project4.desc` in `lib/translations.ts`, `categoryKey: "category.ecommerce"` in `lib/projects.ts`) is wrong and must be rewritten. The real product: a two-sided marketplace matching parents/drivers for **children's transportation** — a user registers and either offers a route (as a driver, setting their own availability) or requests a ride for their kids; a matching algorithm pairs supply and demand. Revenue model: users pay a **subscription** to Piggyback Network, which in turn pays participating drivers their share. Real live URL: **https://www.piggybacknetwork.com/** (currently NOT used as the project link — quick-win, same as Hacking HR).
+
+**Confirmed scope (Figma reviewed + interview, 2026-07-30)**: **frontend-only** — the matching algorithm and driver payment-split logic were built by the project's lead programmer, NOT Arthur. Do not attribute that backend logic to him.
+- **Onboarding (multi-step)**: first-time users save frequent locations (home, school, practice facility, etc. — minimum 2, via Google Places autocomplete), then build "Routes" by combining saved locations into an origin → destination trip, traced on a Google Maps view (point A → point B).
+- **Returning-user dashboard**: sidebar with profile, a points/stats counter (gamification), and counts of routes/offers/requests. Main panel organized into editable sections — Locations, Routes, Offers, Request, and Matches.
+- **Matching UI**: a driver's "Offer" (available route) is matched against a parent's "Request" (needed ride) for the same route, with a visible Pending / Approve / Decline status workflow — Arthur built this UI, the underlying match logic is the lead programmer's.
+- **"Current Activity" widget**: summarizes upcoming trips (e.g. "You are driving" / "Your request is pending").
+- Stripe/PayPal integration is frontend UI only (subscription payment forms), no backend/webhook handling — consistent with prior scope note; do not attribute backend-Stripe ownership here (that's Hacking HR, see #4).
+- X / Y / Z: the two-sided marketplace UI (onboarding → route builder → offer/request → match approval) is strong, concrete frontend material. No hard usage/scale metrics confirmed — don't publish numbers that weren't given.
 
 ### 8. Little Taller — Frontend Suite
-`React, TypeScript, Firebase, Material UI`
-- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
+`Next.js, React, Firebase, Material UI` — corrected 2026-07-30 (dropped "TypeScript": Foster Cooperative's actual source files are `.js`, not typed).
 
-### 9. Enterprise Dashboard
-`Angular, Angular Material, Google Maps API, AWS`
-- No memory found. X / Y / Z: TBD — needs a real interview from scratch.
+**Confirmed via interview + public repo verification (2026-07-30)**: Little Taller is a studio/agency Arthur freelanced for; this case study covers 2 of its client projects.
+
+- **Foster Cooperative** (primary showcase — **public repo**: https://github.com/Foster-Cooperative/foster-cooperative): a Next.js/Firebase/MongoDB community platform connecting Phoenix, Arizona's foster-care community (storytelling, events, programs). Verified directly via `git log` on the real repo: 298 total commits, **Arthur has 8 (~2.7%)** — a small, bounded contribution, not broad ownership (don't overclaim here, unlike the GMVYKON correction above). His confirmed, concrete work: built the **forgot-password / reset-password flow** from scratch (`pages/forgot-password.js` new, 174 lines; `pages/reset-password.js` substantially rewritten, 263 lines changed; plus a validator), over 2 days (2022-08-22 to 24) — package.json confirms `jwt-check-expiration` is used in this codebase, consistent with token-expiration handling on the reset link.
+- **Earmarkz** — a second Little Taller client project: React + Tailwind CSS, frontend-only, pixel-perfect implementation from Figma. **Arthur did not finish this one** — it was paused mid-project, and by the time the client reopened it, Arthur had already moved to other work; a different developer completed it. Mention as experience only, not a full case study — no repo/live link known.
+- X / Y / Z: the Foster Cooperative password-reset feature (real, verified, public code) is the strongest citable piece here — frame it as a bounded, concrete auth-flow contribution, not a claim of owning the whole platform.
+
+### 9. Enterprise Dashboard (public title: "Montrix")
+`Angular, Angular Material, Google Maps API, AWS` — **wrong, see correction below**.
+
+**Correction (2026-07-30)**: "Google Maps API" does not belong here — that's actually Zippyttech's stack (see the orphaned Zippyttech note in the backlog below), and Arthur initially conflated the two before correcting himself. Montrix is a company that spun off from/was created out of Cloudshim; Arthur built (from scratch) an Angular + Angular Material SPA there using **GoJS**, essentially the same kind of diagramming tool as Cloudshim (#10) but for the Montrix brand. Corrected tags should be `Angular, Angular Material, GoJS, TypeScript` (dropping Google Maps API and AWS unless reconfirmed). Arthur tried to find the live site again but it's no longer online — possible domain change, unconfirmed. No live URL currently known. Team also used to have GitHub repo access, but the repo is now private (access lost) — no repo link available either.
+- **Confirmed via interview (2026-07-30)**: same kind of work as Cloudshim (#10) — built with one other developer, and applied the same GoJS performance-optimization techniques (minimal node templates, fewer bindings, incremental model updates, batched transactions, layouts run only when necessary). Arthur says he worked more heavily on the GoJS layer specifically here than on Cloudshim, but didn't give further concrete detail beyond that.
+- X / Y / Z: TBD for a formal metrics write-up — real technical material exists (GoJS canvas + performance work, same lineage as Cloudshim) but no hard numbers confirmed.
 
 ### 10. Cloudshim — SaaS Tool
 `Angular, GoJS, D3.js, TypeScript` (tags confirmed correct)
 
-**Partially recovered from memory**: Frontend Developer on a **team project** (not solo) — custom diagramming canvas built with Angular + GoJS + D3.js. Real live URL: **https://www.cloudshim.com/** (currently NOT used as the project link — third quick-win for the broken-links backlog item).
-- X / Y / Z: TBD — needs a real interview for accomplishment/metrics.
+**Confirmed via interview (2026-07-30)**: Frontend Developer on a **team project** (not solo) — custom AWS-architecture diagramming canvas built with Angular + GoJS + D3.js. Real live URL: **https://www.cloudshim.com/** (currently NOT used as the project link — third quick-win for the broken-links backlog item).
+- Built the GoJS canvas: draggable nodes that render as the specific AWS resource shape/icon the user selects (EC2, S3, Lambda, etc.).
+- Built reusable, DRY Angular components (following the app's code-reuse conventions) for the screens that host the GoJS diagrams, avoiding duplicated screen code.
+- D3.js: used to build at least one diagram matching a specific Figma design — narrower/secondary usage compared to GoJS, not a separate charting layer.
+- **Concrete GoJS performance-optimization work** (real, citable technical depth — the team hit rendering slowdowns with many nodes/elements and worked through GoJS's own performance guidance): kept node templates minimal (fewer Panels/Shapes/TextBlocks per node); reduced binding count by grouping properties instead of binding many individual ones; updated the existing GoJS model incrementally (added/changed data) instead of replacing the whole model, so GoJS only redraws what changed; batched changes inside transactions/commits to avoid multiple re-renders; ran expensive layouts only when necessary instead of on every change; avoided recalculating layout per node; disabled animations where not needed.
+- X / Y / Z: the GoJS performance-tuning list above is the strongest, most specific technical material in this case study — frame it as a concrete "diagnosed a real rendering bottleneck at scale, applied documented GoJS techniques" story. No hard metrics (e.g. node count, before/after render time) confirmed — don't publish numbers that weren't given.
 
 ## Open Decisions / Backlog
 
-- [ ] Fix `lib/translations.ts:1072-1075` (`project12.desc`) — currently reads "Sitio web corporativo **construido con**..." implying Arthur built the whole site; real scope was 3 pages + responsive fixes on an existing project (see GMVYKON case study above). Rewrite to reflect honest scope before a client/recruiter catches the gap in an interview.
-- [ ] Replace broken project links in `lib/projects.ts` — 3 have real URLs recovered from memory and are quick wins: **Hacking HR** → `https://www.hackinghrlab.io/`, **Piggyback Network** → `https://www.piggybacknetwork.com/`, **Cloudshim** → `https://www.cloudshim.com/` (all currently point to the generic Upwork profile). The other 4 Upwork-linked projects (Otherworld Gift, Speedy Delivery, Little Taller, Enterprise Dashboard) have no known public URL — need a repo/demo link or stay Upwork-linked.
-- [ ] Write real X/Y/Z case studies for projects #3–#10 using the "Partially recovered from memory" notes above as a starting point (School, Hacking HR, Otherworld Gift, Speedy Delivery, Piggyback Network) or from scratch (Little Taller, Enterprise Dashboard have no memory at all; Cloudshim has scope but no metrics).
-- [ ] Fix School Platform's stack tags in `lib/projects.ts` — currently frontend-only (`Next.js, TypeScript, Tailwind CSS, Vercel`), real stack also includes NestJS backend, PostgreSQL/Neon, Railway, Turborepo.
-- [ ] Add a scope caveat to Piggyback Network's copy (frontend-only Stripe/PayPal, no backend/webhooks) so it doesn't read as backend payments ownership — that's Hacking HR's story, not this one.
+- [x] `project12.desc` (GMVYKON) — no longer needs a downward fix. GMVYKON's real scope turned out to be much bigger than previously thought (verified via git log 2026-07-30 — Arthur was one of two senior frontend devs, 44% of commits, built most of the site's pages/features, see case study above). The current "built with Next.js..." copy is accurate as a frontend-tech description and doesn't overclaim CMS ownership; no rewrite needed.
+- [ ] Replace remaining broken project links in `lib/projects.ts` — **Hacking HR** → `https://www.hackinghrlab.io/` still points to the generic Upwork profile. (**Piggyback Network** and **Cloudshim** done — both now point to their real live URLs.) The other 4 Upwork-linked projects (Otherworld Gift, Speedy Delivery, Little Taller, Enterprise Dashboard) have no known public URL — need a repo/demo link or stay Upwork-linked.
+- [x] Write real X/Y/Z case studies for School SaaS, Hacking HR, Otherworld Gift, Speedy Delivery, Piggyback Network — done. Still open: Little Taller, Enterprise Dashboard (no memory at all, need fresh interviews), Cloudshim (has scope but no metrics).
+- [x] Fix School Platform's stack tags in `lib/projects.ts` — done, full real stack documented and applied.
+- [x] Add a scope caveat to Piggyback Network's copy — done, corrected the whole description (was mislabeled as e-commerce) and clarified frontend-only scope.
 - [ ] Buy a custom domain — not resolved; `NEXT_PUBLIC_SITE_URL` set to the Vercel URL as an interim value (2026-07-28)
 - [ ] Disable GitHub Pages source / delete `gh-pages` branch; merge + trigger the redirect stub (source is already GitHub Actions — just needs the workflow run, see Hosting & Deployment)
 - [ ] Add `<lastmod>` to `sitemap.xml`
+- [ ] **Decide what to do with Zippyttech**: `lib/translations.ts` already has `project8.title`/`project8.desc` written ("Zippyttech — Portal Web de Operaciones", Angular + TypeScript + Google Maps) but this key is **not referenced by any entry in `lib/projects.ts`** — it's currently invisible on the live site. Confirmed via interview (2026-07-30): Zippyttech is a software agency where Arthur worked on multiple Angular projects, including a real incremental migration story — AngularJS → Angular 2, then upgraded through Angular 3 through 11. That migration story is strong, concrete material (legacy-upgrade experience is high-value for recruiters) but has no case study yet. Decide: add Zippyttech as a new project card (needs image, live URL if any, full X/Y/Z interview), or leave it unused.
 - [ ] Decide on locale routing / `hreflang` strategy
 - [x] `eslint-config-next` version mismatch — resolved 2026-07-28 (bumped to match `next`, migrated to flat config)

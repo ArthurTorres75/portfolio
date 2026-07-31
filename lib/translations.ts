@@ -861,6 +861,26 @@ export const translations: Translations = {
     es: "Ver Todos los Proyectos",
     en: "View All Projects",
   },
+  "projects.highlightsTitle": {
+    es: "Aspectos técnicos",
+    en: "Technical Highlights",
+  },
+  "projects.privateRepoNote": {
+    es: "Código no público — pedime una demo o entrevista para verlo en detalle.",
+    en: "Code isn't public — request a demo or interview to walk through it.",
+  },
+  "projects.requestInterview": {
+    es: "Solicitar una entrevista",
+    en: "Request an interview",
+  },
+  "projects.scheduleCall": {
+    es: "Agendar una llamada",
+    en: "Schedule a call",
+  },
+  "projects.messageTelegram": {
+    es: "Escribir por Telegram",
+    en: "Message on Telegram",
+  },
 
   // SEO Metadata
   "seo.home.title": {
@@ -971,6 +991,7 @@ export const translations: Translations = {
   "category.frontendSuite": { es: "Frontend Suite", en: "Frontend Suite" },
   "category.enterpriseDashboard": { es: "Dashboard Empresarial", en: "Enterprise Dashboard" },
   "category.saasTool": { es: "SaaS Tool", en: "SaaS Tool" },
+  "category.marketplace": { es: "Marketplace", en: "Marketplace" },
 
   // Project Examples
   "project1.title": {
@@ -994,40 +1015,40 @@ export const translations: Translations = {
     en: "Speedy Delivery — Food Delivery Mobile App",
   },
   "project3.desc": {
-    es: "Aplicación móvil para delivery de comida desarrollada con React Native y Expo, con interfaz responsiva y flujo de pedidos en tiempo real.",
-    en: "Food delivery mobile app developed with React Native and Expo, featuring a responsive UI and real-time order flow.",
+    es: "Aplicación móvil de delivery de comida desarrollada en React Native, con roles separados para restaurante y motorizado y notificaciones en tiempo real vía Firebase.",
+    en: "Food delivery mobile app built in React Native, with separate restaurant and rider roles and real-time notifications via Firebase.",
   },
   "project4.title": {
-    es: "PiggyBack Network — Plataforma E-commerce con Pagos",
-    en: "PiggyBack Network — E-commerce Platform with Payments",
+    es: "PiggyBack Network — Marketplace de Transporte Escolar",
+    en: "PiggyBack Network — Kids' Transportation Marketplace",
   },
   "project4.desc": {
-    es: "Desarrollo frontend para plataforma de e-commerce con integración de Stripe y PayPal, optimización de rendimiento y arquitectura escalable en AWS.",
-    en: "Frontend development for an e-commerce platform with Stripe and PayPal integration, performance optimization, and scalable AWS architecture.",
+    es: "Frontend de un marketplace de dos lados que conecta padres y conductores para el transporte de niños: onboarding con ubicaciones frecuentes, rutas, ofertas/pedidos y un sistema de matching con pagos por suscripción vía Stripe y PayPal.",
+    en: "Frontend for a two-sided marketplace matching parents and drivers for children's transportation: onboarding with frequent locations, routes, offers/requests, and a matching system with subscription payments via Stripe and PayPal.",
   },
   "project5.title": {
     es: "Little Taller — Suite Frontend para Clientes",
     en: "Little Taller — Client Frontend Suite",
   },
   "project5.desc": {
-    es: "Conjunto de interfaces frontend con React, TypeScript, Firebase y Material UI, desplegadas en Vercel para productos web orientados a cliente final.",
-    en: "Collection of frontend interfaces using React, TypeScript, Firebase, and Material UI, deployed on Vercel for customer-facing web products.",
+    es: "Trabajo freelance para clientes de Little Taller: flujo de recuperación de contraseña para Foster Cooperative (Next.js/Firebase) y pantallas pixel-perfect en React/Tailwind CSS para otros clientes.",
+    en: "Freelance work for Little Taller clients: password-recovery flow for Foster Cooperative (Next.js/Firebase) and pixel-perfect React/Tailwind CSS screens for other clients.",
   },
   "project6.title": {
-    es: "Montrix — Dashboard Operacional con Mapas",
-    en: "Montrix — Operational Dashboard with Maps",
+    es: "Montrix — Herramienta de Diagramación Empresarial",
+    en: "Montrix — Enterprise Diagramming Tool",
   },
   "project6.desc": {
-    es: "Aplicación empresarial con Angular, Angular Material y Google Maps API para visualización operativa, experiencia UX mejorada y alto rendimiento.",
-    en: "Enterprise application using Angular, Angular Material, and Google Maps API for operational visualization, improved UX, and high performance.",
+    es: "SPA construida desde cero con Angular y Angular Material, con un canvas de diagramación basado en GoJS.",
+    en: "SPA built from scratch with Angular and Angular Material, featuring a GoJS-based diagramming canvas.",
   },
   "project7.title": {
     es: "Cloudshim — Herramienta de Diagramación Avanzada",
     en: "Cloudshim — Advanced Diagramming Tool",
   },
   "project7.desc": {
-    es: "Plataforma frontend con Angular y GoJS para diagramación compleja, gráficos interactivos con D3.js y diseño responsivo para entornos cloud.",
-    en: "Frontend platform with Angular and GoJS for complex diagramming, interactive D3.js charts, and responsive design for cloud environments.",
+    es: "Plataforma frontend en equipo para diagramar arquitecturas AWS: canvas de nodos arrastrables con GoJS que representan recursos de AWS, componentes reutilizables y optimización de rendimiento para diagramas con muchos elementos.",
+    en: "Team frontend platform for diagramming AWS architectures: a draggable-node GoJS canvas representing AWS resources, reusable components, and performance optimization for diagrams with many elements.",
   },
   "project8.title": {
     es: "Zippyttech — Portal Web de Operaciones",
