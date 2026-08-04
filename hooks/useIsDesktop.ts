@@ -1,15 +1,14 @@
 import { useSyncExternalStore } from "react";
-
-const DESKTOP_QUERY = "(hover: none), (pointer: coarse)";
+import { MEDIA_QUERIES } from "@/lib/motion/mediaQueries";
 
 function subscribe(callback: () => void): () => void {
-  const mediaQuery = window.matchMedia(DESKTOP_QUERY);
+  const mediaQuery = window.matchMedia(MEDIA_QUERIES.coarsePointer);
   mediaQuery.addEventListener("change", callback);
   return () => mediaQuery.removeEventListener("change", callback);
 }
 
 function getSnapshot(): boolean {
-  return !window.matchMedia(DESKTOP_QUERY).matches;
+  return !window.matchMedia(MEDIA_QUERIES.coarsePointer).matches;
 }
 
 function getServerSnapshot(): boolean {
