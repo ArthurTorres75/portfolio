@@ -1,6 +1,7 @@
 import type React from "react";
 import { useEffect, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
+import { useMotionCapability } from "@/hooks/useMotionCapability";
 
 interface RotatingPoints {
   rotation: {
@@ -96,26 +97,10 @@ function ParticleField({
 
 export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Element | null {
   const pointerTargetRef = useRef({ x: 0, y: 0 });
-  const [isTouchLikeDevice, setIsTouchLikeDevice] = useState(
-    () => typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches
-  );
+  const { isPointerMotionEnabled } = useMotionCapability();
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(hover: none), (pointer: coarse)");
-    const updateDeviceMode = (): void => {
-      setIsTouchLikeDevice(mediaQuery.matches);
-    };
-
-    updateDeviceMode();
-    mediaQuery.addEventListener("change", updateDeviceMode);
-
-    return () => {
-      mediaQuery.removeEventListener("change", updateDeviceMode);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isTouchLikeDevice) {
+    if (!isPointerMotionEnabled) {
       return;
     }
 
@@ -144,9 +129,9 @@ export function CyberNebula({ containerRef }: CyberNebulaProps): React.JSX.Eleme
       container.removeEventListener("mousemove", handleMouseMove);
       container.removeEventListener("mouseleave", handleMouseLeave);
     };
-  }, [containerRef, isTouchLikeDevice]);
+  }, [containerRef, isPointerMotionEnabled]);
 
-  if (isTouchLikeDevice) return null;
+  if (!isPointerMotionEnabled) return null;
 
   return (
     <div className="hero-nebula" aria-hidden="true">

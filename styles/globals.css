@@ -411,8 +411,15 @@
   }
 }
 
+/*
+ * Belt-and-braces CSS gate for decorative WebGL surfaces. The JS gate
+ * (useMotionCapability, consumed by CyberNebula and WaterSurface3D) is the
+ * primary reduced-motion contract; this rule only guards against a flash of
+ * motion before hydration or if a future consumer forgets to check the hook.
+ */
 @media (prefers-reduced-motion: reduce) {
-  .about-water-3d {
+  .about-water-3d,
+  .hero-nebula {
     display: none;
   }
 }

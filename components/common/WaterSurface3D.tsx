@@ -3,6 +3,8 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { DoubleSide, Vector2 } from "three";
 import type { Mesh, ShaderMaterial } from "three";
+import { MEDIA_QUERIES } from "@/lib/motion/mediaQueries";
+import { useMotionCapability } from "@/hooks/useMotionCapability";
 
 interface WaterPlaneProps {
   isVisible: boolean;
@@ -28,7 +30,7 @@ function WaterPlane({ isVisible }: WaterPlaneProps): React.JSX.Element {
   );
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(hover: none)");
+    const mediaQuery = window.matchMedia(MEDIA_QUERIES.coarsePointer);
     const updateDeviceMode = (): void => {
       setIsTouchLikeDevice(mediaQuery.matches);
     };
@@ -126,10 +128,9 @@ function WaterPlane({ isVisible }: WaterPlaneProps): React.JSX.Element {
 }
 
 export function WaterSurface3D({ isVisible = true }: WaterSurface3DProps): React.JSX.Element | null {
-  const isMobile =
-    typeof window !== "undefined" && window.matchMedia("(hover: none), (pointer: coarse)").matches;
+  const { isPointerMotionEnabled } = useMotionCapability();
 
-  if (isMobile) return null;
+  if (!isPointerMotionEnabled) return null;
 
   return (
     <div className="about-water-3d" aria-hidden="true">
