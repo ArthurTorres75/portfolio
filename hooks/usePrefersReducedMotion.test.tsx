@@ -2,7 +2,7 @@ import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { MEDIA_QUERIES } from "@/lib/motion/mediaQueries";
 import { setMediaQueryState } from "@/tests/matchMedia";
-import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { getServerSnapshot, usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
 
 function getSubscribedMediaQueryList(): MediaQueryList {
   const results = vi.mocked(window.matchMedia).mock.results;
@@ -61,5 +61,13 @@ describe("usePrefersReducedMotion", () => {
       "change",
       expect.any(Function)
     );
+  });
+});
+
+describe("getServerSnapshot", () => {
+  it("returns true as the accessibility-safe SSR default", () => {
+    // renderHook() always exercises the client getSnapshot path in jsdom,
+    // so the SSR branch must be locked via a direct unit test instead.
+    expect(getServerSnapshot()).toBe(true);
   });
 });

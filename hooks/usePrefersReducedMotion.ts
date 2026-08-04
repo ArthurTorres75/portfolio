@@ -11,7 +11,12 @@ function getSnapshot(): boolean {
   return window.matchMedia(MEDIA_QUERIES.reducedMotion).matches;
 }
 
-function getServerSnapshot(): boolean {
+/**
+ * Exported for direct unit testing: `renderHook()` always exercises the
+ * client `getSnapshot` path in jsdom, so this is the only way to lock the
+ * SSR default without mocking `useSyncExternalStore` internals.
+ */
+export function getServerSnapshot(): boolean {
   return true;
 }
 
