@@ -15,6 +15,33 @@ export const UPWORK_PROFILE_FALLBACK =
 
 export const PROJECTS: Project[] = [
   {
+    slug: "medikoch",
+    titleKey: "project13.title",
+    descKey: "project13.desc",
+    technologies: ["Laravel", "PHP", "Vue.js", "MySQL"],
+    link: "https://medikoch.com/",
+    image: "/photos/projects/medikoch.webp",
+    categoryKey: "category.healthcarePlatform",
+    highlights: [
+      {
+        en: "Performed a full technical audit of a legacy Laravel 6 / PHP 7.2 healthcare platform (patient medical records) used by doctors — flagging missing test coverage, outdated dependencies, and unprotected API endpoints — then hardened exposed endpoints with rate limiting.",
+        es: "Realicé una auditoría técnica completa de una plataforma de salud heredada en Laravel 6 / PHP 7.2 (historias clínicas) usada por médicos — identificando falta de cobertura de tests, dependencias desactualizadas y endpoints de API sin protección — y endurecí los endpoints expuestos con rate limiting.",
+      },
+      {
+        en: "Reproduced and fixed a critical bug where editing a patient's clinical history returned a 404, tracing it to a disabled Laravel route through local environment setup (migrations, custom seeders) and step-by-step reproduction as the end user.",
+        es: "Reproduje y solucioné un bug crítico que causaba un error 404 al editar la historia clínica de un paciente, rastreándolo hasta una ruta de Laravel deshabilitada mediante configuración de entorno local (migraciones, seeders personalizados) y reproducción paso a paso como usuario final.",
+      },
+      {
+        en: "Migrated additional views from Blade to the existing Vue 2 frontend, and evaluated the codebase to propose the next phase: upgrading to Vue 3 via Laravel's own officially supported Inertia + Vite path, avoiding a full rewrite.",
+        es: "Migré vistas adicionales de Blade al frontend existente en Vue 2, y evalué el código para proponer la siguiente fase: actualizar a Vue 3 usando el camino oficial de Laravel (Inertia + Vite), evitando una reescritura completa.",
+      },
+      {
+        en: "Led the audit and migration plan using a supervised, spec-driven multi-agent workflow, keeping security and quality gates under direct review while accelerating delivery.",
+        es: "Lideré la auditoría y el plan de migración usando un flujo de trabajo multi-agente supervisado y basado en especificaciones, manteniendo los controles de seguridad y calidad bajo revisión directa mientras aceleraba la entrega.",
+      },
+    ],
+  },
+  {
     slug: "gmvykon",
     titleKey: "project12.title",
     descKey: "project12.desc",
@@ -70,6 +97,7 @@ export const PROJECTS: Project[] = [
     descKey: "project10.desc",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Vercel"],
     link: "https://school-mauve-eight.vercel.app/",
+    image: "/photos/projects/school-platform.webp",
     categoryKey: "category.saas",
     highlights: [
       {
