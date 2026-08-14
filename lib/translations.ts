@@ -1000,6 +1000,7 @@ export const translations: Translations = {
   "category.enterpriseDashboard": { es: "Dashboard Empresarial", en: "Enterprise Dashboard" },
   "category.saasTool": { es: "SaaS Tool", en: "SaaS Tool" },
   "category.marketplace": { es: "Marketplace", en: "Marketplace" },
+  "category.healthcarePlatform": { es: "Plataforma de Salud", en: "Healthcare Platform" },
 
   // Project Examples
   "project1.title": {
@@ -1101,6 +1102,16 @@ export const translations: Translations = {
   "project12.desc": {
     es: "Sitio web corporativo construido con Next.js, TypeScript y Tailwind CSS, con contenido gestionado a través de Strapi CMS. Diseño en Figma, despliegue en Vercel y flujo de trabajo asistido por IA.",
     en: "Corporate website built with Next.js, TypeScript, and Tailwind CSS, with content managed through Strapi CMS. Designed in Figma, deployed on Vercel, and developed with an AI-assisted workflow.",
+  },
+
+  // Project 13 — Medikoch
+  "project13.title": {
+    es: "Medikoch — Plataforma de Salud (Auditoría y Migración)",
+    en: "Medikoch — Healthcare Platform (Audit & Migration)",
+  },
+  "project13.desc": {
+    es: "Auditoría técnica y trabajo de migración en una plataforma de salud heredada en Laravel/PHP usada por médicos: hardening de API, corrección de un bug crítico en historias clínicas y migración progresiva de Blade a Vue.js.",
+    en: "Technical audit and migration work on a legacy Laravel/PHP healthcare platform used by doctors: API hardening, fixing a critical clinical-record bug, and progressive Blade-to-Vue.js migration.",
   },
 };
 
