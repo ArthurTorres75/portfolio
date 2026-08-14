@@ -502,6 +502,24 @@ export const translations: Translations = {
     en: "Built the admin panel, optimized SEO and Lighthouse performance scores, configured CI/CD with GitHub Actions, deployed on Vercel, set up a PostgreSQL server on Azure, configured email delivery via Microsoft Graph API, implemented image uploads with Azure Blob Storage, and performed overall code quality improvements.",
   },
 
+  // Job 15 — Medikoch
+  "job15.title": {
+    es: "Desarrollador Full Stack (Laravel/PHP + Vue.js)",
+    en: "Full Stack Developer (Laravel/PHP + Vue.js)",
+  },
+  "job15.company": {
+    es: "Medikoch — Remoto",
+    en: "Medikoch — Remote",
+  },
+  "job15.period": {
+    es: "Jun 2026 – Presente",
+    en: "Jun 2026 – Present",
+  },
+  "job15.desc": {
+    es: "Auditoría técnica completa de una plataforma de salud heredada en Laravel/PHP (historias clínicas) usada por médicos, identificando falta de cobertura de tests, dependencias desactualizadas y endpoints de API sin protección, y endureciendo los endpoints expuestos con rate limiting. Corrección de un bug crítico que impedía editar historias clínicas, migración de vistas de Blade a Vue.js, y propuesta del roadmap hacia Vue 3 vía Inertia + Vite (el camino oficial de Laravel).",
+    en: "Full technical audit of a legacy Laravel/PHP healthcare platform (patient medical records) used by doctors, identifying missing test coverage, outdated dependencies, and unprotected API endpoints, then hardening exposed endpoints with rate limiting. Fixed a critical bug blocking clinical-record edits, migrated views from Blade to Vue.js, and proposed the roadmap toward Vue 3 via Inertia + Vite (Laravel's official path).",
+  },
+
   // Education Section
   "education.title": {
     es: "Formación Académica",
