@@ -26,9 +26,8 @@ const WaterSurface3D = dynamic(
   { ssr: false }
 );
 
-const FULLSTACK_START_YEAR = 2022;
+const FULLSTACK_START_YEAR = 2018;
 const FRONTEND_START_YEAR = 2022;
-const FULLSTACK_UNIVERSITY_YEARS = 2;
 
 function getYearsSince(startYear: number): number {
   return Math.max(0, new Date().getFullYear() - startYear);
@@ -37,7 +36,7 @@ function getYearsSince(startYear: number): number {
 export default function Home(): React.JSX.Element {
   const { language } = useLanguage();
   const isDesktop = useIsDesktop();
-  const fullStackYears = getYearsSince(FULLSTACK_START_YEAR) + FULLSTACK_UNIVERSITY_YEARS;
+  const fullStackYears = getYearsSince(FULLSTACK_START_YEAR);
   const frontendYears = getYearsSince(FRONTEND_START_YEAR);
 
   const { ref: aboutRef, isInView: isAboutInView } = useScrollAnimation({
