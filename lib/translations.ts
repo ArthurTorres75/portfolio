@@ -426,8 +426,8 @@ export const translations: Translations = {
     en: "Feb 2018 – Oct 2020",
   },
   "job8.desc": {
-    es: "Desarrollo frontend con Angular, TypeScript, Angular Material y Bootstrap. Integración de Google Maps API, diseño responsivo con CSS y SCSS. Trabajo en equipo con metodologías ágiles en entorno Linux.",
-    en: "Frontend development with Angular, TypeScript, Angular Material, and Bootstrap. Google Maps API integration, responsive design with CSS and SCSS. Agile team collaboration in a Linux environment.",
+    es: "Desarrollo frontend con Angular, TypeScript, Angular Material y Bootstrap. Integración de Google Maps API, diseño responsivo con CSS y SCSS. Trabajo en equipo con metodologías ágiles en entorno Linux, desarrollando dentro de contenedores Docker como entorno compartido para un equipo de 8 personas entre frontend y backend.",
+    en: "Frontend development with Angular, TypeScript, Angular Material, and Bootstrap. Google Maps API integration, responsive design with CSS and SCSS. Agile team collaboration in a Linux environment, developing inside Docker containers as the shared environment for an 8-person frontend and backend team.",
   },
 
   // Job 9 — Crazy Imagine Software (Umbrella)
