@@ -726,6 +726,20 @@ export const translations: Translations = {
     en: "Jul 2011",
   },
 
+  // Cert 12 — UX Design Fundamentals
+  "cert12.title": {
+    es: "UX Design: Conceptos básicos para principiantes",
+    en: "UX Design: Fundamentals for Beginners",
+  },
+  "cert12.issuer": {
+    es: "Udemy",
+    en: "Udemy",
+  },
+  "cert12.date": {
+    es: "Ago 2026",
+    en: "Aug 2026",
+  },
+
   // Testimonials Section
   "testimonials.title": {
     es: "Lo Que Dicen Mis Clientes",
